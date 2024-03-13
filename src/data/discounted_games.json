@@ -1,0 +1,71 @@
+[
+    {
+        "cover": "COD_modern_warfare.jpg",
+        "title": "Call Of Duty: Modern Warfare 3",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Playstation", "Xbox" ]
+    },
+
+    {
+        "cover": "realms_of_ruin.jpg",
+        "title": "Realms Of Ruin",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Playstation" ]
+    },
+
+    {
+        "cover": "dead_space.jpg",
+        "title": "Dead Space",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Xbox" ]
+    },
+
+    {
+        "cover": "horizon.jpg",
+        "title": "Horizon",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Playstation", "Xbox" ]
+    },
+
+    {
+        "cover": "COD_cold_war.jpg",
+        "title": "Call Of Duty: Cold War",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Playstation" ]
+    },
+
+    {
+        "cover": "atomic_heart.jpg",
+        "title": "Atomic Heart",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Playstation", "Xbox" ]
+    },
+
+    {
+        "cover": "hogwarts_legacy.jpg",
+        "title": "Hogwarts Legacy",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC", "Playstation" ]
+    }
+]

@@ -82,7 +82,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../card_blur_bg.svg");
+  background-image: url("../assets/card_blur_bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left 100px top calc(100% + 20px);

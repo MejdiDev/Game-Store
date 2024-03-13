@@ -26,6 +26,11 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+
+  background-image: url('../assets/bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -50%;
 }
 
 input, button, select {
@@ -35,13 +40,6 @@ input, button, select {
 
 .mobl {
   display: none !important;
-}
-
-#bg_blur {
-  position: absolute;
-  right: -12%;
-  top: -20%;
-  z-index: -1;
 }
 
 .seperation {
