@@ -1,0 +1,125 @@
+@import "utils/variables";
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 5%;
+
+    .logo {
+        height: 35px;
+        cursor: pointer;
+
+        &.wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 80% !important;
+            }
+        }
+    }
+
+    .text_input_wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        border: 3px #25252f solid;
+        border-radius: 30px;
+        padding: 2px;
+
+        height: 35px;
+        width: 500px;
+
+        &#mobl {
+            display: none;
+            width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+            background: $btn_gradient;
+            border-radius: 50%;
+
+            outline: none;
+            border: none;
+
+            height: 35px;
+            width: 39px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        input {
+            height: 100%;
+            font-size: 17px;
+
+            background: transparent;
+            color: $prim;
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+        }
+    }
+
+    #inputs {
+        gap: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        #menu {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    nav {
+        flex-flow: column nowrap;
+        background: $light_bg;
+        border-radius: 0 0 25px 25px;
+
+        #inputs {
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+
+            #menu {
+                display: flex;
+            }
+        }
+
+        .text_input_wrapper#comp, .select_wrapper {
+            display: none !important;
+        }
+
+        .text_input_wrapper#mobl {
+            display: flex;
+        }
+
+        .logo#comp {
+            display: none !important;
+        }
+
+        .logo.mobl {
+            display: flex !important;
+        }
+    }
+}

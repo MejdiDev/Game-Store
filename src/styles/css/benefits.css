@@ -1,0 +1,188 @@
+#benefits_section {
+  margin-top: 100px;
+  margin-bottom: 80px;
+  padding: 0 5%;
+  gap: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#benefits_section .swiper {
+  padding-top: 100px;
+  width: 100%;
+}
+
+#benefits_section .swiper-slide {
+  aspect-ratio: 1 / 1;
+  font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#benefits_section .swiper-slide .slider_child {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#benefits_section .benefit_card {
+  color: #f9fafe;
+  border-radius: 30px;
+  padding: 20px;
+  position: relative;
+  background: #272530;
+  -webkit-box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+          box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../card_blur_bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 100px top calc(100% + 20px);
+}
+
+#benefits_section .benefit_card #background {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#benefits_section .benefit_card h1 {
+  opacity: .4;
+  z-index: -1;
+  -webkit-text-stroke: 3px #40404c;
+  color: transparent;
+  font-size: 110px;
+  position: absolute;
+  top: -190px;
+  left: 0;
+}
+
+#benefits_section .benefit_card p {
+  font-size: 17px;
+  font-family: Manrope;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1623px) {
+  #benefits_section .benefit_card h2 {
+    font-size: 18px;
+  }
+  #benefits_section .benefit_card p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1420px) {
+  #benefits_section {
+    row-gap: 150px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #benefits_section .benefit_card {
+    width: 400px;
+  }
+  #benefits_section .benefit_card h2 {
+    font-size: 18px;
+  }
+  #benefits_section .benefit_card p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1013px) {
+  #benefits_section {
+    padding: 0 30px !important;
+  }
+  #benefits_section .benefit_card {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  #benefits_section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  #benefits_section .benefit_card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  #benefits_section {
+    padding: 0 15px !important;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  #benefits_section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  #benefits_section .swiper {
+    padding-top: 50px !important;
+  }
+  #benefits_section .benefit_card {
+    width: 100%;
+  }
+}

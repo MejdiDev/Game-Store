@@ -1,0 +1,221 @@
+@import "utils/variables";
+@import "utils/fonts";
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $btn_1;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0,  50%);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 122, 225, .2);
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: $bg;
+  font-family: "Benzin", sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+input, button, select {
+  font-family: "Manrope", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobl {
+  display: none !important;
+}
+
+#bg_blur {
+  position: absolute;
+  right: -12%;
+  top: -20%;
+  z-index: -1;
+}
+
+.seperation {
+  width: 100%;
+  height: 3px;
+  margin: 80px 0;
+  margin-bottom: 50px;
+  opacity: .2;
+
+  display: flex;
+  justify-content: center;
+
+  span {
+    display: block;
+    width: 80%;
+    height: 100%;
+    background: #40404c;
+  }
+}
+
+.pags_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+
+  div {
+      width: 40px;
+      height: 3px;
+      background: #2c2c38;
+      transition: background 200ms;
+      cursor: pointer;
+
+      &.active {
+          background: $btn_1;
+      }
+  }
+}
+
+.nav_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 997;
+
+  .arrow {
+      width: 20px;
+      height: 65px;
+      background: $bg;
+      cursor: pointer;
+      border-radius: 5px;
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &#next-arrow {
+        transform: scaleX(-1);
+      }
+
+      img {
+        user-select: none;
+        width: 20px;
+        margin-right: 3px;
+      }
+  }
+}
+
+#ending {
+  width: 100%;
+  height: 300px;
+  border-radius: 0 0 35% 35%;
+  position: absolute;
+
+  background: $bg;
+  box-shadow: inset -22px 22px 44px #08080d,
+              inset 22px -22px 44px #222235;
+}
+
+.nav_btn, .select_wrapper {
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  border-radius: 150px;
+  background: $neo_background;
+  box-shadow: $neo_box_shadow;
+  padding: 5px 10px;
+  transition-duration: 250ms;
+
+  height: 40px;
+  width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active, &:hover {
+      background: $btn_gradient !important;
+      box-shadow: none;
+  }
+
+  svg, img {
+      height: 25px;
+      width: 25px;
+  }
+
+  &.badged {
+      position: relative;
+
+      #badge {
+          font-family: "Manrope";
+          font-weight: 700;
+
+          top: -5px;
+          right: -5px;
+
+          background: #fff;
+          border-radius: 50%;
+          position: absolute;
+
+          width: 20px;
+          height: 20px;
+
+          p {
+              padding: 0;
+              margin: 0;
+          }
+      }
+  }
+}
+
+.select_wrapper {
+  width: auto;
+  color: $prim;
+
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+  select {
+      cursor: pointer;
+      appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      padding: 0 15px;
+      padding-right: 25px;
+
+      background: none;
+      border-radius: 150px;
+      border: none !important;
+      outline: none !important;
+      color: $prim;
+
+      width: 100%;
+      height: 100%;
+  }
+
+  img {
+      right: 10px;
+      pointer-events: none;
+      width: 15px;
+      height: auto;
+      position: absolute;
+  }
+
+  option {
+      color: $bg;
+      font-size: 15px;
+  }
+}

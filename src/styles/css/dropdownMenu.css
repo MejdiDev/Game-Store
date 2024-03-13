@@ -1,0 +1,183 @@
+#drop_menu_wrapper {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 999;
+  position: absolute;
+}
+
+#drop_menu_wrapper #drop_menu {
+  width: 80%;
+  height: 100%;
+  padding: 0 100px;
+  margin-top: 30px;
+  border-radius: 150px;
+  background: #272530;
+  -webkit-box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+          box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+}
+
+#drop_menu_wrapper #drop_menu ul.main {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li {
+  padding: 0 15px;
+  gap: 10px;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li.active, #drop_menu_wrapper #drop_menu ul.main > li:hover {
+  border-bottom: 1px #fb4a14 solid;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(251, 74, 20, 0.203519)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(251, 74, 20, 0.203519) 100%);
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li img {
+  width: 20px;
+  height: 20px;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  color: #f9fafe;
+  font-size: 14px;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li:hover #menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu {
+  cursor: context-menu;
+  position: absolute;
+  width: 700px;
+  background: #272530;
+  top: 61px;
+  left: 0px;
+  display: none;
+  border-radius: 0 0 20px 20px;
+  gap: 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #f9fafe;
+  padding: 20px 30px;
+  padding-bottom: 200px;
+  font-family: Manrope;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu #card {
+  position: absolute;
+  height: 180px;
+  aspect-ratio: 9/6;
+  border-radius: 20px;
+  right: -15%;
+  top: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu .sprt {
+  width: 100%;
+  height: 2px;
+  background: #f9fafe;
+  opacity: .5;
+  margin: 10px 0;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu h1 {
+  font-size: 23px;
+  margin: 0;
+  font-weight: 600;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu #tabs {
+  width: 100%;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu #tabs ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu #tabs ul li {
+  cursor: pointer;
+  width: calc(100% - 40px);
+  margin: 0;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 20px;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu #tabs ul li:hover, #drop_menu_wrapper #drop_menu ul.main > li #menu #tabs ul li.active {
+  background: #0d0d17;
+}
+
+#drop_menu_wrapper #drop_menu ul.main > li #menu #promoted {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1300px) {
+  #drop_menu_wrapper #drop_menu {
+    padding: 0 30px;
+    width: 85%;
+  }
+  #drop_menu_wrapper #drop_menu p {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  #drop_menu_wrapper {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+@import "utils/variables";
+
+#categories_section {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        margin: 0;
+        padding: 0 50px;
+
+        gap: 40px;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        
+        li {
+            gap: 10px;
+            cursor: pointer;
+            color: $prim;
+            height: 140px;
+            aspect-ratio: 1 / 1;
+            background: $light_bg;
+
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+
+            h4 {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

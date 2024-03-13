@@ -1,0 +1,200 @@
+@import "utils/variables";
+
+#slider_section {
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    #swiper_wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        width: 125%;
+        left: -1%;
+        position: relative;
+
+        .nav_wrapper {
+            width: 25vw;
+            top: calc(120px + 13vw);
+    
+            #next-arrow {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        .swiper {
+            margin-top: 150px;
+            width: 100%;
+        }
+        
+        .swiper-slide {
+            aspect-ratio: 1 / 1;
+            text-align: center;
+            font-size: 18px;
+            user-select: none;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .slider_child {
+                width: 100%;
+                height: 100%;
+
+                opacity: 1;
+                transition-duration: 500ms;
+                transform: scale(1);
+                border-radius: 15px;
+    
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .swiper-wrapper {
+            align-items: center;
+        }
+        
+        .swiper-slide:not([class^="swiper-slide swiper-slide-active"]) {
+            .slider_child {
+                opacity: .4;
+                transform: scale(.8);
+                margin: 0;
+            }
+        }
+    }
+
+    #title {
+        color: $prim;
+        font-weight: 500;
+        font-size: 35px;
+        margin: 0;
+        margin-top: 15px;
+    }
+
+    #platforms_wrapper {
+        gap: 20px;
+        font-family: Manrope;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            color: $prim;
+            font-weight: 400;
+        }
+
+        #platforms {
+            gap: 8px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                border: 2px #40404c solid;
+                border-radius: 7px;
+                font-family: Manrope;
+                margin: 0;
+                padding: 0 10px;
+                color: #40404c;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    #slider_section {
+        .swiper {
+            margin-top: 40px !important;
+        }
+
+        .nav_wrapper {
+            top: calc(25vw - 120px) !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    #slider_section {
+        .nav_wrapper {
+            width: 42vw !important;
+            top: calc(21vw + 10px) !important;
+
+            #next-arrow {
+                right: 0;
+            }
+        }
+
+        #title {
+            width: 90%;
+            text-align: center;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    #slider_section {
+        .swiper {
+            width: calc(100% - 10%) !important;
+        }
+
+        #swiper_wrapper {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav_wrapper {
+            top: calc(50vw - 25px) !important;
+            width: 100% !important;
+
+            .arrow {
+                height: 90px;
+                width: auto;
+
+                img {
+                    width: 23px;
+                    aspect-ratio: 3 / 3.8;
+                }
+
+                &#next-arrow {
+                    left: calc(100vw - 40px) !important;
+                }
+    
+                &#prev-arrow {
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #slider_section {
+        .swiper {
+            margin-top: 25px !important;
+            width: calc(100% - 5%) !important;
+        }
+
+        #title {
+            font-size: 25px;
+        }
+    }
+}
