@@ -81,13 +81,13 @@
         .swiper {
             margin-top: 70px;
             width: 100%;
-            height: calc(25vw + 100px);
+            height: calc(25vw + 130px);
             overflow: visible;
         }
 
         .game_card {
             border-radius: 15px;
-            aspect-ratio: 3 / 4.3;
+            aspect-ratio: 3 / 4.8;
             font-family: Manrope;
 
             background: #1d1d29;
@@ -98,6 +98,25 @@
             flex-flow: column nowrap;
             align-items: center;
             justify-content: end;
+
+            #platforms_wrapper {
+                margin-top: 15px;
+                width: calc(100% - 20px);
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+
+                #platforms {
+                    column-gap: 10px;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    margin-bottom: 15px;
+    
+                    img {
+                        height: 25px;
+                    }
+                }
+            }
 
             #discount_perc {
                 font-family: Benzin;
@@ -148,7 +167,6 @@
                 flex-flow: row nowrap;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 15px;
 
                 #price_wrapper {
                     gap: 10px;
@@ -203,11 +221,11 @@
     }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1100px) {
     .games_buy_slider {
         #swiper_wrapper {
             .swiper {
-                height: calc(33vw + 70px);
+                height: calc(33vw + 130px);
             }
         }
     }
@@ -233,8 +251,12 @@
             display: none;
         }
 
-        #swiper_wrapper .swiper {
-            height: calc(50vw + 100px);
+        .game_card {
+            aspect-ratio: 3 / 4.7 !important;
+        }
+
+        .swiper {
+            height: calc(60vw + 70px) !important;
         }
     }
 }
@@ -257,10 +279,18 @@
         }
 
         .game_card {
+            aspect-ratio: 3 / 4.9 !important;
+
             #discount_perc {
                 font-size: 14px !important;
                 height: 30px !important;
                 width: 70px !important;
+            }
+
+            #platforms {
+                img {
+                    height: 15px;
+                }
             }
         }
     }

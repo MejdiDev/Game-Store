@@ -98,13 +98,13 @@
 .games_buy_slider #swiper_wrapper .swiper {
   margin-top: 70px;
   width: 100%;
-  height: calc(25vw + 100px);
+  height: calc(25vw + 130px);
   overflow: visible;
 }
 
 .games_buy_slider #swiper_wrapper .game_card {
   border-radius: 15px;
-  aspect-ratio: 3 / 4.3;
+  aspect-ratio: 3 / 4.8;
   font-family: Manrope;
   background: #1d1d29;
   color: #f9fafe;
@@ -122,6 +122,38 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+}
+
+.games_buy_slider #swiper_wrapper .game_card #platforms_wrapper {
+  margin-top: 15px;
+  width: calc(100% - 20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.games_buy_slider #swiper_wrapper .game_card #platforms_wrapper #platforms {
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  margin-bottom: 15px;
+}
+
+.games_buy_slider #swiper_wrapper .game_card #platforms_wrapper #platforms img {
+  height: 25px;
 }
 
 .games_buy_slider #swiper_wrapper .game_card #discount_perc {
@@ -185,7 +217,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 15px;
 }
 
 .games_buy_slider #swiper_wrapper .game_card #bottom #price_wrapper {
@@ -245,9 +276,9 @@
   width: 25px;
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1100px) {
   .games_buy_slider #swiper_wrapper .swiper {
-    height: calc(33vw + 70px);
+    height: calc(33vw + 130px);
   }
 }
 
@@ -267,8 +298,11 @@
   .games_buy_slider .nav_wrapper {
     display: none;
   }
-  .games_buy_slider #swiper_wrapper .swiper {
-    height: calc(50vw + 100px);
+  .games_buy_slider .game_card {
+    aspect-ratio: 3 / 4.7 !important;
+  }
+  .games_buy_slider .swiper {
+    height: calc(60vw + 70px) !important;
   }
 }
 
@@ -285,9 +319,15 @@
   .games_buy_slider #top .more_btn {
     display: none;
   }
+  .games_buy_slider .game_card {
+    aspect-ratio: 3 / 4.9 !important;
+  }
   .games_buy_slider .game_card #discount_perc {
     font-size: 14px !important;
     height: 30px !important;
     width: 70px !important;
+  }
+  .games_buy_slider .game_card #platforms img {
+    height: 15px;
   }
 }
