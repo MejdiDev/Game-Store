@@ -81,7 +81,7 @@
         .swiper {
             margin-top: 70px;
             width: 100%;
-            height: calc(25vw + 130px);
+            height: auto !important;
             overflow: visible;
         }
 
@@ -221,16 +221,6 @@
     }
 }
 
-@media only screen and (max-width: 1100px) {
-    .games_buy_slider {
-        #swiper_wrapper {
-            .swiper {
-                height: calc(33vw + 130px);
-            }
-        }
-    }
-}
-
 @media only screen and (max-width: 980px) {
     .games_buy_slider .nav_wrapper {
         width: calc(100% - 10vw + 38px);
@@ -253,10 +243,6 @@
 
         .game_card {
             aspect-ratio: 3 / 4.7 !important;
-        }
-
-        .swiper {
-            height: calc(60vw + 70px) !important;
         }
     }
 }
