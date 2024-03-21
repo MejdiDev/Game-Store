@@ -1,11 +1,16 @@
 import '../styles/css/mobileNav.css';
 
 const hideMobileNav = () => {
+    const filterMenu = document.querySelector('.filter_wrapper');
+
     document.getElementById('mobileNavbar').classList.remove('active');
     document.getElementById('overlay').style.opacity = "0";
+    if(filterMenu) filterMenu.classList.remove("slid_into_view");
 
     setTimeout(() => {
         document.getElementById('mobileNavbar').style.display = "none";
+
+        if(filterMenu) filterMenu.classList.add("mobl_hidden");
         document.getElementById('overlay').style.display = "none";
     }, 400);
     document.querySelector('body').classList.remove('hidden');

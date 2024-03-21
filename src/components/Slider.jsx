@@ -5,8 +5,9 @@ import 'swiper/css';
 
 import '../styles/css/slider.css';
 import { useState, useRef, useCallback, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Slider = ({ games }) => {
+const Slider = ({ games, platform }) => {
     const [selGame, setSelGame] = useState(games[0])
     const sliderRef = useRef(null);
 
@@ -22,15 +23,21 @@ const Slider = ({ games }) => {
 
     useEffect(() => {
         setInterval(() => {
-            let idx = sliderRef.current.swiper.realIndex
+            try {
+                let idx = sliderRef.current.swiper.realIndex
 
-            if(!document.getElementById("main-pag-" + idx).classList.contains('active')) {
-                setSelGame(games[idx])
+                if(!document.getElementById("main-pag-" + idx).classList.contains('active')) {
+                    setSelGame(games[idx])
 
-                document.querySelectorAll("#slider_section .pags_wrapper div").forEach(el => {
-                    if(el.id.replace('main-pag-','') === String(idx)) el.classList.add("active")
-                    else el.classList.remove("active")
-                })
+                    document.querySelectorAll("#slider_section .pags_wrapper div").forEach(el => {
+                        if(el.id.replace('main-pag-','') === String(idx)) el.classList.add("active")
+                        else el.classList.remove("active")
+                    })
+                }
+            }
+
+            catch {
+                console.log("error !")
             }
         }, 10)
     }, [])
@@ -66,7 +73,11 @@ const Slider = ({ games }) => {
         >
             {
                 games.map((game, index) =>
-                    <SwiperSlide key={`main-game-slider-child-${index}`}><div style={{backgroundImage: `url(./game_covers/${game.cover})`}} className="slider_child"></div></SwiperSlide>
+                    <SwiperSlide key={`main-game-slider-child-${index}`}>
+                        <Link to={`/product/${platform}/${game.id}`}>
+                            <div style={{backgroundImage: `url(./game_covers/${game.cover})`}} className="slider_child"></div>
+                        </Link>
+                    </SwiperSlide>
                 )
             }
         </Swiper>
@@ -91,8 +102,8 @@ const Slider = ({ games }) => {
         <h3>Platforms: </h3>
         <span id="platforms">
             {
-                selGame.platforms.map(plt => 
-                    <p>{plt}</p>
+                selGame.platforms.map((plt, idx) => 
+                    <p key={`game-main-platform-${idx}`}>{plt}</p>
                 )
             }
         </span>

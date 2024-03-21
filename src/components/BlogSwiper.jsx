@@ -8,8 +8,6 @@ import 'swiper/css';
 const BlogCard = ({ idx, blog_data }) => {
     return (
         <div className="benefit_card">
-            <h1>0{ idx + 1 }</h1>
-            
             <div id="background" style={{backgroundImage: `url(${blog_data.img})`}}></div>
             <p>{ blog_data.description }</p>
         </div>
@@ -43,12 +41,7 @@ const BlogSwiper = ({ data }) => {
 
                     820: {
                         slidesPerView: 3,
-                        spaceBetween: 30
-                    },
-
-                    1100: {
-                        slidesPerView: 4,
-                        spaceBetween: 30
+                        spaceBetween: 40
                     }
                 }}
             >

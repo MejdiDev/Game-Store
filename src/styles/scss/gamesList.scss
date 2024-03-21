@@ -1,0 +1,231 @@
+@import "utils/variables";
+
+#games_list_body {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding: 0 5%;
+
+    & > h1 {
+        color: $prim;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    #game_list_body_wrapper {
+        gap: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: start;
+
+        .filter_wrapper {
+            position: relative;
+            width: 430px;
+            background: $dark_bg;
+            border-radius: 20px;
+    
+            &.mobl_hidden {
+                display: block;
+            }
+    
+            .seperation {
+                margin: 0;
+    
+                span {
+                    width: calc(100% - 30px);
+                }
+            }
+    
+            .cri_wrapper {
+                padding: 30px;
+    
+                &#price_cri {
+                    padding-top: 30px;
+    
+                    button {
+                        cursor: pointer;
+                        border-radius: 5px;
+                        padding: 5px 0;
+                        font-size: 16px;
+                        color: $prim;
+                        background: $btn_gradient;
+                        margin-top: 20px;
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                    }
+    
+                    #price_inputs_wrapper {
+                        margin-top: 10px;
+                        width: 100%;
+                        display: flex;
+                        gap: 10px;
+                        
+                        input {
+    
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                              -webkit-appearance: none;
+                              margin: 0;
+                            }
+    
+                            -moz-appearance: textfield;
+    
+                            outline: none;
+                            border: none;
+                            background: none;
+                            width: 100%;
+                            border: 2px #40404c solid;
+                            border-radius: 5px;
+                            height: 30px;
+                            padding-left: 15px;
+                            color: $prim;
+                        }
+                    }
+                }
+    
+                h1 {
+                    margin: 0;
+                    color: $prim;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+    
+                .checks_wrapper {
+                    span {
+                        margin: 15px 0;
+                        gap: 10px;
+                        display: flex;
+                        align-items: center;
+                        
+                        #checkbox {
+                            user-select: none;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            width: 25px;
+                            aspect-ratio: 1 / 1;
+                            border-radius: 5px;
+                            background: $light_bg;
+    
+                            img {
+                                display: none;
+                                height: 20px;
+                            }
+    
+                            &.active {
+                                background: $btn_gradient;
+    
+                                img {
+                                    display: block;
+                                }
+                            }
+                        }
+    
+                        p {
+                            font-size: 17px;
+                            font-weight: 700;
+                            margin: 0;
+                            font-family: Manrope;
+                            color: #40404c;
+                        }
+                    }
+                }
+            }
+        }
+    
+        #content {
+            width: 100%;
+            margin-top: 50px;
+    
+            #filter_btn {
+                display: none;
+                margin-bottom: 100px;
+                cursor: pointer;
+                background: $btn_gradient;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                padding: 5px 20px;
+    
+                gap: 10px;
+                flex-flow: row nowrap;
+                align-items: center;
+    
+                p {
+                    margin: 0;
+                    color: $prim;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+    
+                img {
+                    height: 20px;
+                }
+            }
+    
+            #res_wrapper {
+                width: 100%;
+        
+                display: grid;
+                column-gap: 20px;
+                row-gap: 100px;
+                grid-template-columns: repeat(3, calc((100% / 3) - (40px / 3)));
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    #games_list_body {
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #games_list_body {
+        .filter_wrapper {
+            position: fixed !important;
+            z-index: 999;
+            top: 0;
+            left: -70vw;
+            border-radius: 0;
+            height: 100%;
+            width: 70vw !important;
+            transition: left 400ms;
+            overflow-y: scroll;
+
+            &.mobl_hidden {
+                display: none !important;
+            }
+
+            &.slid_into_view {
+                left: 0 !important;
+            }
+        }
+        
+        #content {
+            margin-top: 0;
+
+            #filter_btn {
+                display: flex !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    #games_list_body {
+        & > h1 {
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #res_wrapper {
+            grid-template-columns: repeat(2, calc((100% / 2) - (20px / 2))) !important;
+        }
+    }
+}

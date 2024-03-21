@@ -1,3 +1,4 @@
+import "../styles/css/gameCard.css";
 import img_paths from "../data/img_paths.json";
 
 const GameCard = ({ game }) => {
@@ -5,11 +6,11 @@ const GameCard = ({ game }) => {
         <article className="game_card">
             {game.is_discounted && <div id="discount_perc">-{ game.discount_perc }%</div>}
 
-            <div style={{ backgroundImage: `url(./game_covers/${game.cover})` }} id="cover"></div>
+            <div style={{ backgroundImage: `url('./game_covers/${game.cover}')` }} id="cover"></div>
             <p>{ game.title }</p>
 
             <div id="bottom">
-                <div id="price_wrapper">
+                <div className="game_price_wrapper">
                     {game.is_discounted && <h3 id="discount_price">€ { game.new_price }</h3>}
                     <h3 id="original_price">€ { game.price }</h3>
                 </div>
@@ -24,7 +25,7 @@ const GameCard = ({ game }) => {
 
                 <div id="platforms">
                     {
-                        game.platforms.map(plt => <img src={img_paths[plt]} alt={plt} />)
+                        game.platforms.map((plt, idx) => <img key={`game-buy-plt-${idx}`} src={img_paths[plt]} alt={plt} />)
                     }
                 </div>
             </div>

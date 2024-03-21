@@ -10,31 +10,46 @@ import InfoSection from "../components/InfoSection";
 import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 
-import games from "../data/games.json";
-import discounted_games from "../data/discounted_games.json"
-import blog_data from "../data/blog_data.json";
+import games from "../data/games.json"
+import blog_data from "../data/blog_data.json"
 
 import { shuffleArray } from "../utils/functions";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 
 const LandingPage = () => {
+    const { platform } = useParams();
+    const [data, setData] = useState([])
+
+    const getGameData = () => {
+        axios.get(`https://www.giantbomb.com/api/games/?format=json&limit=20&api_key=${process.env.REACT_APP_GIANT_BOMB_API_KEY}`)
+        .then(res => res.data.results)
+        .then(res => {
+            setData(res)
+            console.log(res[0])
+        })
+    }
+
     return (
         <main>
             <div id="overlay" onClick={hideMobileNav}></div>
             <div id="overlay_dropdown" onClick={hideMobileNav}></div>
 
-            <MobileNav isHome={true} />
+            <MobileNav />
 
             <Nav />
-            <DropdownMenu />
+            <DropdownMenu platform={platform} />
             
-            <Slider games={ games } />
+            <Slider platform={platform} games={ games } />
 
             <Categories />
 
             <div className="seperation"><span></span></div>
 
-            <GamesBuySlider id="trending_games_section" title="Trending" games={ shuffleArray(games) } />
-            <GamesBuySlider id="bestsell_games_section" title="Bestsellers" games={ shuffleArray(discounted_games) } />
+            <GamesBuySlider id="trending_games_section" title="Trending" platform={platform} games={ shuffleArray(games) } />
+            <GamesBuySlider id="bestsell_games_section" title="Bestsellers" platform={platform} games={ shuffleArray(games.filter(game => game.is_discounted)) } />
 
             <BlogSwiper data={ shuffleArray(blog_data) } />
             <InfoSection />

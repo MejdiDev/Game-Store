@@ -62,6 +62,11 @@
           align-items: center;
 }
 
+#slider_section #swiper_wrapper .swiper-slide a {
+  width: 100%;
+  height: 100%;
+}
+
 #slider_section #swiper_wrapper .swiper-slide .slider_child {
   width: 100%;
   height: 100%;

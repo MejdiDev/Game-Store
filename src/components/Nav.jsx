@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "../styles/css/nav.css";
+import { Link, useNavigate  } from "react-router-dom";
 
 const Nav = () => {
+    const [query, setQuery] = useState("")
+    const navigate = useNavigate()
+
     const showMobileNav = () => {
         document.getElementById('overlay').style.display = "block";
         document.getElementById('mobileNavbar').style.display = "flex";
@@ -12,17 +17,25 @@ const Nav = () => {
         document.querySelector('body').classList.add('hidden');
     }
 
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        navigate("/search/" + encodeURIComponent(query))
+    }
+
     return (
         <nav>
-            <img className="logo" id="comp" src="./logo.png" alt="Logo" />
+            <Link to='/'>
+                <img className="logo" id="comp" src="./logo.png" alt="Logo" />
+            </Link>
 
-            <span id="comp" className="text_input_wrapper">
-                <input type="text" placeholder="Search" />
+            <form onSubmit={handleSubmit} id="comp" className="text_input_wrapper">
+                <input value={query} onChange={e => setQuery(e.target.value)} type="text" placeholder="Search" />
 
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="256" height="256"><g data-name="Layer 2" fill="#000000" className="color000 svgShape"><path d="m20.71 19.29-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z" data-name="search" fill="#fff" className="color000 svgShape"></path></g></svg>
                 </button>
-            </span>
+            </form>
 
             <span id="inputs">
                 <div className="select_wrapper">
@@ -44,7 +57,9 @@ const Nav = () => {
                 </button>
 
                 <div className="logo mobl wrapper">
-                    <img src="./logo.png" alt="Logo" />
+                    <Link to='/'>
+                        <img src="./logo.png" alt="Logo" />
+                    </Link>
                 </div>
 
                 <button className="nav_btn">

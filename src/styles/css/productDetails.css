@@ -1,0 +1,380 @@
+#product_details_section {
+  gap: 30px;
+  padding: 0 5%;
+  margin-top: 150px;
+  color: #f9fafe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+#product_details_section #title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#product_details_section p {
+  font-family: Manrope;
+}
+
+#product_details_section #cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  aspect-ratio: 3 / 4;
+  border-radius: 15px;
+}
+
+#product_details_section #disc_perc {
+  font-family: Benzin;
+  background: #fcce16;
+  border-radius: 13px 0 13px 0;
+  height: 35px;
+  width: 80px;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  color: #151521;
+}
+
+#product_details_section #buy_component {
+  width: 320px;
+  right: 5%;
+  padding: 20px;
+  border-radius: 20px;
+  background: #272530;
+  -webkit-box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+          box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#product_details_section #buy_component #top {
+  width: 100%;
+  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+#product_details_section #buy_component #top div {
+  width: 5px;
+  height: 30px;
+  background: #40404c;
+  opacity: .2;
+}
+
+#product_details_section #buy_component #top span {
+  gap: 5px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+#product_details_section #buy_component #top span img {
+  height: 20px;
+}
+
+#product_details_section #buy_component #top span p {
+  margin: 0;
+}
+
+#product_details_section #buy_component .seperation {
+  margin: 0;
+  margin-top: 20px;
+}
+
+#product_details_section #buy_component #benefits {
+  width: calc(100% - 40px);
+  background: #151521;
+  padding: 20px;
+  border-radius: 15px;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#product_details_section #buy_component #benefits div {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+#product_details_section #buy_component #benefits div img {
+  height: 20px;
+}
+
+#product_details_section #buy_component #benefits div p {
+  margin: 0;
+  font-size: 14px;
+  opacity: .4;
+  font-weight: 500;
+}
+
+#product_details_section #buy_component #fav {
+  cursor: pointer;
+  gap: 10px;
+  margin: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  border-radius: 15px;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
+}
+
+#product_details_section #buy_component #fav:hover {
+  background: #151521;
+}
+
+#product_details_section #buy_component #fav svg {
+  height: 25px;
+  width: 25px;
+}
+
+#product_details_section #buy_component #fav p {
+  font-weight: 700;
+  margin: 0;
+  font-size: 18px;
+}
+
+#product_details_section #buy_component .game_price_wrapper {
+  gap: 15px;
+  margin: 20px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Manrope;
+}
+
+#product_details_section #buy_component .game_price_wrapper h3 {
+  font-size: 38px;
+  font-weight: 800;
+}
+
+#product_details_section #buy_component .game_price_wrapper:has(> #discount_price) h3:first-child {
+  font-size: 38px;
+  font-weight: 800;
+}
+
+#product_details_section #buy_component .game_price_wrapper:has(> #discount_price) h3:last-child {
+  font-size: 20px;
+}
+
+#product_details_section #buy_component button {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  font-family: Manrope;
+  font-size: 18px;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+#product_details_section .seperation {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#product_details_section .seperation span {
+  width: 100%;
+}
+
+#product_details_section #data {
+  width: calc(100% - 700px);
+}
+
+#product_details_section #data p {
+  margin: 0;
+  font-size: 16px;
+  color: #40404c;
+}
+
+#product_details_section #data #game_info {
+  height: 150px;
+  row-gap: 30px;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+#product_details_section #data #game_info .info_wrapper {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Manrope;
+  font-weight: 700;
+}
+
+#product_details_section #data #game_info .info_wrapper #icon {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  background: #1d1d29;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#product_details_section #data #game_info .info_wrapper #icon img {
+  height: 25px;
+  aspect-ratio: 1 / 1;
+}
+
+#product_details_section #data #game_info .info_wrapper #text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#product_details_section #data #game_info .info_wrapper #text h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1320px) {
+  #product_details_section {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #product_details_section #data {
+    width: calc(100% - 350px);
+  }
+  #product_details_section #buy_component {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #product_details_section #game_info {
+    height: auto !important;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  #product_details_section {
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  #product_details_section #buy_component {
+    width: calc(100% - 100px);
+  }
+  #product_details_section #cover {
+    width: 500px;
+  }
+  #product_details_section #game_info {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-flow: row wrap !important;
+            flex-flow: row wrap !important;
+  }
+  #product_details_section #data {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  #product_details_section {
+    margin-top: 50px;
+  }
+  #product_details_section #cover {
+    width: calc(100% - 40px);
+  }
+}

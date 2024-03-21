@@ -1,0 +1,177 @@
+@import "utils/variables";
+
+#about_product {
+    width: 95%;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    padding-left: 5%;
+    color: $prim;
+
+    h1 {
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .seperation {
+        margin: 0;
+    }
+
+    .section_wrapper {
+        width: calc(100% - 350px);
+
+        .content_wrapper {
+            background: $light_bg;
+            padding: 30px;
+            border-radius: 15px;
+            font-family: Manrope;
+        }
+    }
+
+    #description {
+        #more_less_wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            transition: height 200ms;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+
+            p {
+                margin: 0;
+            }
+
+            #grad {
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(29, 29, 41,1) 78%);
+    
+                bottom: 0;
+                position: absolute;
+                width: 100%;
+                height: 50px;
+            }
+        }
+    
+        button {
+            outline: none;
+            border: none;
+    
+            margin-top: 20px;
+            font-family: Manrope;
+            color: $btn_1;
+            background: $bg;
+            width: 100%;
+            font-size: 17px;
+            padding: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+
+    #overview {
+        margin-top: 50px;
+    }
+
+    .content_wrapper {
+        h4 {
+            margin: 0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .seperation {
+            height: 2px;
+
+            span {
+                width: 100%;
+            }
+        }
+    }
+
+    #overview .content_wrapper div:not(.seperation), #requirements .content_wrapper div:not(.seperation) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        padding: 15px 0;
+        column-gap: 30px;
+
+        p {
+            margin: 0;
+
+            &:first-child {
+                width: 250px;
+                font-size: 16px;
+                color: #40404c;
+                font-weight: 700;
+            }
+        }
+
+        div {
+            gap: 5px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            img {
+                height: 30px;
+            }
+        }
+    }
+
+    #requirements {
+        margin-top: 50px;
+        
+        #row_wrapper {
+            width: 100%;
+            gap: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+
+            .content_wrapper {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    #about_product {
+        .section_wrapper {
+            width: calc(95% - 60px);
+
+            .content_wrapper {
+                width: 100%;
+            }
+
+            &:has(> #row_wrapper) {
+                width: 95%;
+            }
+        }
+
+        #row_wrapper {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #about_product {
+        flex-flow: column nowrap !important;
+
+        #overview .content_wrapper div:not(.seperation), #requirements .content_wrapper div:not(.seperation) {
+            flex-wrap: wrap;
+        }
+
+        #more_less_wrapper {
+            transition: height 450ms !important;
+        }
+
+        .section_wrapper:has(> #row_wrapper) {
+            width: calc(95% - 60px);
+        }
+
+        #row_wrapper {
+            flex-direction: column !important;
+        }
+    }
+}

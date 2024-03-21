@@ -3,7 +3,7 @@
   top: 0;
   height: 100%;
   z-index: 998;
-  position: absolute;
+  position: fixed;
   background: #0d0d17;
   opacity: 0;
   display: none;
@@ -14,11 +14,12 @@
 #overlay_dropdown {
   width: 100% !important;
   height: 500vh !important;
+  position: absolute !important;
 }
 
 #mobileNavbar {
   top: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -84,7 +85,7 @@
 }
 
 #mobileNavbar ul {
-  margin-left: 15%;
+  margin-left: 20%;
 }
 
 #mobileNavbar ul li {
@@ -158,5 +159,17 @@
   }
   #mobileNavbar.active {
     right: 20% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #mobileNavbar ul {
+    margin-left: 18% !important;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  #mobileNavbar ul {
+    margin-left: 15% !important;
   }
 }

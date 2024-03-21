@@ -33,7 +33,7 @@ nav .logo.wrapper {
           align-items: center;
 }
 
-nav .logo.wrapper img {
+nav .logo.wrapper a, nav .logo.wrapper img {
   height: 80% !important;
 }
 

@@ -1,0 +1,311 @@
+@import "utils/variables";
+
+#product_details_section {
+    gap: 30px;
+    padding: 0 5%;
+    margin-top: 150px;
+    color: $prim;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: start;
+
+    #title {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    p {
+        font-family: Manrope;
+    }
+
+    #cover {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        width: 300px;
+        aspect-ratio: 3 / 4;
+        border-radius: 15px;
+    }
+
+    #disc_perc {
+        font-family: Benzin;
+        background: $btn_2;
+        border-radius: 13px 0 13px 0;
+
+        height: 35px;
+        width: 80px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        color: $bg;
+    }
+
+    #buy_component {
+        width: 320px;
+        right: 5%;
+        padding: 20px;
+        border-radius: 20px;
+        background: $neo_background;
+        box-shadow: $neo_box_shadow;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        #top {
+            width: 100%;
+            gap: 20px;
+            display: flex;
+            align-items: center;
+            flex-flow: row nowrap;
+
+            div {
+                width: 5px;
+                height: 30px;
+                background: #40404c;
+                opacity: .2;
+            }
+
+            span {
+                gap: 5px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: row nowrap;
+
+                img {
+                    height: 20px;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        .seperation {
+            margin: 0;
+            margin-top: 20px;
+        }
+
+        #benefits {
+            width: calc(100% - 40px);
+            background: $bg;
+            padding: 20px;
+            border-radius: 15px;
+
+            gap: 10px;
+            display: flex;
+            flex-flow: column nowrap;
+
+            div {
+                gap: 10px;
+                display: flex;
+                align-items: center;
+                flex-flow: row nowrap;
+
+                img {
+                    height: 20px;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 14px;
+                    opacity: .4;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        #fav {
+            cursor: pointer;
+            gap: 10px;
+            margin: 15px 0;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            
+            padding: 10px 20px;
+            border-radius: 15px;
+            transition: background 200ms;
+
+            &:hover {
+                background: $bg;
+            }
+
+            svg {
+                height: 25px;
+                width: 25px;
+            }
+
+            p {
+                font-weight: 700;
+                margin: 0;
+                font-size: 18px;
+            }
+        }
+
+        .game_price_wrapper {
+            gap: 15px;
+            margin: 20px 0;
+            justify-content: center;
+            font-family: Manrope;
+
+            h3 {
+                font-size: 38px;
+                font-weight: 800;
+            }
+
+            &:has(> #discount_price) {
+                h3 {
+                    &:first-child {
+                        font-size: 38px;
+                        font-weight: 800;
+                    }
+    
+                    &:last-child {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            outline: none;
+            border: none;
+            color: #fff;
+            background: $btn_gradient;
+            font-family: Manrope;
+            font-size: 18px;
+            padding: 15px 0;
+            border-radius: 10px;
+        }
+    }
+
+    .seperation {
+        margin: 0;
+        margin-bottom: 10px;
+
+        span {
+            width: 100%;
+        }
+    }
+
+    #data {
+        width: calc(100% - 700px);
+
+        p {
+            margin: 0;
+            font-size: 16px;
+            color: #40404c;
+        }
+
+        #game_info {
+            height: 150px;
+            row-gap: 30px;
+            column-gap: 50px;
+            display: flex;
+            flex-flow: column wrap;
+            
+            .info_wrapper {
+                gap: 10px;
+                display: flex;
+                font-family: Manrope;
+                font-weight: 700;
+
+                #icon {
+                    width: 50px;
+                    aspect-ratio: 1 / 1;
+                    background: $light_bg;
+                    border-radius: 5px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        height: 25px;
+                        aspect-ratio:  1 / 1;
+                    }
+                }
+
+                #text {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-between;
+
+                    h4 {
+                        margin: 0;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    #product_details_section {
+        flex-wrap: wrap;
+
+        #data {
+            width: calc(100% - 350px);
+        }
+
+        #buy_component {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #product_details_section {
+        #game_info {
+            height: auto !important;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #product_details_section {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        #buy_component {
+            width: calc(100% - 100px);
+        }
+
+        #cover {
+            width: 500px;
+        }
+
+        #game_info {
+            flex-flow: row wrap !important;
+        }
+
+        #data {
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #product_details_section {
+        margin-top: 50px;
+
+        #cover {
+            width: calc(100% - 40px);
+        }
+    }
+}

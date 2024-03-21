@@ -3,11 +3,12 @@ import { useState, useRef, useCallback } from 'react';
 import GameCard from "./GameCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from "swiper/modules";
+import { Link } from 'react-router-dom';
 
 import 'swiper/css';
 import '../styles/css/gameBuySlider.css';
 
-const GamesBuySlider = ({ title, id, games }) => {
+const GamesBuySlider = ({ title, id, games, platform }) => {
     const [selGame, setSelGame] = useState(games[0])
     const sliderRef = useRef(null);
 
@@ -74,7 +75,9 @@ const GamesBuySlider = ({ title, id, games }) => {
                     {
                         games.map((game, index) =>
                             <SwiperSlide key={`game-buy-slider-child-${index}`}>
-                                <GameCard game={game} />
+                                <Link to={`/product/${platform}/${game.id}`}>
+                                    <GameCard game={game} />
+                                </Link>
                             </SwiperSlide>
                         )
                     }
