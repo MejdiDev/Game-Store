@@ -32,6 +32,10 @@ const LandingPage = () => {
         })
     }
 
+    useEffect(() => {
+        document.title = "Key4GG";
+    })
+
     return (
         <main>
             <div id="overlay" onClick={hideMobileNav}></div>

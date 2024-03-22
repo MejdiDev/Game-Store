@@ -112,6 +112,7 @@ const FilterComponent = ({ games, applyHandler }) => {
 }
 
 const GamesList = ({ pageTitle, games, platform }) => {
+    const [resGameList, setResGameList] = useState(null)
     const [applCriList, applCriListHandler] = useState(emptyCri)
 
     const showFilterMenu = () => {
@@ -125,6 +126,22 @@ const GamesList = ({ pageTitle, games, platform }) => {
 
         document.querySelector('body').classList.add('hidden');
     }
+
+    useEffect(() => {
+        setResGameList(
+            games.filter(game => {
+                const game_price = game.is_discounted ? game.new_price : game.price
+
+                return(
+                    includesAll(game.platforms, applCriList["platforms"]) &&
+                    includesAll(game.genres, applCriList["genres"]) &&
+                    
+                    applCriList["price_range"].min <= game_price &&
+                    game_price <= applCriList["price_range"].max
+                )
+            })
+        )
+    }, [ applCriList ])
 
     return(
         <section id="games_list_body">
@@ -143,23 +160,14 @@ const GamesList = ({ pageTitle, games, platform }) => {
                     </button>
 
                     <div id="res_wrapper">
-                        {
-                            shuffleArray(
-                                games.filter(game => {
-                                    const game_price = game.is_discounted ? game.new_price : game.price
+                        {   !resGameList ? <h1 className="msg">Loading ...</h1> :
 
-                                    return(
-                                        includesAll(game.platforms, applCriList["platforms"]) &&
-                                        includesAll(game.genres, applCriList["genres"]) &&
-                                        
-                                        applCriList["price_range"].min <= game_price &&
-                                        game_price <= applCriList["price_range"].max
-                                    )
-                                })
-                            ).map((game, idx) =>
-                                <Link key={`game-grid-${idx}`} to={`/product/${platform == "" ? "PC" : platform}/${game.id}`}>
-                                    <GameCard game={game} />
-                                </Link>
+                            (resGameList.length == 0 ? <h1 className="msg">No results found ! 🤷🏻‍♂️🙅🏻‍♀️</h1> :
+                                resGameList.map((game, idx) =>
+                                    <Link key={Math.random()} to={`/product/${platform == "" ? "PC" : platform}/${game.id}`}>
+                                        <GameCard game={game} />
+                                    </Link>
+                                )
                             )
                         }
                     </div>

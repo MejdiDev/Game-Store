@@ -21,9 +21,10 @@ const ProductPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        setGameData(
-            games.filter(game => game.id == product_id)[0]
-        )
+        const res_game = games.filter(game => game.id == product_id)[0];
+
+        document.title = res_game.title;
+        setGameData( res_game );
     }, [])
 
     return (
@@ -38,7 +39,7 @@ const ProductPage = () => {
             
             <ProductLocation />
             <ProductDetails platform={platform} game={ gameData } />
-            <ProductAbout game={gameData} />
+            <ProductAbout game={ gameData } />
 
             {/* <div id="ending"></div> */}
 
