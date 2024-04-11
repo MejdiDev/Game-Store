@@ -4,10 +4,11 @@ import GameCard from "../utils/GameCard";
 import MultiRangeSlider from "../utils/MultiRangeSlider";
 
 import { Link } from "react-router-dom";
-import { shuffleArray, includesAll } from "../utils/functions";
+import { shuffleArray, includesAll, gameIsInWishlist } from "../utils/functions";
 import { useEffect, useState } from "react";
+import { hideMobileNav } from "./MobileNav";
 
-const emptyCri = { "platforms": [], "genres": [], "price_range": { "min": 0, "max": 1000 } }
+const emptyCri = { "platforms": [], "genres": [], "price_range": { "min": 0, "max": 1000 }, "wishlisted": false }
 
 const FilterComponent = ({ games, applyHandler }) => {
     const [rangeMin, setRangeMin] = useState(0)
@@ -26,8 +27,16 @@ const FilterComponent = ({ games, applyHandler }) => {
     const handleCheck = (e, field) => {
         const trgt = (e.target.tagName == "IMG" ? e.target.parentNode : e.target)
         trgt.classList.toggle("active")
-        
+
         let tmp = JSON.parse(JSON.stringify(criList))
+
+        if(field == "wishlisted") {
+            tmp["wishlisted"] = !tmp["wishlisted"]
+            criListHandler(tmp)
+
+            return
+        }
+        
         const toAppend = trgt.parentNode.innerText
 
         if(!tmp[field].includes(toAppend)) tmp[field].push(toAppend)
@@ -63,9 +72,26 @@ const FilterComponent = ({ games, applyHandler }) => {
                     onChange={({ min, max }) => handleRangeChange(min, max)}
                 />
 
-                <button onClick={() =>
+                <button onClick={() => {
+                    hideMobileNav()
                     applyHandler(criList)
-                }>Filter</button>
+                }}>Filter</button>
+            </div>
+
+            <div className="seperation"><span></span></div>
+
+            <div className="cri_wrapper">
+                <h1>Wishlisted:</h1>
+
+                <div className="checks_wrapper">
+                    <span>
+                        <div onClick={e => handleCheck(e, "wishlisted")} id="checkbox">
+                            <img src="./icons/check.svg" alt="Check" />
+                        </div>
+
+                        <p>Wishlisted</p>
+                    </span>
+                </div>
             </div>
 
             <div className="seperation"><span></span></div>
@@ -130,9 +156,15 @@ const GamesList = ({ pageTitle, games, platform }) => {
     useEffect(() => {
         setResGameList(
             games.filter(game => {
+                const initBool = (
+                    !applCriList["wishlisted"] ? true : gameIsInWishlist(game.id)
+                )
+
                 const game_price = game.is_discounted ? game.new_price : game.price
 
                 return(
+                    initBool &&
+
                     includesAll(game.platforms, applCriList["platforms"]) &&
                     includesAll(game.genres, applCriList["genres"]) &&
                     
@@ -164,8 +196,14 @@ const GamesList = ({ pageTitle, games, platform }) => {
 
                             (resGameList.length == 0 ? <h1 className="msg">No results found ! 🤷🏻‍♂️🙅🏻‍♀️</h1> :
                                 resGameList.map((game, idx) =>
-                                    <Link key={Math.random()} to={`/product/${platform == "" ? "PC" : platform}/${game.id}`}>
-                                        <GameCard game={game} />
+                                    <Link
+                                        key={Math.random()}
+                                        to={`/product/${platform == "" ? "PC" : platform}/${game.id}`}
+                                    >
+                                        <GameCard
+                                            game={game}
+                                            idx={idx}
+                                        />
                                     </Link>
                                 )
                             )

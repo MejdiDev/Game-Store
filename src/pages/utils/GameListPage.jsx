@@ -5,9 +5,14 @@ import DropdownMenu from "../../components/DropdownMenu";
 import Footer from "../../components/Footer";
 
 import GamesList from "../../components/GamesList";
+import { useEffect } from "react";
 
 
 const GameListPage = ({ platform, pageTitle, games }) => {
+    useEffect(() => {
+        hideMobileNav()
+    }, [])
+
     return (
         <main>
             <div id="overlay" onClick={hideMobileNav}></div>

@@ -6,7 +6,7 @@ import DropdownMenu from "../components/DropdownMenu";
 import Slider from "../components/Slider";
 import GamesBuySlider from "../utils/GamesBuySlider";
 import BlogSwiper from "../components/BlogSwiper";
-import InfoSection from "../components/InfoSection";
+import InfoSection from "../utils/InfoSection";
 import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 
@@ -34,7 +34,8 @@ const LandingPage = () => {
 
     useEffect(() => {
         document.title = "Key4GG";
-    })
+        hideMobileNav()
+    }, [])
 
     return (
         <main>
@@ -52,11 +53,37 @@ const LandingPage = () => {
 
             <div className="seperation"><span></span></div>
 
-            <GamesBuySlider id="trending_games_section" title="Trending" platform={platform} games={ shuffleArray(games) } />
-            <GamesBuySlider id="bestsell_games_section" title="Bestsellers" platform={platform} games={ shuffleArray(games.filter(game => game.is_discounted)) } />
+            <GamesBuySlider
+                id="trending_games_section"
+                title="Trending"
+                platform={platform}
+                games={ shuffleArray(games) }
+                delay={2000}
+            />
+
+            <GamesBuySlider
+                id="bestsell_games_section"
+                title="Bestsellers"
+                platform={platform}
+                games={ shuffleArray(games.filter(game => game.is_discounted)) }
+                delay={2700}
+            />
 
             <BlogSwiper data={ shuffleArray(blog_data) } />
-            <InfoSection />
+            <InfoSection
+                title="Online game shop Key4gg"
+                body={
+                    <p>
+                        Welcome to our online game shop, your trusted partner in the world of virtual entertainment. We offer a wide range of PC and console games to satisfy the most sophisticated array of games for all ages.
+                        <br /><br />
+                        Why us?
+                        <br /><br />
+                        A huge selection of games. We have the best games on the market for PC and consoles. Whether you're a fan of action, adventure, strategy or sports simulation, we offer a wide selection to satisfy your thirst for gaming entertainment.
+                        <br /><br />
+                        Bargain prices. We pride ourselves on offering our customers competitive prices. We have regular promotions and discounts, making your gaming fun even more affordable.
+                    </p>
+                }
+            />
 
             {/* <div id="ending"></div> */}
 

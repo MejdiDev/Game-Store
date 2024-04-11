@@ -1,6 +1,7 @@
 @import "utils/variables";
 
 .game_card {
+    cursor: pointer;
     border-radius: 15px;
     aspect-ratio: 3 / 4.8;
     font-family: Manrope;
@@ -13,6 +14,31 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: end;
+
+    #fav_btn {
+        top: -40px;
+        right: 20px;
+        position: absolute;
+        z-index: 900;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 8px;
+        padding: 4px;
+        height: 30px;
+        width: 30px;
+
+        backdrop-filter: blur(12px);
+        background-color: rgba(21, 21, 33, .2);
+
+        svg {
+            height: 100%;
+            width: 100%;
+            z-index: 901;
+        }
+    }
 
     #platforms_wrapper {
         background: $dark_bg;

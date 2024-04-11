@@ -193,7 +193,7 @@
   background: #151521;
 }
 
-#product_details_section #buy_component #fav svg {
+#product_details_section #buy_component #fav svg, #product_details_section #buy_component #fav img {
   height: 25px;
   width: 25px;
 }

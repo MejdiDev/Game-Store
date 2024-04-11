@@ -217,32 +217,11 @@
 }
 
 #games_list_body #game_list_body_wrapper #content #res_wrapper .game_card {
+  will-change: margin-top, opacity;
   opacity: 0;
   margin-top: 50px;
   -webkit-animation: fadeIn 300ms ease 200ms forwards;
           animation: fadeIn 300ms ease 200ms forwards;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    margin-top: 50px;
-    opacity: 0;
-  }
-  100% {
-    margin-top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    margin-top: 50px;
-    opacity: 0;
-  }
-  100% {
-    margin-top: 0;
-    opacity: 1;
-  }
 }
 
 @media only screen and (max-width: 1130px) {

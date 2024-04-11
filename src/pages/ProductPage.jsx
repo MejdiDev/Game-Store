@@ -20,6 +20,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        hideMobileNav();
 
         const res_game = games.filter(game => game.id == product_id)[0];
 

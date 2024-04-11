@@ -3,14 +3,14 @@ import { useState, useRef, useCallback } from 'react';
 import GameCard from "./GameCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from "swiper/modules";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import '../styles/css/gameBuySlider.css';
 
-const GamesBuySlider = ({ title, id, games, platform }) => {
-    const [selGame, setSelGame] = useState(games[0])
+const GamesBuySlider = ({ title, id, games, platform, delay }) => {
     const sliderRef = useRef(null);
+    const navigate = useNavigate();
 
     const handlePrev = useCallback(() => {
         if (!sliderRef.current) return;
@@ -21,6 +21,15 @@ const GamesBuySlider = ({ title, id, games, platform }) => {
         if (!sliderRef.current) return;
         sliderRef.current.swiper.slideNext();
     }, []);
+
+    const handleRedirect = (e, platform, id) => {
+        let trgt = e.target
+        while(trgt.tagName != "DIV") {
+            trgt = trgt.parentNode
+        }
+
+        if(trgt.getAttribute("favable") !== "true") navigate(`/product/${platform}/${id}`)
+    }
 
     return (
         <section id={id} className="games_buy_slider">
@@ -42,9 +51,7 @@ const GamesBuySlider = ({ title, id, games, platform }) => {
                     grabCursor={true}
                     modules={[Autoplay]}
 
-                    autoplay={{
-                        delay: 2000
-                    }}
+                    autoplay={{ delay }}
 
                     breakpoints= {{
                         0: {
@@ -64,8 +71,6 @@ const GamesBuySlider = ({ title, id, games, platform }) => {
                     }}
 
                     onSlideChangeTransitionStart={(slide) => {
-                        setSelGame(games[slide.realIndex])
-
                         document.querySelectorAll("#" + id + " .pags_wrapper div").forEach(el => {
                             if(el.id.replace(id + '-pag-','') === String(slide.realIndex)) el.classList.add("active")
                             else el.classList.remove("active")
@@ -74,10 +79,11 @@ const GamesBuySlider = ({ title, id, games, platform }) => {
                 >
                     {
                         games.map((game, index) =>
-                            <SwiperSlide key={`game-buy-slider-child-${index}`}>
-                                <Link to={`/product/${platform}/${game.id}`}>
-                                    <GameCard game={game} />
-                                </Link>
+                            <SwiperSlide
+                                key={`game-buy-slider-child-${index}`}
+                                onClick={e => handleRedirect(e, platform, game.id)}
+                            >
+                                <GameCard game={ game } />
                             </SwiperSlide>
                         )
                     }

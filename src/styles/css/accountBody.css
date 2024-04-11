@@ -1,0 +1,277 @@
+#account_body {
+  margin-top: 150px;
+  margin-bottom: 200px;
+  padding: 0 5%;
+  color: #f9fafe;
+}
+
+#account_body > h1 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+#account_body #row_wrapper {
+  gap: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+#account_body #row_wrapper #navigator {
+  position: relative;
+  padding: 15px;
+  width: 300px;
+  border-radius: 20px;
+  background: #0d0d17;
+}
+
+#account_body #row_wrapper #navigator #bg {
+  cursor: pointer;
+  top: 15px;
+  height: 50px;
+  width: calc(100% - 30px);
+  position: absolute;
+  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  z-index: 0;
+  border-radius: 10px;
+  -webkit-transition: top 150ms;
+  transition: top 150ms;
+}
+
+#account_body #row_wrapper #navigator .tab_wrapper {
+  padding: 0 15px;
+  cursor: pointer;
+  height: 50px;
+  color: #f9fafe;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#account_body #row_wrapper #navigator .tab_wrapper img, #account_body #row_wrapper #navigator .tab_wrapper svg {
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+}
+
+#account_body #row_wrapper #navigator .tab_wrapper p {
+  z-index: 1;
+}
+
+#account_body #row_wrapper #content_wrapper h1 {
+  font-weight: 500;
+  margin-bottom: 10px !important;
+}
+
+#account_body #row_wrapper #content_wrapper .tab_wrapper .seperation {
+  margin: 0;
+}
+
+#account_body #row_wrapper #content_wrapper .tab_wrapper .seperation span {
+  width: 100%;
+}
+
+#account_body #row_wrapper #content_wrapper .tab_wrapper h1 {
+  margin: 0;
+}
+
+#account_body #row_wrapper #content_wrapper #favs_tab {
+  width: calc(100% + 120px);
+}
+
+#account_body #row_wrapper #content_wrapper #favs_tab #game_grid {
+  margin-top: 80px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(100% / 4 - 15px))[4];
+      grid-template-columns: repeat(4, calc(100% / 4 - 15px));
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  row-gap: 80px;
+}
+
+#account_body #row_wrapper #content_wrapper #favs_tab #game_grid .game_card {
+  opacity: 0;
+  -webkit-animation: fadeIn 300ms ease 700ms forwards;
+          animation: fadeIn 300ms ease 700ms forwards;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab {
+  width: calc(100vw - 550px) !important;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper {
+  width: 100%;
+  margin-top: 25px;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card {
+  padding: 15px 25px;
+  border: 2px #40404c solid;
+  border-radius: 12px;
+  font-family: Manrope;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card p {
+  margin: 0;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #top {
+  gap: 30px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #top div:last-child {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #top div p {
+  white-space: nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #top div p:first-of-type {
+  color: #40404c;
+  font-weight: 900;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card {
+  cursor: pointer;
+  position: relative;
+  border-top: 1px #40404c solid;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  height: 80px;
+  background: #1d1d29;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card:first-of-type {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: none !important;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card:last-of-type {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card #cover {
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card p {
+  white-space: nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card p:nth-child(3) {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card .game_price_wrapper {
+  white-space: nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card .game_price_wrapper h3 {
+  text-align: end;
+}
+
+#account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card .game_price_wrapper h3:first-child {
+  width: 100%;
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body {
+  margin-top: 20px;
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body h1 {
+  margin-top: 40px;
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body .input_grp {
+  gap: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body .input_grp div {
+  width: calc(100% / 3 - (100px / 3));
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body .input_grp div label {
+  font-family: Manrope;
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body .input_grp div input {
+  margin-top: 5px;
+  outline: none;
+  border: none;
+  background: none;
+  width: 100%;
+  border: 2px #40404c solid;
+  border-radius: 4px;
+  height: 30px;
+  padding-left: 15px;
+  color: #f9fafe;
+}

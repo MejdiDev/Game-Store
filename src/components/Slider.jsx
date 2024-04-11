@@ -12,17 +12,17 @@ const Slider = ({ games, platform }) => {
     const sliderRef = useRef(null);
 
     const handlePrev = useCallback(() => {
-        if (!sliderRef.current) return;
-        sliderRef.current.swiper.slidePrev();
+        if (sliderRef.current) sliderRef.current.swiper.slidePrev();
     }, []);
 
     const handleNext = useCallback(() => {
-        if (!sliderRef.current) return;
-        sliderRef.current.swiper.slideNext();
+        if (sliderRef.current) sliderRef.current.swiper.slideNext();
     }, []);
 
     useEffect(() => {
         setInterval(() => {
+            if(!document.getElementById("slider_section")) return;
+
             try {
                 let idx = sliderRef.current.swiper.realIndex
 
@@ -75,7 +75,9 @@ const Slider = ({ games, platform }) => {
                 games.map((game, index) =>
                     <SwiperSlide key={`main-game-slider-child-${index}`}>
                         <Link to={`/product/${platform}/${game.id}`}>
-                            <div style={{backgroundImage: `url(./game_covers/${game.cover})`}} className="slider_child"></div>
+                            <div style={{backgroundImage: `url(./game_covers/${game.cover})`}} className="slider_child">
+                                {game.is_discounted && <div id="disc_perc">-{ game.discount_perc }%</div>}
+                            </div>
                         </Link>
                     </SwiperSlide>
                 )

@@ -3,18 +3,32 @@ import "../styles/css/blogSwiper.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from "swiper/modules";
 
+import { useRef, useCallback } from "react";
+
 import 'swiper/css';
 
-const BlogCard = ({ idx, blog_data }) => {
+const BlogCard = ({ blog_data }) => {
     return (
         <div className="benefit_card">
             <div id="background" style={{backgroundImage: `url(${blog_data.img})`}}></div>
+            
+            <h1>{ blog_data.title }</h1>
             <p>{ blog_data.description }</p>
         </div>
     );
 }
 
 const BlogSwiper = ({ data }) => {
+    const sliderRef = useRef(null);
+
+    const handlePrev = useCallback(() => {
+        if (sliderRef.current) sliderRef.current.swiper.slidePrev();
+    }, []);
+
+    const handleNext = useCallback(() => {
+        if (sliderRef.current) sliderRef.current.swiper.slideNext();
+    }, []);
+
     return (
         <section id="benefits_section">
             <Swiper
@@ -47,10 +61,22 @@ const BlogSwiper = ({ data }) => {
             >
                 {
                     data.map((data, idx) =>
-                        <SwiperSlide key={`blog-slide-${idx}`}><BlogCard idx={idx} blog_data={data} /></SwiperSlide>
+                        <SwiperSlide key={`blog-slide-${idx}`}>
+                            <BlogCard blog_data={data} />
+                        </SwiperSlide>
                     )
                 }
             </Swiper>
+
+            <div className="nav_wrapper">
+                <div className="arrow" id="prev-arrow" onClick={handlePrev}>
+                    <img src="./arrow_prev.png" alt="Prev" />
+                </div>
+
+                <div className="arrow" id="next-arrow" onClick={handleNext}>
+                    <img src="./arrow_prev.png" alt="Next" />
+                </div>
+            </div>
         </section>
     );
 }

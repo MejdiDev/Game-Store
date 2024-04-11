@@ -1,0 +1,54 @@
+[
+    {
+        "num": 45465,
+        "date": "20/03/2021",
+        "status": "completed",
+        "cost": 80.26,
+
+        "products": [
+            {
+                "id": 24074,
+
+                "cover": "./game_covers/COD_modern_warfare.jpg",
+                "title": "Call Of Duty",
+                "num": 2,
+
+                "price": 89.99,
+                "is_discounted": true,
+                "new_price": 39.55
+            },
+
+            {
+                "id": 50455,
+
+                "cover": "./game_covers/COD_modern_warfare.jpg",
+                "title": "Call Of Duty",
+                "num": 2,
+
+                "price": 89.99,
+                "is_discounted": false
+            }
+        ]
+    },
+
+    {
+        "num": 45465,
+        "date": "20/03/2021",
+        "status": "completed",
+        "cost": 80.26,
+
+        "products": [
+            {
+                "id": 50455,
+
+                "cover": "./game_covers/COD_modern_warfare.jpg",
+                "title": "Call Of Duty",
+                "num": 2,
+
+                "price": 89.99,
+                "is_discounted": true,
+                "new_price": 39.55
+            }
+        ]
+    }
+]

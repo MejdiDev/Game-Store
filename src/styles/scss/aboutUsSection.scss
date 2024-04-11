@@ -1,0 +1,26 @@
+@import "utils/variables";
+
+#about_us_section {
+    margin-top: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    h1 {
+        width: 90%;
+        margin: 0;
+        color: $prim;
+    }
+
+    #img {
+        margin-bottom: 100px;
+
+        width: 90%;
+        height: 450px;
+        border-radius: 20px;
+
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

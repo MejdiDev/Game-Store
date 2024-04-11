@@ -1,4 +1,5 @@
 import '../styles/css/mobileNav.css';
+import { Link } from 'react-router-dom';
 
 const hideMobileNav = () => {
     const filterMenu = document.querySelector('.filter_wrapper');
@@ -93,8 +94,14 @@ const MobileNav = () => {
 
             <div id="nav_link">
                 <div className="links">
-                    <p>About us</p>
-                    <p>Blog</p>
+                    <Link to='/about'>
+                        <p>About us</p>
+                    </Link>
+                    
+                    <Link to='/blog'>
+                        <p>Blog</p>
+                    </Link>
+
                     <p>Create ticket</p>
                     <p>Delivery payment</p>
                     <p>Sitemap</p>

@@ -2,9 +2,15 @@ import GameListPage from "./utils/GameListPage";
 import { useParams } from "react-router-dom";
 
 import games from "../data/games.json";
+import { useEffect } from "react";
+import { hideMobileNav } from "../components/MobileNav";
 
 const SearchResultsPage = () => {
     const { query } = useParams();
+
+    useEffect(() => {
+        hideMobileNav()
+    }, [])
 
     return (
         <GameListPage 

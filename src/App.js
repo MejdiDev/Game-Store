@@ -2,9 +2,15 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import LandingPage from "./pages/LandingPage";
 import ProductPage from './pages/ProductPage';
-import NotFoundPage from "./pages/NotFoundPage";
+
 import SearchResultPage from './pages/SearchResultsPage';
 import CriGameList from './pages/CriGameList';
+
+import AboutUsPage from './pages/AboutUsPage';
+import BlogListPage from './pages/BlogListPage';
+import AccountPage from './pages/AccountPage';
+
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
   return (
@@ -17,8 +23,11 @@ const App = () => {
 
         <Route exact path="/search/:query" element={<SearchResultPage />} />
         <Route exact path="/game-list/:platform" element={<CriGameList />} />
-
-        <Route path='*' element={<NotFoundPage />}/>
+        
+        <Route exact path="/about" element={<AboutUsPage />} />
+        <Route exact path="/blog" element={<BlogListPage />} />
+        <Route exact path="/account/:tab" element={<AccountPage />} />
+        
       </Routes>
     </Router>
   );
