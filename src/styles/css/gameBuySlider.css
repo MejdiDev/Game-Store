@@ -118,13 +118,10 @@
   .games_buy_slider .nav_wrapper {
     display: none;
   }
-  .games_buy_slider .game_card {
-    aspect-ratio: 3 / 4.7 !important;
-  }
 }
 
 @media only screen and (max-width: 650px) {
-  .games_buy_slider .mobl {
+  .games_buy_slider .mobl:not(.more_btn) {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -135,8 +132,5 @@
   }
   .games_buy_slider #top .more_btn {
     display: none;
-  }
-  .games_buy_slider .game_card {
-    aspect-ratio: 3 / 4.9 !important;
   }
 }

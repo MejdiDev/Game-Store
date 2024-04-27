@@ -200,8 +200,8 @@
 }
 
 #games_list_body #game_list_body_wrapper #content #res_wrapper:not(#res_wrapper:has(> .msg)) {
-  -ms-grid-columns: (calc((100% / 3) - (40px / 3)))[3];
-      grid-template-columns: repeat(3, calc((100% / 3) - (40px / 3)));
+  -ms-grid-columns: (calc((100% / 4) - (40px / 4)))[4];
+      grid-template-columns: repeat(4, calc((100% / 4) - (40px / 4)));
 }
 
 #games_list_body #game_list_body_wrapper #content #res_wrapper .msg {
@@ -222,6 +222,13 @@
   margin-top: 50px;
   -webkit-animation: fadeIn 300ms ease 200ms forwards;
           animation: fadeIn 300ms ease 200ms forwards;
+}
+
+@media only screen and (max-width: 1410px) {
+  #res_wrapper:not(#res_wrapper:has(> .msg)) {
+    -ms-grid-columns: (calc((100% / 3) - (40px / 3)))[3] !important;
+        grid-template-columns: repeat(3, calc((100% / 3) - (40px / 3))) !important;
+  }
 }
 
 @media only screen and (max-width: 1130px) {

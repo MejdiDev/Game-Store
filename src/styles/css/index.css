@@ -76,6 +76,7 @@ body {
 @media (max-aspect-ratio: 1 / 1) {
   body {
     background-size: contain !important;
+    background-position: top !important;
   }
 }
 

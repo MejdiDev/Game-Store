@@ -108,14 +108,14 @@
         }
 
         .game_card {
-            aspect-ratio: 3 / 4.7 !important;
+            
         }
     }
 }
 
 @media only screen and (max-width: 650px) {
     .games_buy_slider {
-        .mobl {
+        .mobl:not(.more_btn) {
             display: flex !important;
         }
         
@@ -131,7 +131,7 @@
         }
 
         .game_card {
-            aspect-ratio: 3 / 4.9 !important;
+            
         }
     }
 }

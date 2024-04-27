@@ -8,6 +8,12 @@ import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import '../styles/css/gameBuySlider.css';
 
+window.addEventListener("resize", (event) => {
+    document.querySelectorAll(".games_buy_slider #placeholder").forEach(el => {
+        el.style.height = document.querySelector(".game_card #cover").style.height
+    })
+})
+
 const GamesBuySlider = ({ title, id, games, platform, delay }) => {
     const sliderRef = useRef(null);
     const navigate = useNavigate();

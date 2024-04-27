@@ -12,10 +12,15 @@
     }
 
     #row_wrapper {
+        width: 100%;
         gap: 60px;
         display: flex;
         flex-flow: row nowrap;
         align-items: start;
+
+        #content_wrapper {
+            width: 100%;
+        }
 
         #navigator {
             position: relative;
@@ -81,7 +86,7 @@
             }
 
             #favs_tab {
-                width: calc(100% + 120px);
+                width: 100%;
                 
                 #game_grid {
                     margin-top: 80px;
@@ -98,8 +103,6 @@
             }
 
             #orders_tab {
-                width: calc(100vw - 550px) !important;
-
                 #orders_wrapper {
                     width: 100%;
                     margin-top: 25px;
@@ -194,7 +197,6 @@
                                         text-align: end;
 
                                         &:first-child {
-                                            
                                             width: 100%;
                                         }
                                     }
@@ -239,6 +241,83 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    #account_body #favs_tab  {
+        #game_grid {
+            grid-template-columns: repeat(3, calc(100% / 3 - 10px)) !important;
+            column-gap: 10px !important;
+            row-gap: 70px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    #account_body {
+        margin-top: 50px;
+
+        #row_wrapper {
+            align-items: center;
+            flex-flow: column nowrap;
+        }
+
+        #navigator {
+            width: calc(100% - 30px) !important;
+        }
+
+        #favs_tab  {
+            #game_grid {
+                grid-template-columns: repeat(2, calc(100% / 2 - 10px)) !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #account_body {
+        #info_tab {
+            .input_grp {
+                gap: 20px !important;
+                flex-flow: column nowrap !important;
+
+                div {
+                    width: calc(100% - 15px) !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    #account_body #orders_tab {
+        .order_card {
+            #top {
+                justify-content: center;
+                flex-wrap: wrap !important;
+                
+                div {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center !important;
+
+                    &:last-child {
+                        width: auto !important;
+                    }
+                }
+            }
+
+            .game_price_wrapper {
+                #discount_price {
+                    font-size: 25px !important;
+                }
+
+                #original_price {
+                    font-size: 16px !important;
                 }
             }
         }

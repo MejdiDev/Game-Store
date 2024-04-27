@@ -11,6 +11,7 @@
 }
 
 #account_body #row_wrapper {
+  width: 100%;
   gap: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,6 +23,10 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+}
+
+#account_body #row_wrapper #content_wrapper {
+  width: 100%;
 }
 
 #account_body #row_wrapper #navigator {
@@ -91,7 +96,7 @@
 }
 
 #account_body #row_wrapper #content_wrapper #favs_tab {
-  width: calc(100% + 120px);
+  width: 100%;
 }
 
 #account_body #row_wrapper #content_wrapper #favs_tab #game_grid {
@@ -109,10 +114,6 @@
   opacity: 0;
   -webkit-animation: fadeIn 300ms ease 700ms forwards;
           animation: fadeIn 300ms ease 700ms forwards;
-}
-
-#account_body #row_wrapper #content_wrapper #orders_tab {
-  width: calc(100vw - 550px) !important;
 }
 
 #account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper {
@@ -274,4 +275,80 @@
   height: 30px;
   padding-left: 15px;
   color: #f9fafe;
+}
+
+@media only screen and (max-width: 1440px) {
+  #account_body #favs_tab #game_grid {
+    -ms-grid-columns: (calc(100% / 3 - 10px))[3] !important;
+        grid-template-columns: repeat(3, calc(100% / 3 - 10px)) !important;
+    -webkit-column-gap: 10px !important;
+            column-gap: 10px !important;
+    row-gap: 70px !important;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  #account_body {
+    margin-top: 50px;
+  }
+  #account_body #row_wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  #account_body #navigator {
+    width: calc(100% - 30px) !important;
+  }
+  #account_body #favs_tab #game_grid {
+    -ms-grid-columns: (calc(100% / 2 - 10px))[2] !important;
+        grid-template-columns: repeat(2, calc(100% / 2 - 10px)) !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #account_body #info_tab .input_grp {
+    gap: 20px !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-flow: column nowrap !important;
+            flex-flow: column nowrap !important;
+  }
+  #account_body #info_tab .input_grp div {
+    width: calc(100% - 15px) !important;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  #account_body #orders_tab .order_card #top {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  #account_body #orders_tab .order_card #top div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  #account_body #orders_tab .order_card #top div:last-child {
+    width: auto !important;
+  }
+  #account_body #orders_tab .order_card .game_price_wrapper #discount_price {
+    font-size: 25px !important;
+  }
+  #account_body #orders_tab .order_card .game_price_wrapper #original_price {
+    font-size: 16px !important;
+  }
 }

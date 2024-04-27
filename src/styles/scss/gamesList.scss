@@ -177,7 +177,7 @@
                 row-gap: 100px;
                 
                 &:not(#res_wrapper:has(> .msg)) {
-                    grid-template-columns: repeat(3, calc((100% / 3) - (40px / 3)));
+                    grid-template-columns: repeat(4, calc((100% / 4) - (40px / 4)));
                 }
 
                 .msg {
@@ -202,6 +202,14 @@
                     animation: fadeIn 300ms ease 200ms forwards;
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1410px) {
+    #res_wrapper {
+        &:not(#res_wrapper:has(> .msg)) {
+            grid-template-columns: repeat(3, calc((100% / 3) - (40px / 3))) !important;
         }
     }
 }

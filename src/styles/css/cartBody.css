@@ -1,0 +1,268 @@
+#cart_body {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  padding: 0 5%;
+}
+
+#cart_body #row_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: 30px;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+#cart_body #row_wrapper #checkout_component > h3, #cart_body #row_wrapper #games_list > h3 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+#cart_body #row_wrapper #checkout_component {
+  color: #f9fafe;
+  width: 360px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #151521;
+  border: 3px #272530 solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 20px;
+}
+
+#cart_body #row_wrapper #checkout_component button {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  font-family: Manrope;
+  font-size: 18px;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+#cart_body #row_wrapper #checkout_component #checkout_total_wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#cart_body #row_wrapper #checkout_component #checkout_total_wrapper h3 {
+  margin: 0;
+  font-weight: 500;
+  font-family: Manrope;
+}
+
+#cart_body #row_wrapper #games_list {
+  color: #f9fafe;
+  padding: 20px;
+  border-radius: 20px;
+  border: 3px #272530 solid;
+  width: calc(100% - 470px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 10px;
+}
+
+#cart_body #row_wrapper #games_list .cart_game {
+  position: relative;
+  font-family: Manrope;
+  padding: 10px;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  background: #1d1d29;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #cross {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #cross img {
+  width: 12px;
+  height: 12px;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #cover {
+  height: 150px;
+  aspect-ratio: 3 / 4;
+  border-radius: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #content_wrapper {
+  width: 100%;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #top {
+  height: 80px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin-bottom: 10px;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #top p {
+  margin: 0;
+  width: 100%;
+  font-size: 18px;
+  height: 30px;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #top .game_price_wrapper {
+  margin-right: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #top .game_price_wrapper h3 {
+  height: 30px;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #bottom #qte_control_wrapper {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #bottom #qte_control_wrapper button {
+  cursor: pointer;
+  color: #f9fafe;
+  background: none;
+  border: none;
+  outline: none;
+  border: 3px #272530 solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+#cart_body #row_wrapper #games_list .cart_game #bottom #total_price_wrapper {
+  gap: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #cart_body {
+    padding: 0 10px;
+    margin-top: 50px;
+  }
+  #cart_body #row_wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  #cart_body #row_wrapper #checkout_component {
+    z-index: 997;
+    width: calc(100% - 44px);
+    height: auto;
+    position: fixed;
+    border-radius: 15px 15px 0 0;
+    background: #1d1d29;
+    bottom: 0;
+    left: 0;
+  }
+  #cart_body #row_wrapper #games_list {
+    width: calc(100% - 46px);
+  }
+  #cart_body #row_wrapper #games_list .cart_game {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #cart_body #row_wrapper #games_list .cart_game #cover {
+    height: 100px;
+  }
+  #cart_body #row_wrapper #games_list .cart_game .game_price_wrapper {
+    display: none;
+  }
+}

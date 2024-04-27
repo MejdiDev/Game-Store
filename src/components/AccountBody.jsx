@@ -7,7 +7,7 @@ import orders from "../data/orders.json";
 import GameCard from "../utils/GameCard";
 import { Link, useNavigate } from "react-router-dom";
 
-const OrderCard = ({ order }) => {
+const OrderCard = ({ order, order_idx }) => {
     const navigate = useNavigate()
 
     return (
@@ -36,8 +36,8 @@ const OrderCard = ({ order }) => {
 
             <div id="body">
                 {
-                    order.products.map(product =>
-                        <div onClick={() => navigate(`/product/PC/${product.id}`)} className="order_product_card">
+                    order.products.map((product, idx) =>
+                        <div key={`order-${order_idx}-product-${idx}`} onClick={() => navigate(`/product/PC/${product.id}`)} className="order_product_card">
                             <div id="cover" style={{backgroundImage: `url('${product.cover}')`}}></div>
                             <p>{product.title}</p>
 
@@ -47,7 +47,7 @@ const OrderCard = ({ order }) => {
                                 {product.is_discounted && <h3 id="discount_price">€ { product.new_price }</h3>}
                                 <h3 id="original_price">€ { product.price }</h3>
                             </div>
-                        </div>   
+                        </div>
                     )
                 }
             </div>
@@ -110,8 +110,8 @@ const OrdersTab = () => {
 
             <div id="orders_wrapper">
                 {
-                    orders.map(order =>
-                        <OrderCard order={order} />   
+                    orders.map((order, idx) =>
+                        <OrderCard order_idx={idx} order={order} />   
                     )
                 }
             </div>

@@ -8,7 +8,9 @@ import CriGameList from './pages/CriGameList';
 
 import AboutUsPage from './pages/AboutUsPage';
 import BlogListPage from './pages/BlogListPage';
+
 import AccountPage from './pages/AccountPage';
+import CartPage from './pages/CartPage';
 
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -26,7 +28,9 @@ const App = () => {
         
         <Route exact path="/about" element={<AboutUsPage />} />
         <Route exact path="/blog" element={<BlogListPage />} />
+
         <Route exact path="/account/:tab" element={<AccountPage />} />
+        <Route exact path="/my-cart" element={<CartPage />} />
         
       </Routes>
     </Router>

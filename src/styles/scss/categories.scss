@@ -40,3 +40,14 @@
         }
     }
 }
+
+@media only screen and (max-width: 608px) {
+    #categories_section ul {
+        padding: 0 20px !important;
+
+        li {
+            width: calc(50vw - 60px);
+            height: calc(50vw - 60px);
+        }
+    }
+}

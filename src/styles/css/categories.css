@@ -56,3 +56,13 @@
 #categories_section ul li p {
   margin: 0;
 }
+
+@media only screen and (max-width: 608px) {
+  #categories_section ul {
+    padding: 0 20px !important;
+  }
+  #categories_section ul li {
+    width: calc(50vw - 60px);
+    height: calc(50vw - 60px);
+  }
+}

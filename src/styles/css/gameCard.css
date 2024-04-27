@@ -140,6 +140,10 @@
   background-size: cover;
 }
 
+.game_card #placeholder {
+  width: 100%;
+}
+
 .game_card #bottom {
   width: calc(100% - 20px);
   display: -webkit-box;
@@ -189,5 +193,15 @@
   }
   .game_card #platforms img {
     height: 15px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .game_card {
+    aspect-ratio: 3 / 4;
+    padding-bottom: 15px !important;
+  }
+  .game_card #platforms_wrapper {
+    display: none !important;
   }
 }

@@ -10,6 +10,12 @@ import { hideMobileNav } from "./MobileNav";
 
 const emptyCri = { "platforms": [], "genres": [], "price_range": { "min": 0, "max": 1000 }, "wishlisted": false }
 
+window.addEventListener("resize", (event) => {
+    document.querySelectorAll("#games_list_body .game_card #placeholder").forEach(el => {
+        el.style.height = document.querySelector(".game_card #cover").style.height
+    })
+})
+
 const FilterComponent = ({ games, applyHandler }) => {
     const [rangeMin, setRangeMin] = useState(0)
     const [rangeMax, setRangeMax] = useState(1000)
