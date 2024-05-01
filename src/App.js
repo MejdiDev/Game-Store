@@ -11,6 +11,7 @@ import BlogListPage from './pages/BlogListPage';
 
 import AccountPage from './pages/AccountPage';
 import CartPage from './pages/CartPage';
+import LoginPage from './pages/LoginPage';
 
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -31,6 +32,7 @@ const App = () => {
 
         <Route exact path="/account/:tab" element={<AccountPage />} />
         <Route exact path="/my-cart" element={<CartPage />} />
+        <Route exact path="/auth/:type" element={<LoginPage />} />
         
       </Routes>
     </Router>
