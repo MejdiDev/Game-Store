@@ -5,6 +5,82 @@
     margin-bottom: 150px;
     padding: 0 5%;
 
+    .mobl {
+        display: none;
+    }
+
+    button.grad_btn {
+        cursor: pointer;
+        width: 100%;
+        outline: none;
+        border: none;
+        color: #fff;
+        background: $btn_gradient;
+        font-family: Manrope;
+        font-size: 18px;
+        padding: 15px 0;
+        border-radius: 10px;
+        height: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #promo_input_wrapper {
+        margin: 20px 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        border: 3px #25252f solid;
+        border-radius: 30px;
+        padding: 2px;
+
+        height: 35px;
+        width: 100%;
+
+        input {
+            height: 100%;
+            font-size: 17px;
+
+            background: transparent;
+            color: $prim;
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+        }
+
+        button {
+            width: auto;
+            padding: 0 20px;
+            height: 100%;
+            font-size: 16px;
+            border-radius: 30px;
+        }
+    }
+
+    #payement_method_wrapper {
+        margin: 20px 0;
+        width: calc(100% - 10px);
+        height: 100px;
+
+        display: grid;
+        gap: 10px;
+        
+        grid-template-columns: repeat(3, calc((100% / 3) - (10px / 3)));
+        grid-template-rows: repeat(2, calc((100% / 2) - (10px / 2)));
+
+        div {
+            cursor: pointer;
+            background: #30303c;
+            border-radius: 10px;
+        }
+    }
+
     #row_wrapper {
         display: flex;
         flex-flow: row nowrap;
@@ -29,22 +105,8 @@
 
             display: flex;
             flex-flow: column nowrap;
-            gap: 20px;
 
-            button {
-                cursor: pointer;
-                width: 100%;
-                outline: none;
-                border: none;
-                color: #fff;
-                background: $btn_gradient;
-                font-family: Manrope;
-                font-size: 18px;
-                padding: 15px 0;
-                border-radius: 10px;
-            }
-
-            #checkout_total_wrapper {
+            .price_detail_wrapper {
                 width: 100%;
                 display: flex;
                 flex-flow: row nowrap;
@@ -52,8 +114,29 @@
 
                 h3 {
                     margin: 0;
-                    font-weight: 500;
+                    font-weight: 600;
                     font-family: Manrope;
+                    color: #40404c;
+                    font-size: 17px;
+                }
+            }
+
+            #cart_total h3 {
+                color: $prim;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .seperation {
+                margin: 0;
+                opacity: 1;
+
+                margin-top: 5px;
+                margin-bottom: 10px;
+
+                span {
+                    width: 100%;
+                    height: 2px;
                 }
             }
         }
@@ -185,11 +268,26 @@
         padding: 0 10px;
         margin-top: 50px;
 
+        #promo_input_wrapper, #payement_method_wrapper {
+            display: none;
+        }
+
+        #promo_input_wrapper.mobl {
+            display: flex !important;
+            width: calc(100% - 10px);
+        }
+
+        #payement_method_wrapper.mobl {
+            display: grid !important;
+            width: calc(100% - 15px);
+        }
+
         #row_wrapper {
             align-items: center;
             flex-flow: column nowrap;
 
             #checkout_component {
+                padding-top: 10px;
                 z-index: 997;
                 width: calc(100% - 44px);
                 height: auto;
@@ -199,6 +297,14 @@
 
                 bottom: 0;
                 left: 0;
+
+                & > h3 {
+                    margin-bottom: 10px;
+                }
+                
+                .grad_btn {
+                    margin-top: 20px;
+                }
             }
 
             #games_list {

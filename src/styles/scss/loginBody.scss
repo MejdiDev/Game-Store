@@ -1,0 +1,236 @@
+@import "utils/variables";
+
+#login_body {
+    padding: 80px 0;
+    margin-top: 100px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #form_wrapper {
+        padding-right: 200px;
+        height: calc(90% - 100px);
+
+        display: flex;
+        flex-flow: row nowrap;
+
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 80px;
+
+        border-radius: 25px;
+        border: 3px #353342 solid;
+
+        background-color: rgba(29, 29, 41, .5);
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+        #hot_games_slider_wrapper {
+            border-radius: 22px 30px 30px 22px;
+            color: $prim;
+            width: 500px;
+            aspect-ratio: 2/3;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        form {
+            opacity: 0;
+            margin-top: 50px;
+            animation: fadeIn 300ms ease 200ms forwards;
+
+            width: 30%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: start;
+            
+            color: $prim;
+            width: 400px;
+
+            #qa_wrapper {
+                margin-top: 30px;
+                width: 100%;
+
+                gap: 20px;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                    gap: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+
+                    padding: 5px;
+                    padding-right: 10px;
+                    border: 2px #40404c solid;
+                    border-radius: 10px;
+
+                    p {
+                        font-weight: 600;
+                        font-family: Manrope;
+                        margin: 0;
+                    }
+
+                    img {
+                        width: 25px;
+                    }
+                }
+            }
+
+            &#signup {
+                & > div {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    gap: 50px;
+                }
+            }
+
+            h1 {
+                margin: 0;
+                font-weight: 500;
+                font-size: 40px;
+                margin-top: 50px;
+            }
+
+            p {
+                margin: 0;
+                color: grey;
+                margin-bottom: 30px;
+            }
+
+            label {
+                width: 100%;
+                font-family: Manrope;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            input {
+                width: 100%;
+                height: 40px;
+
+                border: none;
+                outline: none;
+
+                background: #353342;
+
+                border-radius: 15px;
+                color: $prim;
+                padding-left: 25px;
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+            p:not(p:first-of-type) {
+                font-family: Manrope;
+                font-size: 17px;
+                font-weight: 600;
+                width: calc(100% + 15px);
+                text-align: end;
+                cursor: pointer;
+                margin: 0;
+                text-decoration: underline;
+
+                &:last-of-type {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 30px;
+                }
+            }
+
+            button {
+                cursor: pointer;
+                outline: none;
+                border: none;
+                color: #fff;
+                background: $btn_gradient;
+                font-family: Manrope;
+                font-size: 18px;
+                padding: 15px 0;
+                border-radius: 10px;
+                height: 38px;
+                padding: 0 20px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1220px) {
+    #login_body {
+        #form_wrapper {
+            padding-right: 50px;
+            width: calc(100% - 100px);
+
+            form {
+                width: calc(100% - 500px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    #login_body {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #login_body {
+        #form_wrapper {
+            width: calc(100% - 60px);
+            padding-right: 10px;
+            gap: 35px;
+
+            form {
+                h1 {
+                    margin-top: 20px;
+                }
+            }
+
+            #hot_games_slider_wrapper {
+                width: 420px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #login_body {
+        #form_wrapper {
+            width: calc(100% - 40px);
+            justify-content: center;
+            height: 650px;
+
+            #hot_games_slider_wrapper {
+                display: none;
+            }
+
+            form {
+                width: calc(100% - 70px);
+
+                input { 
+                    margin-left: -10px;
+                }
+
+                h1 {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

@@ -4,6 +4,19 @@ import faved_games from "../data/faved_games.json";
 const CartBody = () => {
     return (
         <section id="cart_body">
+            <div className="mobl" id="promo_input_wrapper">
+                <input placeholder="Promo Code" type="text" />
+                <button className="grad_btn">Apply</button>
+            </div>
+
+            <div className="mobl" id="payement_method_wrapper">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            
             <div id="row_wrapper">
                 <div id="games_list">
                     <h3>Your cart</h3>
@@ -51,12 +64,38 @@ const CartBody = () => {
 
                 <div id="checkout_component">
                     <h3>Your order</h3>
-                    <button>Checkout</button>
 
-                    <div id="checkout_total_wrapper">
-                        <h3>Total: </h3>
+                    <div id="promo_input_wrapper">
+                        <input placeholder="Promo Code" type="text" />
+                        <button className="grad_btn">Apply</button>
+                    </div>
+
+                    <div className="price_detail_wrapper">
+                        <h3>Subtotal: </h3>
                         <h3>486$</h3>
                     </div>
+
+                    <div className="price_detail_wrapper">
+                        <h3>Discount: </h3>
+                        <h3>-38$</h3>
+                    </div>
+
+                    <div className="seperation"><span></span></div>
+
+                    <div className="price_detail_wrapper" id="cart_total">
+                        <h3>Total: </h3>
+                        <h3>308$</h3>
+                    </div>
+
+                    <div id="payement_method_wrapper">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+                    <button className="grad_btn">Checkout</button>
                 </div>
             </div>
         </section>
