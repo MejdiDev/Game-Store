@@ -34,7 +34,7 @@
         align-items: center;
         justify-content: space-between;
 
-        border: 3px #25252f solid;
+        border: 3px $dark_prim solid;
         border-radius: 30px;
         padding: 2px;
 
@@ -76,7 +76,7 @@
 
         div {
             cursor: pointer;
-            background: #30303c;
+            background: $light_prim;
             border-radius: 10px;
         }
     }
@@ -116,7 +116,7 @@
                     margin: 0;
                     font-weight: 600;
                     font-family: Manrope;
-                    color: #40404c;
+                    color: $light_prim;
                     font-size: 17px;
                 }
             }

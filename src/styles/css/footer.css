@@ -88,6 +88,24 @@ footer ul li p {
   font-size: 17px;
 }
 
+footer ul #payement_method_wrapper {
+  margin: 20px 0;
+  width: calc(100% - 10px);
+  height: 100px;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: (calc((100% / 3) - (10px / 3)))[3];
+      grid-template-columns: repeat(3, calc((100% / 3) - (10px / 3)));
+  -ms-grid-rows: (calc((100% / 2) - (10px / 2)))[2];
+      grid-template-rows: repeat(2, calc((100% / 2) - (10px / 2)));
+}
+
+footer ul #payement_method_wrapper div {
+  background: #40404c;
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 1240px) {
   footer {
     padding-left: 0;

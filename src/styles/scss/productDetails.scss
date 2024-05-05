@@ -46,6 +46,8 @@
     }
 
     #buy_component {
+        position: absolute;
+
         width: 320px;
         right: 5%;
         padding: 20px;
@@ -57,6 +59,20 @@
         flex-flow: column nowrap;
         align-items: center;
 
+        & > p:last-child {
+            color: grey;
+            cursor: pointer;
+            font-family: Manrope;
+            font-size: 17px;
+            font-weight: 600;
+            width: calc(100% + 15px);
+            text-align: center;
+            cursor: pointer;
+            margin: 0;
+            margin-top: 15px;
+            text-decoration: underline;
+        }
+
         #top {
             width: 100%;
             gap: 20px;
@@ -67,7 +83,7 @@
             div {
                 width: 5px;
                 height: 30px;
-                background: #40404c;
+                background: $light_prim;
                 opacity: .2;
             }
 
@@ -200,12 +216,28 @@
     }
 
     #data {
-        width: calc(100% - 700px);
+        width: calc(100% - 720px);
 
         p {
             margin: 0;
             font-size: 16px;
-            color: #40404c;
+            color: $light_prim;
+        }
+
+        #flags_wrapper {
+            margin-top: 7px;
+            display: flex;
+            gap: 15px;
+
+            .flag {
+                border-radius: 2px;
+                width: 55px;
+                aspect-ratio: 16/9;
+
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 106%;
+            }
         }
 
         #game_info {
@@ -261,6 +293,7 @@
         }
 
         #buy_component {
+            position: static !important;
             width: 100%;
         }
     }

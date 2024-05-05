@@ -6,7 +6,7 @@
     aspect-ratio: 3 / 4.8;
     font-family: Manrope;
 
-    background: #1d1d29;
+    background: $light_bg;
     color: $prim;
     position: relative;
 
@@ -61,8 +61,51 @@
             align-items: center;
             flex-flow: row nowrap;
 
-            img {
-                height: 25px;
+            #platform_entry_wrapper {
+                position: relative;
+
+                &:hover {
+                    #index {
+                        display: flex;
+                    }
+                }
+
+                img {
+                    height: 25px;
+                }
+
+                #index {
+                    display: none;
+                    margin-left: -30px;
+                    margin-top: 10px;
+                    position: absolute;
+                    background: $light_prim;
+                    height: 30px;
+                    width: 90px;
+                    border-radius: 3px;
+
+                    justify-content: center;
+                    align-items: center;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;
+                        border-bottom: 8px solid $light_prim;
+
+                        top: -8px;
+                        left: 38px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
             }
         }
     }

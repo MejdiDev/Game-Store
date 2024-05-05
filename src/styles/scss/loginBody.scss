@@ -24,7 +24,7 @@
         gap: 80px;
 
         border-radius: 25px;
-        border: 3px #353342 solid;
+        border: 3px $light_prim solid;
 
         background-color: rgba(29, 29, 41, .5);
         backdrop-filter: blur(12px) saturate(180%);
@@ -73,7 +73,7 @@
 
                     padding: 5px;
                     padding-right: 10px;
-                    border: 2px #40404c solid;
+                    border: 2px $light_prim solid;
                     border-radius: 10px;
 
                     p {
@@ -123,7 +123,7 @@
                 border: none;
                 outline: none;
 
-                background: #353342;
+                background: $light_prim;
 
                 border-radius: 15px;
                 color: $prim;

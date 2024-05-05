@@ -1,7 +1,19 @@
 #benefits_section {
+  margin-top: 100px;
+  padding: 0 5%;
+}
+
+#benefits_section > h1 {
+  margin: 0;
+  color: #f9fafe;
+  font-weight: 500;
+  font-size: 35px;
+}
+
+#benefits_section #blog_swiper_wrapper {
+  margin-top: 30px;
   margin-bottom: 80px;
   position: relative;
-  padding: 0 5%;
   gap: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,12 +30,11 @@
           justify-content: space-between;
 }
 
-#benefits_section .swiper {
-  padding-top: 100px;
+#benefits_section #blog_swiper_wrapper .swiper {
   width: 100%;
 }
 
-#benefits_section .swiper-slide {
+#benefits_section #blog_swiper_wrapper .swiper-slide {
   aspect-ratio: 1 / 1;
   font-size: 18px;
   -webkit-user-select: none;
@@ -41,7 +52,7 @@
           align-items: center;
 }
 
-#benefits_section .swiper-slide .slider_child {
+#benefits_section #blog_swiper_wrapper .swiper-slide .slider_child {
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -64,7 +75,7 @@
   background-position: center;
 }
 
-#benefits_section .benefit_card {
+#benefits_section #blog_swiper_wrapper .benefit_card {
   color: #f9fafe;
   border-radius: 30px;
   padding: 20px;
@@ -88,7 +99,7 @@
   background-position: left 100px top calc(100% + 20px);
 }
 
-#benefits_section .benefit_card #background {
+#benefits_section #blog_swiper_wrapper .benefit_card #background {
   height: 200px;
   width: 100%;
   border-radius: 10px;
@@ -97,7 +108,7 @@
   background-position: center;
 }
 
-#benefits_section .benefit_card h1 {
+#benefits_section #blog_swiper_wrapper .benefit_card h1 {
   margin: 0;
   width: 100%;
   margin-top: 15px;
@@ -105,7 +116,7 @@
   font-size: 25px;
 }
 
-#benefits_section .benefit_card p {
+#benefits_section #blog_swiper_wrapper .benefit_card p {
   font-size: 17px;
   font-family: Manrope;
   margin: 0;
@@ -113,21 +124,21 @@
   margin-top: 3px;
 }
 
-#benefits_section .nav_wrapper {
+#benefits_section #blog_swiper_wrapper .nav_wrapper {
   top: 275px;
-  width: calc(100% - 10vw + 48px);
+  width: calc(100% + 48px);
 }
 
-#benefits_section .nav_wrapper .arrow {
+#benefits_section #blog_swiper_wrapper .nav_wrapper .arrow {
   border: 2px #40404c solid;
   width: 28px;
 }
 
-#benefits_section .nav_wrapper #next-arrow {
+#benefits_section #blog_swiper_wrapper .nav_wrapper #next-arrow {
   right: 0;
 }
 
-#benefits_section .nav_wrapper #prev-arrow {
+#benefits_section #blog_swiper_wrapper .nav_wrapper #prev-arrow {
   margin-left: -48px;
 }
 
@@ -169,15 +180,19 @@
   }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1080px) {
   #benefits_section .nav_wrapper {
-    width: calc(100% - 10vw + 38px);
-  }
-  #benefits_section .nav_wrapper .arrow {
-    width: 20px;
+    top: 180px !important;
+    width: calc(100% + 20px) !important;
   }
   #benefits_section .nav_wrapper #prev-arrow {
-    margin-left: -38px;
+    margin-left: -20px !important;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #benefits_section .nav_wrapper .arrow {
+    width: 20px;
   }
 }
 
@@ -197,6 +212,13 @@
   #benefits_section {
     padding: 0 15px !important;
   }
+  #benefits_section .nav_wrapper {
+    top: 180px !important;
+    width: calc(100% + 00px) !important;
+  }
+  #benefits_section .nav_wrapper #prev-arrow {
+    margin-left: 0px !important;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -206,15 +228,19 @@
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
   }
-  #benefits_section .swiper {
-    padding-top: 50px !important;
-  }
   #benefits_section .benefit_card {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 530px) {
+  #benefits_section #blog_swiper_wrapper {
+    margin-top: 0;
+  }
+  #benefits_section > h1 {
+    width: 100%;
+    text-align: center;
+  }
   #benefits_section .nav_wrapper {
     display: none;
   }

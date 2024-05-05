@@ -14,6 +14,7 @@ import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
 
 import NotFoundPage from "./pages/NotFoundPage";
+import GuideBody from './components/GuideBody';
 
 const App = () => {
   return (
@@ -32,7 +33,10 @@ const App = () => {
 
         <Route exact path="/account/:tab" element={<AccountPage />} />
         <Route exact path="/my-cart" element={<CartPage />} />
+        
         <Route exact path="/auth/:type" element={<LoginPage />} />
+
+        <Route exact path="/guide" element={<GuideBody />} />
         
       </Routes>
     </Router>

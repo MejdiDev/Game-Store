@@ -14,7 +14,7 @@ window.addEventListener("resize", (event) => {
     })
 })
 
-const GamesBuySlider = ({ title, id, games, platform, delay }) => {
+const GamesBuySlider = ({ title, id, className, games, platform, delay }) => {
     const sliderRef = useRef(null);
     const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ const GamesBuySlider = ({ title, id, games, platform, delay }) => {
     }
 
     return (
-        <section id={id} className="games_buy_slider">
+        <section id={id} className={`games_buy_slider ${className ? className : ""}`}>
             <div id="top">
                 <h1>{ title }</h1>
 
@@ -51,7 +51,7 @@ const GamesBuySlider = ({ title, id, games, platform, delay }) => {
             <div id="swiper_wrapper">
                 <Swiper
                     ref={sliderRef}
-                    slidesPerView={4}
+                    slidesPerView={5}
                     speed={500}
                     loop={true}
                     grabCursor={true}
@@ -59,22 +59,48 @@ const GamesBuySlider = ({ title, id, games, platform, delay }) => {
 
                     autoplay={{ delay }}
 
-                    breakpoints= {{
-                        0: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        },
-
-                        820: {
-                            slidesPerView: 3,
-                            spaceBetween: 30
-                        },
-
-                        1100: {
-                            slidesPerView: 4,
-                            spaceBetween: 30
+                    breakpoints= { (className == "gift_card") ?
+                        {
+                            0: {
+                                slidesPerView: 2,
+                                spaceBetween: 10
+                            },
+    
+                            820: {
+                                slidesPerView: 3,
+                                spaceBetween: 30
+                            },
+    
+                            1100: {
+                                slidesPerView: 4,
+                                spaceBetween: 30
+                            }
                         }
-                    }}
+
+                        :
+
+                        {
+                            0: {
+                                slidesPerView: 2,
+                                spaceBetween: 10
+                            },
+    
+                            820: {
+                                slidesPerView: 3,
+                                spaceBetween: 30
+                            },
+    
+                            1100: {
+                                slidesPerView: 4,
+                                spaceBetween: 30
+                            },
+    
+                            1390: {
+                                slidesPerView: 5,
+                                spaceBetween: 30
+                            }
+                        }
+                    }
 
                     onSlideChangeTransitionStart={(slide) => {
                         document.querySelectorAll("#" + id + " .pags_wrapper div").forEach(el => {

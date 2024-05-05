@@ -133,12 +133,12 @@
             justify-content: center;
 
             p {
-                border: 2px #40404c solid;
+                border: 2px $light_prim solid;
                 border-radius: 7px;
                 font-family: Manrope;
                 margin: 0;
                 padding: 0 10px;
-                color: #40404c;
+                color: $light_prim;
             }
         }
     }

@@ -39,7 +39,15 @@ const GameCard = ({ game, idx }) => {
 
                 <div id="platforms">
                     {
-                        game.platforms.map((plt, idx) => <img key={`game-buy-plt-${idx}`} src={img_paths[plt]} alt={plt} />)
+                        game.platforms.map((plt, idx) =>
+                            <div id="platform_entry_wrapper">
+                                <img key={`game-buy-plt-${idx}`} src={img_paths[plt]} alt={plt} />
+
+                                <div id="index">
+                                    <p>{ plt }</p>
+                                </div>
+                            </div>
+                        )
                     }
                 </div>
             </div>

@@ -4,6 +4,37 @@
     padding: 0 5%;
     position: relative;
 
+    &.gift_card {
+        .nav_wrapper {
+            top: 300px;
+            background: red;
+        }
+
+        .game_card {
+            aspect-ratio: 16/11.5 !important;
+
+            #discount_perc {
+                top: -90px;
+            }
+
+            #fav_btn {
+                top: -80px;
+            }
+
+            #cover {
+                top: -90px;
+                aspect-ratio: 16/9 !important;
+            }
+        }
+
+        .swiper {
+            margin-top: 140px !important;
+            width: 100%;
+            height: auto !important;
+            overflow: visible;
+        }
+    }
+
     .more_btn {
         cursor: pointer;
         gap: 15px;
@@ -12,12 +43,12 @@
         align-items: center;
         font-weight: 900;
 
-        border: 2px #40404c solid;
+        border: 2px $light_prim solid;
         border-radius: 12px;
         font-family: Manrope;
         margin: 0;
         padding: 15px 12px;
-        color: #40404c;
+        color: $light_prim;
         background: none;
 
         &.mobl {
@@ -56,7 +87,7 @@
         width: calc(100% - 10vw + 48px);
 
         .arrow {
-            border: 2px #40404c solid;
+            border: 2px $light_prim solid;
             width: 28px;
         }
 
@@ -73,6 +104,7 @@
         width: 100% !important;
         overflow: hidden;
         position: relative;
+        padding-bottom: 30px;
 
         .swiper-wrapper {
             width: 100%;
@@ -106,9 +138,25 @@
         .nav_wrapper {
             display: none;
         }
+        
+        &.gift_card {
+            .game_card {
+                #discount_perc {
+                    top: -40px;
+                }
+    
+                #fav_btn {
+                    top: -30px;
+                }
+    
+                #cover {
+                    top: -40px;
+                }
+            }
 
-        .game_card {
-            
+            .swiper { 
+                margin-top: 50px !important;
+            }
         }
     }
 }

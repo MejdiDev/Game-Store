@@ -1,11 +1,23 @@
 import { useState } from 'react';
 import '../styles/css/productAbout.css';
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from "swiper/modules";
+
+import 'swiper/css';
+
+import '../styles/css/slider.css';
+import { EffectFade } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 const ProductAbout = ({ game }) => {
     const [shownMore, setShownMore] = useState(false);
 
     const showMore = () => {
-        const h = document.querySelector("#content_wrapper").offsetHeight;
+        const h = document.querySelector("#more_less_wrapper #content_wrapper").offsetHeight;
         document.getElementById("more_less_wrapper").style.height = String(h + 10) + "px";
 
         document.querySelector("#more_less_wrapper #grad").style.display = "none";
@@ -36,7 +48,11 @@ const ProductAbout = ({ game }) => {
                             </p>
 
                             <div className="inline_image_wrapper right">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod distinctio optio laboriosam. Rerum expedita numquam ducimus recusandae, consequatur voluptate alias a cupiditate error sed facere quis harum perferendis dolorum nemo!</p>
+                                <div id="text">
+                                    <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod distinctio optio laboriosam. Rerum expedita numquam ducimus recusandae, consequatur voluptate alias a cupiditate error sed facere quis harum perferendis dolorum nemo!</p>
+                                </div>
+                                
                                 <div id="img" style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
                             </div>
 
@@ -46,7 +62,11 @@ const ProductAbout = ({ game }) => {
                             </p>
 
                             <div className="inline_image_wrapper left">
-                                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod distinctio optio laboriosam. Rerum expedita numquam ducimus recusandae, consequatur voluptate alias a cupiditate error sed facere quis harum perferendis dolorum nemo!</p>
+                                <div id="text">
+                                    <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod distinctio optio laboriosam. Rerum expedita numquam ducimus recusandae, consequatur voluptate alias a cupiditate error sed facere quis harum perferendis dolorum nemo!</p>
+                                </div>
+                                 
                                 <div id="img" style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
                             </div>
                         </div>
@@ -64,11 +84,35 @@ const ProductAbout = ({ game }) => {
                 <h1>Visuals</h1>
 
                 <div id="images_wrapper">
-                    <div style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
-                    <div style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
-                    <div style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
-                    <div style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
-                    <div style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
+                    <div className="visuals_card">
+                        <Swiper
+                            speed={500}
+                            loop={true}
+                            modules={[Autoplay, EffectFade]}
+                            effect={"fade"}
+                            spaceBetween={20}
+
+                            autoplay={{
+                                delay: 4000
+                            }}
+
+                            breakpoints= {{
+                                0: {
+                                    slidesPerView: 1
+                                }
+                            }}
+                        >
+                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/6.jpg')`}}></div></SwiperSlide>
+                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/7.jpg')`}}></div></SwiperSlide>
+                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/8.jpg')`}}></div></SwiperSlide>
+                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/9.jpg')`}}></div></SwiperSlide>
+                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/10.jpg')`}}></div></SwiperSlide>
+                        </Swiper>
+                    </div>
+                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/1.jpg')`}}></div>
+                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/2.jpg')`}}></div>
+                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/3.jpg')`}}></div>
+                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/4.jpg')`}}></div>
                 </div>
             </div>
 
@@ -78,6 +122,14 @@ const ProductAbout = ({ game }) => {
                 <div className="content_wrapper">
                     <div>
                         <p>Languages</p>
+                        
+                        <div id="flags_wrapper">
+                            {
+                                game.langs && game.langs.map((cnt, idx) =>
+                                    <div key={`game-lang-flag-${idx}`} className="flag" style={{backgroundImage: `url('https://flagsapi.com/${cnt}/flat/64.png')`}}></div>
+                                )
+                            }
+                        </div>
                     </div>
 
                     <div className="seperation"><span></span></div>

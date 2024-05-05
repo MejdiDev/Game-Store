@@ -1,16 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import '../styles/css/loginBody.css';
 
-const LoginBody = ({ type }) => {
-    const navigate = useNavigate()
-
+const LoginBody = ({ type, navigate }) => {
     return (
         <section id="login_body" style={{backgroundImage: "url('./wave.svg')"}}>
             <div id="form_wrapper">
                 <div id="hot_games_slider_wrapper" style={{backgroundImage: "url('./doom_eternal.jpg')"}}></div>
 
                 {
-                    type == "login" ? 
+                    type == "login" ?
 
                     <form id="login">
                         <h1>Sign In</h1>

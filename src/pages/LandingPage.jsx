@@ -69,6 +69,15 @@ const LandingPage = () => {
                 delay={2700}
             />
 
+            <GamesBuySlider
+                className="gift_card"
+                id="gift_cards_section"
+                title="Gift Cards"
+                platform={ platform }
+                games={ shuffleArray(games) }
+                delay={3000}
+            />
+
             <BlogSwiper data={ shuffleArray(blog_data) } />
             <InfoSection
                 title="Online game shop Key4gg"

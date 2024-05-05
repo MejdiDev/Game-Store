@@ -87,7 +87,7 @@ input, button, select {
     display: block;
     width: 80%;
     height: 100%;
-    background: #40404c;
+    background: $light_prim;
   }
 }
 
@@ -104,7 +104,7 @@ input, button, select {
   div {
       width: 40px;
       height: 3px;
-      background: #2c2c38;
+      background: $light_prim;
       transition: background 200ms;
       cursor: pointer;
 
@@ -258,7 +258,7 @@ input, button, select {
   
   &:has(> #discount_price) {
       #original_price {
-          color: #40404c;
+          color: $light_prim;
           font-size: 18px;
           font-weight: 800;
           text-decoration: line-through;

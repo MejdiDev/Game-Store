@@ -19,6 +19,20 @@ const platform_data = {
 }
 
 const ProductDetails = ({ game, platform }) => {
+    const showGuideWindow = () => {
+        document.getElementById('drop_menu_wrapper').style.zIndex = '997';
+
+        document.getElementById('overlay_dropdown').style.display = "block";
+        document.getElementById('guide_body_wrapper').style.display = "flex";
+        
+        setTimeout(() => {
+            document.getElementById('overlay_dropdown').style.opacity = "0.7";
+            document.getElementById('guide_body_wrapper').classList.add('active');
+        }, 1);
+
+        document.querySelector('body').style.overflowY = 'hidden';
+    }
+
     return (
         <section id="product_details_section">
             <div id="cover" style={{backgroundImage: `url('./game_covers/${game.cover}')`}}></div>
@@ -47,7 +61,7 @@ const ProductDetails = ({ game, platform }) => {
 
                         <div id="text">
                             <p>Delivery</p>
-                            <h4>Instant Digital Delivery</h4>
+                            <h4>Fast Digital Delivery</h4>
                         </div>
                     </div>
 
@@ -77,13 +91,20 @@ const ProductDetails = ({ game, platform }) => {
                 <div className="seperation"><span></span></div>
 
                 <p>Languages:</p>
+                <div id="flags_wrapper">
+                    {
+                        game.langs && game.langs.map((cnt, idx) =>
+                            <div key={`game-lang-flag-top-${idx}`} className="flag" style={{backgroundImage: `url('https://flagsapi.com/${cnt}/flat/64.png')`}}></div>
+                        )
+                    }
+                </div>
             </div>
 
             <div id="buy_component">
                 <div id="top">
                     <span>
                         <img src="./icons/lightning.png" alt="Lightning" />
-                        <p>Instant Delivery</p>
+                        <p>Fast Delivery</p>
                     </span>
 
                     <div></div>
@@ -134,6 +155,8 @@ const ProductDetails = ({ game, platform }) => {
                         <p>Convenient Payement Options</p>
                     </div>
                 </div>
+
+                <p onClick={showGuideWindow}>Don't know how to activate ?</p>
             </div>
         </section>
     );

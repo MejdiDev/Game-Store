@@ -29,7 +29,7 @@
   flex-flow: row nowrap;
   gap: 80px;
   border-radius: 25px;
-  border: 3px #353342 solid;
+  border: 3px #40404c solid;
   background-color: rgba(29, 29, 41, 0.5);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -149,7 +149,7 @@
   height: 40px;
   border: none;
   outline: none;
-  background: #353342;
+  background: #40404c;
   border-radius: 15px;
   color: #f9fafe;
   padding-left: 25px;

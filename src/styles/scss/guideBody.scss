@@ -1,0 +1,133 @@
+@import "utils/variables";
+
+#guide_body_wrapper {
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 999;
+    position: fixed;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 300ms;
+    transition-timing-function: ease-in-out;
+
+    &.active {
+        opacity: 1;
+    }
+
+    #guide_body {
+        position: relative;
+        overflow-y: scroll;
+        
+        background: $light_bg;
+        width: auto !important;
+        height: 90vh;
+
+        gap: 2px;
+        display: flex;
+        flex-flow: column nowrap;
+        color: $prim;
+
+        padding: 30px 20px;
+        border-radius: 10px;
+
+        #cross {
+            border-radius: 5px;
+            background: $light_prim;
+            padding: 10px;
+            padding-bottom: 6px;
+            right: 20px;
+            top: 30px;
+            cursor: pointer;
+            width: 20px;
+            position: absolute;
+
+            img {
+                width: 20px;
+                height: 20px;
+
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .step_wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+
+            h2 {
+                margin: 0;
+                width: 60px;
+                font-weight: 600;
+            }
+
+            &:last-of-type #content_wrapper img {
+                padding-bottom: 0 !important;
+            }
+
+            #line_design_wrapper {
+                margin-top: 4px;
+                gap: 10px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+
+                #circle {
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    background: $btn_gradient;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                    #ring {
+                        position: absolute;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        border: 3px $bg solid;
+                    }
+                }
+
+                #line {
+                    height: calc(100% - 36px);
+                    width: 2px;
+                    background: $btn_gradient;
+                }
+            }
+
+            #content_wrapper {
+                margin-left: 10px;
+
+                p {
+                    margin: 0;
+                    font-family: Manrope;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 30px;
+                    margin-bottom: 10px;
+                }
+
+                img {
+                    padding-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    #guide_body_wrapper {
+        #guide_body {
+            width: calc(100% - 80px) !important;
+        }
+    }
+}

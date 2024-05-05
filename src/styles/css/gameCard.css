@@ -90,8 +90,53 @@
           flex-flow: row nowrap;
 }
 
-.game_card #platforms_wrapper #platforms img {
+.game_card #platforms_wrapper #platforms #platform_entry_wrapper {
+  position: relative;
+}
+
+.game_card #platforms_wrapper #platforms #platform_entry_wrapper:hover #index {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game_card #platforms_wrapper #platforms #platform_entry_wrapper img {
   height: 25px;
+}
+
+.game_card #platforms_wrapper #platforms #platform_entry_wrapper #index {
+  display: none;
+  margin-left: -30px;
+  margin-top: 10px;
+  position: absolute;
+  background: #40404c;
+  height: 30px;
+  width: 90px;
+  border-radius: 3px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game_card #platforms_wrapper #platforms #platform_entry_wrapper #index::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 8px solid #40404c;
+  top: -8px;
+  left: 38px;
+}
+
+.game_card #platforms_wrapper #platforms #platform_entry_wrapper #index p {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
 }
 
 .game_card #discount_perc {

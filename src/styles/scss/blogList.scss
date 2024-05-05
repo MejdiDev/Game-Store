@@ -28,7 +28,7 @@
     .blog_card {
         cursor: pointer;
         border-radius: 20px;
-        background: #1d1d29;
+        background: $light_bg;
         padding: 20px 15px;
 
         opacity: 0;
@@ -41,7 +41,7 @@
         p {
             margin: 0;
             font-family: Manrope;
-            color: #40404c;
+            color: $light_prim;
             font-weight: 600;
             font-size: 16px;
         }

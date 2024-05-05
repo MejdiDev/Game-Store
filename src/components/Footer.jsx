@@ -81,6 +81,13 @@ const Footer = () => {
 
                 <li>
                     <h3>Payment Network</h3>
+                    <div id="payement_method_wrapper">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </li>
             </ul>
         </footer>

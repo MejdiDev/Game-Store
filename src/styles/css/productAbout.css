@@ -1,5 +1,5 @@
 #about_product {
-  width: 95%;
+  width: calc(105% - 320px);
   margin-top: 50px;
   margin-bottom: 150px;
   padding-left: 5%;
@@ -75,6 +75,13 @@
           flex-direction: row-reverse;
 }
 
+#about_product #description #more_less_wrapper .inline_image_wrapper #text h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: Benzin;
+  font-weight: 500;
+}
+
 #about_product #description #more_less_wrapper .inline_image_wrapper #img {
   border-radius: 10px;
   width: 100%;
@@ -100,6 +107,28 @@
 
 #about_product #overview {
   margin-top: 50px;
+}
+
+#about_product #overview div:has(> #flags_wrapper) {
+  padding: 0;
+}
+
+#about_product #overview #flags_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+#about_product #overview #flags_wrapper .flag {
+  border-radius: 2px;
+  width: 45px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
 }
 
 #about_product .content_wrapper h4 {
@@ -197,6 +226,17 @@
       grid-template-rows: repeat(2, calc(100% / 2));
 }
 
+#about_product #visuals #images_wrapper .swiper {
+  height: 100%;
+}
+
+#about_product #visuals #images_wrapper .swiper div {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 #about_product #visuals #images_wrapper div {
   border-radius: 10px;
   background-repeat: no-repeat;
@@ -214,6 +254,9 @@
 }
 
 @media only screen and (max-width: 1320px) {
+  #about_product {
+    width: 95%;
+  }
   #about_product .section_wrapper {
     width: calc(95% - 60px);
   }
@@ -225,6 +268,12 @@
   }
   #about_product #row_wrapper {
     width: 100%;
+  }
+  #about_product #visuals {
+    width: 100%;
+  }
+  #about_product #visuals #images_wrapper {
+    width: calc(100% - 40px) !important;
   }
 }
 
@@ -267,8 +316,12 @@
         -ms-flex-direction: column-reverse !important;
             flex-direction: column-reverse !important;
   }
+  #visuals {
+    width: 95% !important;
+  }
   #visuals #images_wrapper {
     height: 400px !important;
+    width: 100% !important;
     -ms-grid-columns: (calc(100% / 3))[3] !important;
         grid-template-columns: repeat(3, calc(100% / 3)) !important;
     -ms-grid-rows: (calc(100% / 3))[3] !important;

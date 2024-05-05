@@ -51,12 +51,12 @@
 
             background: none;
             box-shadow: none;
-            border: 2px #40404c solid;
+            border: 2px $light_prim solid;
         }
     
         #cross {
             border-radius: 5px;
-            background: #343341;
+            background: $light_prim;
             padding: 10px;
             padding-bottom: 6px;
             right: 20px;
@@ -118,7 +118,7 @@
             font-family: Manrope;
             margin: 0;
             font-weight: 700;
-            color: #40404c;
+            color: $light_prim;
             font-size: 16px;
             margin-bottom: 15px;
         }
