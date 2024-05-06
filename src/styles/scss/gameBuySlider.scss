@@ -7,7 +7,6 @@
     &.gift_card {
         .nav_wrapper {
             top: 300px;
-            background: red;
         }
 
         .game_card {
@@ -28,7 +27,7 @@
         }
 
         .swiper {
-            margin-top: 140px !important;
+            margin-top: 110px !important;
             width: 100%;
             height: auto !important;
             overflow: visible;
@@ -142,20 +141,20 @@
         &.gift_card {
             .game_card {
                 #discount_perc {
-                    top: -40px;
+                    top: -90px;
                 }
     
                 #fav_btn {
-                    top: -30px;
+                    top: -80px;
                 }
     
                 #cover {
-                    top: -40px;
+                    top: -90px;
                 }
             }
 
-            .swiper { 
-                margin-top: 50px !important;
+            .swiper {
+                margin-top: 100px !important;
             }
         }
     }
@@ -177,9 +176,33 @@
                 display: none;
             }
         }
+    }
+}
 
+@media only screen and (max-width: 500px) {
+    .games_buy_slider.gift_card {
         .game_card {
-            
+            padding-bottom: 0 !important;
+
+            #discount_perc {
+                top: -80px;
+            }
+
+            #fav_btn {
+                top: -70px;
+            }
+
+            #cover {
+                top: -80px;
+            }
+
+            #platforms_wrapper {
+                display: flex !important;
+            }
+        }
+
+        .swiper {
+            margin-top: 80px !important;
         }
     }
 }

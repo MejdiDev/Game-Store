@@ -18,7 +18,7 @@ const GameCard = ({ game, idx }) => {
             </div>
             {game.is_discounted && <div id="discount_perc">-{ game.discount_perc }%</div>}
 
-            <div style={{ backgroundImage: `url('./game_covers/${game.cover}')` }} id="cover"></div>
+            <div style={{ backgroundImage: `url('${game.cover}')` }} id="cover"></div>
             <div id="placeholder"></div>
 
             <p>{ game.title }</p>

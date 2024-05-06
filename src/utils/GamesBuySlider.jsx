@@ -34,7 +34,8 @@ const GamesBuySlider = ({ title, id, className, games, platform, delay }) => {
             trgt = trgt.parentNode
         }
 
-        if(trgt.getAttribute("favable") !== "true") navigate(`/product/${platform}/${id}`)
+        if(trgt.getAttribute("favable") !== "true")
+            (className == "gift_card") ? alert(id) : navigate(`/product/${platform}/${id}`)
     }
 
     return (
@@ -62,6 +63,11 @@ const GamesBuySlider = ({ title, id, className, games, platform, delay }) => {
                     breakpoints= { (className == "gift_card") ?
                         {
                             0: {
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            },
+
+                            500: {
                                 slidesPerView: 2,
                                 spaceBetween: 10
                             },

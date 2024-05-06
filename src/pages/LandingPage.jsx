@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 
 import games from "../data/games.json"
+import gift_cards from "../data/gift_cards.json"
 import blog_data from "../data/blog_data.json"
 
 import { shuffleArray } from "../utils/functions";
@@ -74,8 +75,8 @@ const LandingPage = () => {
                 id="gift_cards_section"
                 title="Gift Cards"
                 platform={ platform }
-                games={ shuffleArray(games) }
-                delay={3000}
+                games={ shuffleArray(gift_cards) }
+                delay={ 3000 }
             />
 
             <BlogSwiper data={ shuffleArray(blog_data) } />

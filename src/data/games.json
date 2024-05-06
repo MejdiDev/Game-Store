@@ -1,7 +1,7 @@
 [
     {
         "id": 50455,
-        "cover": "COD_modern_warfare.jpg",
+        "cover": "./game_covers/COD_modern_warfare.jpg",
         "title": "Call Of Duty: Modern Warfare 3",
         "price": 59,
         "platforms": [ "PC", "Playstation", "Xbox" ],
@@ -11,7 +11,7 @@
 
     {
         "id": 89127,
-        "cover": "realms_of_ruin.jpg",
+        "cover": "./game_covers/realms_of_ruin.jpg",
         "title": "Realms Of Ruin",
         "price": 59,
         "platforms": [ "PC", "Playstation" ],
@@ -21,7 +21,7 @@
 
     {
         "id": 53487,
-        "cover": "dead_space.jpg",
+        "cover": "./game_covers/dead_space.jpg",
         "title": "Dead Space",
         "price": 59,
         "platforms": [ "PC", "Xbox" ],
@@ -31,7 +31,7 @@
 
     {
         "id": 95289,
-        "cover": "horizon.jpg",
+        "cover": "./game_covers/horizon.jpg",
         "title": "Horizon",
         "price": 59,
         "platforms": [ "PC", "Playstation", "Xbox" ],
@@ -41,7 +41,7 @@
 
     {
         "id": 80574,
-        "cover": "COD_cold_war.jpg",
+        "cover": "./game_covers/COD_cold_war.jpg",
         "title": "Call Of Duty: Cold War",
         "price": 59,
         "platforms": [ "PC", "Playstation" ],
@@ -51,7 +51,7 @@
 
     {
         "id": 93483,
-        "cover": "atomic_heart.jpg",
+        "cover": "./game_covers/atomic_heart.jpg",
         "title": "Atomic Heart",
         "price": 59,
         "platforms": [ "PC", "Playstation", "Xbox" ],
@@ -61,7 +61,7 @@
 
     {
         "id": 43471,
-        "cover": "hogwarts_legacy.jpg",
+        "cover": "./game_covers/hogwarts_legacy.jpg",
         "title": "Hogwarts Legacy",
         "price": 59,
         "platforms": [ "PC", "Playstation" ],
@@ -71,7 +71,7 @@
 
     {
         "id": 39260,
-        "cover": "COD_modern_warfare.jpg",
+        "cover": "./game_covers/COD_modern_warfare.jpg",
         "title": "Call Of Duty: Modern Warfare 3",
         "price": 59,
         "new_price": 36,
@@ -84,7 +84,7 @@
 
     {
         "id": 82189,
-        "cover": "realms_of_ruin.jpg",
+        "cover": "./game_covers/realms_of_ruin.jpg",
         "title": "Realms Of Ruin",
         "price": 59,
         "new_price": 36,
@@ -97,7 +97,7 @@
 
     {
         "id": 87774,
-        "cover": "dead_space.jpg",
+        "cover": "./game_covers/dead_space.jpg",
         "title": "Dead Space",
         "price": 59,
         "new_price": 36,
@@ -110,7 +110,7 @@
 
     {
         "id": 10200,
-        "cover": "horizon.jpg",
+        "cover": "./game_covers/horizon.jpg",
         "title": "Horizon",
         "price": 59,
         "new_price": 36,
@@ -123,7 +123,7 @@
 
     {
         "id": 24074,
-        "cover": "COD_cold_war.jpg",
+        "cover": "./game_covers/COD_cold_war.jpg",
         "title": "Call Of Duty: Cold War",
         "price": 59,
         "new_price": 36,
@@ -136,7 +136,7 @@
 
     {
         "id": 70939,
-        "cover": "atomic_heart.jpg",
+        "cover": "./game_covers/atomic_heart.jpg",
         "title": "Atomic Heart",
         "price": 59,
         "new_price": 36,
@@ -149,7 +149,7 @@
 
     {
         "id": 82787,
-        "cover": "hogwarts_legacy.jpg",
+        "cover": "./game_covers/hogwarts_legacy.jpg",
         "title": "Hogwarts Legacy",
         "price": 59,
         "new_price": 36,

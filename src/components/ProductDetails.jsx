@@ -35,7 +35,7 @@ const ProductDetails = ({ game, platform }) => {
 
     return (
         <section id="product_details_section">
-            <div id="cover" style={{backgroundImage: `url('./game_covers/${game.cover}')`}}></div>
+            <div id="cover" style={{backgroundImage: `url('${game.cover}')`}}></div>
 
             <div id="data">
                 {game.is_discounted && <div id="disc_perc">-{ game.discount_perc }%</div>}

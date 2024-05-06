@@ -273,7 +273,7 @@
     width: 100%;
   }
   #about_product #visuals #images_wrapper {
-    width: calc(100% - 40px) !important;
+    width: calc(100% - 125px);
   }
 }
 
@@ -321,7 +321,7 @@
   }
   #visuals #images_wrapper {
     height: 400px !important;
-    width: 100% !important;
+    width: calc(100% - 40px) !important;
     -ms-grid-columns: (calc(100% / 3))[3] !important;
         grid-template-columns: repeat(3, calc(100% / 3)) !important;
     -ms-grid-rows: (calc(100% / 3))[3] !important;

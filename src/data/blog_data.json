@@ -1,42 +1,30 @@
 [
     {
-        "img": "./game_covers/hogwarts_legacy.jpg",
+        "img": "./blog_covers/exp1.jpg",
         "title": "Lorem Ipsum !",
         "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
     },
 
     {
-        "img": "./game_covers/hogwarts_legacy.jpg",
+        "img": "./blog_covers/exp2.jpg",
         "title": "Lorem Ipsum !",
         "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
     },
 
     {
-        "img": "./game_covers/hogwarts_legacy.jpg",
+        "img": "./blog_covers/exp3.jpg",
         "title": "Lorem Ipsum !",
         "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
     },
 
     {
-        "img": "./game_covers/hogwarts_legacy.jpg",
+        "img": "./blog_covers/exp4.jpg",
         "title": "Lorem Ipsum !",
         "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
     },
 
     {
-        "img": "./game_covers/hogwarts_legacy.jpg",
-        "title": "Lorem Ipsum !",
-        "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
-    },
-
-    {
-        "img": "./game_covers/hogwarts_legacy.jpg",
-        "title": "Lorem Ipsum !",
-        "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
-    },
-
-    {
-        "img": "./game_covers/hogwarts_legacy.jpg",
+        "img": "./blog_covers/exp5.jpg",
         "title": "Lorem Ipsum !",
         "description": "Welcome to our online game shop, your trusted partner in the world of virtual entertainment."
     }

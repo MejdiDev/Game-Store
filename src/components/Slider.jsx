@@ -75,7 +75,7 @@ const Slider = ({ games, platform }) => {
                 games.map((game, index) =>
                     <SwiperSlide key={`main-game-slider-child-${index}`}>
                         <Link to={`/product/${platform}/${game.id}`}>
-                            <div style={{backgroundImage: `url(./game_covers/${game.cover})`}} className="slider_child">
+                            <div style={{backgroundImage: `url('${game.cover}')`}} className="slider_child">
                                 {game.is_discounted && <div id="disc_perc">-{ game.discount_perc }%</div>}
                             </div>
                         </Link>

@@ -247,7 +247,7 @@
             width: 100%;
 
             #images_wrapper {
-                width: calc(100% - 40px) !important;
+                width: calc(100% - 125px);
             }
         }
     }
@@ -291,7 +291,7 @@
 
         #images_wrapper {
             height: 400px !important;
-            width: 100% !important;
+            width: calc(100% - 40px) !important;
             
             grid-template-columns: repeat(3, calc(100% / 3)) !important;
             grid-template-rows: repeat(3, calc(100% / 3)) !important;

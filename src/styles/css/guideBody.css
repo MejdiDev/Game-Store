@@ -74,6 +74,7 @@
   margin: 0;
   width: 60px;
   font-weight: 600;
+  margin-right: 15px;
 }
 
 #guide_body_wrapper #guide_body .step_wrapper:last-of-type #content_wrapper img {
@@ -117,7 +118,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 3px #151521 solid;
+  border: 3px #1d1d29 solid;
 }
 
 #guide_body_wrapper #guide_body .step_wrapper #line_design_wrapper #line {
@@ -141,10 +142,55 @@
 
 #guide_body_wrapper #guide_body .step_wrapper #content_wrapper img {
   padding-bottom: 50px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
 }
 
 @media only screen and (max-width: 970px) {
   #guide_body_wrapper #guide_body {
     width: calc(100% - 80px) !important;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  #guide_body_wrapper #guide_body {
+    height: calc(90vh - 60px);
+    padding-top: 60px;
+  }
+  #guide_body_wrapper #guide_body #cross {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: 8px 5px;
+    padding-right: 6px;
+    padding-top: 9px;
+    top: 20px;
+    width: 20px;
+  }
+  #guide_body_wrapper #guide_body #cross img {
+    width: 15px;
+    height: 15px;
+  }
+  #guide_body_wrapper #guide_body .step_wrapper #line_design_wrapper #circle {
+    width: 18px;
+    height: 18px;
+  }
+  #guide_body_wrapper #guide_body .step_wrapper #line_design_wrapper #circle #ring {
+    width: 8px;
+    height: 8px;
+    border-width: 3px;
+  }
+  #guide_body_wrapper #guide_body .step_wrapper h2 {
+    font-size: 20px !important;
+    width: 30px !important;
+  }
+  #guide_body_wrapper #guide_body .step_wrapper #content_wrapper p {
+    font-size: 18px !important;
   }
 }

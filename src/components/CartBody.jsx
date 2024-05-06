@@ -24,7 +24,7 @@ const CartBody = () => {
                     {
                         faved_games.map((game, idx) =>
                             <div className="cart_game" key={`cart-game-${idx}`}>
-                                <div id="cover" style={{backgroundImage: `url('./game_covers/${game.cover}')`}}></div>
+                                <div id="cover" style={{backgroundImage: `url('${game.cover}')`}}></div>
                                 
                                 <div id="content_wrapper">
                                     <button id="cross">

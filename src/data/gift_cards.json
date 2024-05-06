@@ -1,0 +1,47 @@
+[
+    {
+        "id": 9896,
+        "cover": "./gift_cards/pc.jpg",
+        "title": "Steam Giftcard",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "PC" ]
+    },
+
+    {
+        "id": 7145,
+        "cover": "./gift_cards/nintendo.jpg",
+        "title": "Nintendo Giftcard",
+        "price": 59,
+        "platforms": [ "PC" ]
+    },
+
+    {
+        "id": 8364,
+        "cover": "./gift_cards/ps.jpg",
+        "title": "Playstation Giftcard",
+        "price": 59,
+        "new_price": 36,
+        "is_discounted": true,
+        "discount_perc": 39,
+        "platforms": [ "Playstation" ]
+    },
+
+    {
+        "id": 7410,
+        "cover": "./gift_cards/xbox.jpg",
+        "title": "Xbox Giftcard",
+        "price": 59,
+        "platforms": [ "Xbox" ]
+    },
+
+    {
+        "id": 6653,
+        "cover": "./gift_cards/origin.png",
+        "title": "Origin Giftcard",
+        "price": 59,
+        "platforms": [ "PC" ]
+    }
+]
