@@ -403,6 +403,27 @@
   }
 }
 
+@media only screen and (max-width: 550px) {
+  #game_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  #game_info .info_wrapper {
+    width: calc(50% - 30px);
+  }
+  #game_info .info_wrapper #icon {
+    height: 50px;
+  }
+  #game_info .info_wrapper #text {
+    height: 50px;
+  }
+}
+
 @media only screen and (max-width: 540px) {
   #product_details_section {
     margin-top: 50px;

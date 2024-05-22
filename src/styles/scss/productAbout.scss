@@ -29,6 +29,23 @@
         }
     }
 
+    .games_buy_slider {
+        padding: 0 !important;
+        margin-top: 70px;
+        width: calc(100% - 350px) !important;
+        
+        .pags_wrapper {
+            display: none;
+        }
+
+        .nav_wrapper {
+            top: 20vw;
+            width: calc(100% + 48px);
+    
+            z-index: -1 !important;
+        }
+    }
+
     #description {
         #more_less_wrapper {
             height: 300px;
@@ -275,33 +292,65 @@
     }
 }
 
-@media only screen and (max-width: 1160px) {
-    #more_less_wrapper .inline_image_wrapper {
-        &.right {
-            flex-direction: column !important;
-        }
-
-        &.left {
-            flex-direction: column-reverse !important;
+@media only screen and (max-width: 1440px) {
+    #about_product {
+        .games_buy_slider {
+            width: 70% !important;
         }
     }
+}
 
-    #visuals {
-        width: 95% !important;
+@media only screen and (max-width: 1160px) {
+    #about_product {
+        #more_less_wrapper .inline_image_wrapper {
+            &.right {
+                flex-direction: column !important;
+            }
 
-        #images_wrapper {
-            height: 400px !important;
-            width: calc(100% - 40px) !important;
-            
-            grid-template-columns: repeat(3, calc(100% / 3)) !important;
-            grid-template-rows: repeat(3, calc(100% / 3)) !important;
-    
-            div {
-    
-                &:first-child {
-                    grid-column: 1 / 4 !important;
-                    grid-row: 1 / 3 !important;
+            &.left {
+                flex-direction: column-reverse !important;
+            }
+        }
+
+        #visuals {
+            width: 95% !important;
+
+            #images_wrapper {
+                height: 400px !important;
+                width: calc(100% - 40px) !important;
+                
+                grid-template-columns: repeat(3, calc(100% / 3)) !important;
+                grid-template-rows: repeat(3, calc(100% / 3)) !important;
+        
+                div {
+        
+                    &:first-child {
+                        grid-column: 1 / 4 !important;
+                        grid-row: 1 / 3 !important;
+                    }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    #about_product {
+        .games_buy_slider {
+            width: 95% !important;
+            
+            .nav_wrapper {
+                top: calc(30vw);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+    #about_product {
+        .games_buy_slider {
+            .nav_wrapper {
+                display: none !important;
             }
         }
     }

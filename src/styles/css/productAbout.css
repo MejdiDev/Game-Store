@@ -28,6 +28,22 @@
   font-family: Manrope;
 }
 
+#about_product .games_buy_slider {
+  padding: 0 !important;
+  margin-top: 70px;
+  width: calc(100% - 350px) !important;
+}
+
+#about_product .games_buy_slider .pags_wrapper {
+  display: none;
+}
+
+#about_product .games_buy_slider .nav_wrapper {
+  top: 20vw;
+  width: calc(100% + 48px);
+  z-index: -1 !important;
+}
+
 #about_product #description #more_less_wrapper {
   height: 300px;
   overflow: hidden;
@@ -303,23 +319,29 @@
   }
 }
 
+@media only screen and (max-width: 1440px) {
+  #about_product .games_buy_slider {
+    width: 70% !important;
+  }
+}
+
 @media only screen and (max-width: 1160px) {
-  #more_less_wrapper .inline_image_wrapper.right {
+  #about_product #more_less_wrapper .inline_image_wrapper.right {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: column !important;
             flex-direction: column !important;
   }
-  #more_less_wrapper .inline_image_wrapper.left {
+  #about_product #more_less_wrapper .inline_image_wrapper.left {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: reverse !important;
         -ms-flex-direction: column-reverse !important;
             flex-direction: column-reverse !important;
   }
-  #visuals {
+  #about_product #visuals {
     width: 95% !important;
   }
-  #visuals #images_wrapper {
+  #about_product #visuals #images_wrapper {
     height: 400px !important;
     width: calc(100% - 40px) !important;
     -ms-grid-columns: (calc(100% / 3))[3] !important;
@@ -327,12 +349,27 @@
     -ms-grid-rows: (calc(100% / 3))[3] !important;
         grid-template-rows: repeat(3, calc(100% / 3)) !important;
   }
-  #visuals #images_wrapper div:first-child {
+  #about_product #visuals #images_wrapper div:first-child {
     -ms-grid-column: 1 !important;
     -ms-grid-column-span: 3 !important;
     grid-column: 1 / 4 !important;
     -ms-grid-row: 1 !important;
     -ms-grid-row-span: 2 !important;
     grid-row: 1 / 3 !important;
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  #about_product .games_buy_slider {
+    width: 95% !important;
+  }
+  #about_product .games_buy_slider .nav_wrapper {
+    top: calc(30vw);
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  #about_product .games_buy_slider .nav_wrapper {
+    display: none !important;
   }
 }

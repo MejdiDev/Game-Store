@@ -14,7 +14,7 @@ window.addEventListener("resize", (event) => {
     })
 })
 
-const GamesBuySlider = ({ title, id, className, games, platform, delay }) => {
+const GamesBuySlider = ({ title, id, className, games, platform, delay, custombreak }) => {
     const sliderRef = useRef(null);
     const navigate = useNavigate();
 
@@ -60,31 +60,9 @@ const GamesBuySlider = ({ title, id, className, games, platform, delay }) => {
 
                     autoplay={{ delay }}
 
-                    breakpoints= { (className == "gift_card") ?
-                        {
-                            0: {
-                                slidesPerView: 1,
-                                spaceBetween: 10
-                            },
-
-                            500: {
-                                slidesPerView: 2,
-                                spaceBetween: 10
-                            },
-    
-                            820: {
-                                slidesPerView: 3,
-                                spaceBetween: 30
-                            },
-    
-                            1100: {
-                                slidesPerView: 4,
-                                spaceBetween: 30
-                            }
-                        }
-
-                        :
-
+                    breakpoints= {
+                        custombreak ? custombreak :
+                        
                         {
                             0: {
                                 slidesPerView: 2,

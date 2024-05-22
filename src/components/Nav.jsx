@@ -2,6 +2,20 @@ import { useState } from "react";
 import "../styles/css/nav.css";
 import { Link, useNavigate  } from "react-router-dom";
 
+document.addEventListener("scroll", () => {
+    let top = window.pageYOffset;
+    
+    if(top > 210) {
+        document.querySelector("body").style.marginTop = "0";
+        document.querySelector("nav").classList.add("fixed");
+    }
+
+    else {
+        document.querySelector("body").style.marginTop = "0";
+        document.querySelector("nav").classList.remove("fixed");
+    }
+});
+
 const Nav = () => {
     const [query, setQuery] = useState("")
     const navigate = useNavigate()

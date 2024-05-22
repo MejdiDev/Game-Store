@@ -333,6 +333,25 @@
     }
 }
 
+@media only screen and (max-width: 550px) {
+    #game_info {
+        display: flex;
+        flex-flow: row wrap;
+
+        .info_wrapper {
+            width: calc(50% - 30px);
+
+            #icon {
+                height: 50px;
+            }
+
+            #text {
+                height: 50px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 540px) {
     #product_details_section {
         margin-top: 50px;

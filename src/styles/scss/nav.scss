@@ -1,12 +1,21 @@
 @import "utils/variables";
 
 nav {
+    z-index: 997;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 
     padding: 20px 5%;
+
+    &.fixed {
+        top: 0;
+        width: calc(100vw - 195px);
+        position: fixed;
+        background: $light_bg;
+        border-radius: 0 0 20px 20px;
+    }
 
     .logo {
         height: 35px;
@@ -95,6 +104,11 @@ nav {
         flex-flow: column nowrap;
         background: $light_bg;
         border-radius: 0 0 25px 25px;
+
+        &.fixed {
+            background: $light_bg;
+            width: calc(100vw - 50px);
+        }
 
         #inputs {
             gap: 10px;

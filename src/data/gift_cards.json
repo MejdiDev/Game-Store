@@ -1,7 +1,7 @@
 [
     {
         "id": 9896,
-        "cover": "./gift_cards/pc.jpg",
+        "cover": "./gift_cards/steam.png",
         "title": "Steam Giftcard",
         "price": 59,
         "new_price": 36,
@@ -12,7 +12,7 @@
 
     {
         "id": 7145,
-        "cover": "./gift_cards/nintendo.jpg",
+        "cover": "./gift_cards/nintendo.png",
         "title": "Nintendo Giftcard",
         "price": 59,
         "platforms": [ "PC" ]
@@ -20,7 +20,7 @@
 
     {
         "id": 8364,
-        "cover": "./gift_cards/ps.jpg",
+        "cover": "./gift_cards/ps-store.png",
         "title": "Playstation Giftcard",
         "price": 59,
         "new_price": 36,
@@ -31,16 +31,32 @@
 
     {
         "id": 7410,
-        "cover": "./gift_cards/xbox.jpg",
+        "cover": "./gift_cards/xbox.png",
         "title": "Xbox Giftcard",
         "price": 59,
         "platforms": [ "Xbox" ]
     },
 
     {
-        "id": 6653,
-        "cover": "./gift_cards/origin.png",
-        "title": "Origin Giftcard",
+        "id": 9147,
+        "cover": "./gift_cards/google-play.png",
+        "title": "Google Play Card",
+        "price": 59,
+        "platforms": [ "PC" ]
+    },
+
+    {
+        "id": 8583,
+        "cover": "./gift_cards/fortnite.jpg",
+        "title": "Fortnite Giftcard",
+        "price": 59,
+        "platforms": [ "PC" ]
+    },
+
+    {
+        "id": 5027,
+        "cover": "./gift_cards/lol.png",
+        "title": "League Giftcard",
         "price": 59,
         "platforms": [ "PC" ]
     }

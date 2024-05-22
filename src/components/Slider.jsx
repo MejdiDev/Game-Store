@@ -37,7 +37,7 @@ const Slider = ({ games, platform }) => {
             }
 
             catch {
-                console.log("error !")
+                return
             }
         }, 10)
     }, [])

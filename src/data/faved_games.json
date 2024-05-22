@@ -1,7 +1,7 @@
 [
     {
         "id": 50455,
-        "cover": "COD_modern_warfare.jpg",
+        "cover": "./game_covers/COD_modern_warfare.jpg",
         "title": "Call Of Duty: Modern Warfare 3",
         "price": 59,
         "platforms": [ "PC", "Playstation", "Xbox" ],
@@ -10,7 +10,7 @@
 
     {
         "id": 89127,
-        "cover": "realms_of_ruin.jpg",
+        "cover": "./game_covers/realms_of_ruin.jpg",
         "title": "Realms Of Ruin",
         "price": 59,
         "platforms": [ "PC", "Playstation" ],
@@ -19,7 +19,7 @@
 
     {
         "id": 43471,
-        "cover": "hogwarts_legacy.jpg",
+        "cover": "./game_covers/hogwarts_legacy.jpg",
         "title": "Hogwarts Legacy",
         "price": 59,
         "platforms": [ "PC", "Playstation" ],
@@ -28,7 +28,7 @@
 
     {
         "id": 82189,
-        "cover": "realms_of_ruin.jpg",
+        "cover": "./game_covers/realms_of_ruin.jpg",
         "title": "Realms Of Ruin",
         "price": 59,
         "new_price": 36,
@@ -40,7 +40,7 @@
 
     {
         "id": 82787,
-        "cover": "hogwarts_legacy.jpg",
+        "cover": "./game_covers/hogwarts_legacy.jpg",
         "title": "Hogwarts Legacy",
         "price": 59,
         "new_price": 36,

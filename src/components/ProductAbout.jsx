@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import '../styles/css/productAbout.css';
 
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from "swiper/modules";
 
@@ -12,6 +11,10 @@ import { EffectFade } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+
+import faved_games from "../data/faved_games.json";
+import { shuffleArray } from '../utils/functions';
+import GamesBuySlider from '../utils/GamesBuySlider';
 
 const ProductAbout = ({ game }) => {
     const [shownMore, setShownMore] = useState(false);
@@ -248,6 +251,28 @@ const ProductAbout = ({ game }) => {
                     </div>
                 </div>
             </div>
+
+            <GamesBuySlider
+                id="similar_products_section"
+                title="Similar Products"
+                platform={ "" }
+                games={ shuffleArray(faved_games) }
+                delay={ 3000 }
+
+                custombreak={
+                    {
+                        0: {
+                            slidesPerView: 2,
+                            spaceBetween: 10
+                        },
+
+                        850: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        }
+                    }
+                }
+            />
         </section>
     );
 }

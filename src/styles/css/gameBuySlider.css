@@ -8,7 +8,7 @@
 }
 
 .games_buy_slider.gift_card .game_card {
-  aspect-ratio: 16/11.5 !important;
+  aspect-ratio: 3/4.4 !important;
 }
 
 .games_buy_slider.gift_card .game_card #discount_perc {
@@ -21,7 +21,7 @@
 
 .games_buy_slider.gift_card .game_card #cover {
   top: -90px;
-  aspect-ratio: 16/9 !important;
+  aspect-ratio: 3/4 !important;
 }
 
 .games_buy_slider.gift_card .swiper {
@@ -96,6 +96,7 @@
 }
 
 .games_buy_slider .nav_wrapper {
+  z-index: 995;
   top: calc(100px + (380px + 70px) / 2);
   width: calc(100% - 10vw + 48px);
 }
