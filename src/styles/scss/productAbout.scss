@@ -40,7 +40,7 @@
 
         .nav_wrapper {
             top: 20vw;
-            width: calc(100% + 48px);
+            width: calc(85% + 48px);
     
             z-index: -1 !important;
         }
@@ -205,6 +205,7 @@
         margin-top: 50px;
 
         #images_wrapper {
+            cursor: pointer;
             height: 500px;
             width: calc(100% - 60px);
             
@@ -212,17 +213,6 @@
             display: grid;
             grid-template-columns: repeat(4, calc(100% / 4));
             grid-template-rows: repeat(2, calc(100% / 2));
-
-            .swiper {
-                height: 100%;
-                
-                div {
-                    height: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-            }
 
             div {
                 border-radius: 10px;

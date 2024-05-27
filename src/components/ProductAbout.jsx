@@ -1,17 +1,6 @@
 import { useState } from 'react';
 import '../styles/css/productAbout.css';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from "swiper/modules";
-
-import 'swiper/css';
-
-import '../styles/css/slider.css';
-import { EffectFade } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-
 import faved_games from "../data/faved_games.json";
 import { shuffleArray } from '../utils/functions';
 import GamesBuySlider from '../utils/GamesBuySlider';
@@ -33,6 +22,20 @@ const ProductAbout = ({ game }) => {
         document.getElementById("more_less_wrapper").style.height = "200px";
 
         setShownMore(false)
+    }
+
+    const showVisualCarr = () => {
+        document.getElementById('drop_menu_wrapper').style.zIndex = '997';
+
+        document.getElementById('overlay_dropdown').style.display = "block";
+        document.getElementById('visual_carr_wrapper').style.display = "flex";
+        
+        setTimeout(() => {
+            document.getElementById('overlay_dropdown').style.opacity = "0.7";
+            document.getElementById('visual_carr_wrapper').classList.add('active');
+        }, 1);
+
+        document.querySelector('body').style.overflowY = 'hidden';
     }
 
     return (
@@ -86,32 +89,8 @@ const ProductAbout = ({ game }) => {
             <div className="section_wrapper" id="visuals">
                 <h1>Visuals</h1>
 
-                <div id="images_wrapper">
-                    <div className="visuals_card">
-                        <Swiper
-                            speed={500}
-                            loop={true}
-                            modules={[Autoplay, EffectFade]}
-                            effect={"fade"}
-                            spaceBetween={20}
-
-                            autoplay={{
-                                delay: 4000
-                            }}
-
-                            breakpoints= {{
-                                0: {
-                                    slidesPerView: 1
-                                }
-                            }}
-                        >
-                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/6.jpg')`}}></div></SwiperSlide>
-                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/7.jpg')`}}></div></SwiperSlide>
-                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/8.jpg')`}}></div></SwiperSlide>
-                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/9.jpg')`}}></div></SwiperSlide>
-                            <SwiperSlide><div style={{backgroundImage: `url('./visuals_example/10.jpg')`}}></div></SwiperSlide>
-                        </Swiper>
-                    </div>
+                <div id="images_wrapper" onClick={showVisualCarr}>
+                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/6.jpg')`}}></div>
                     <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/1.jpg')`}}></div>
                     <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/2.jpg')`}}></div>
                     <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/3.jpg')`}}></div>

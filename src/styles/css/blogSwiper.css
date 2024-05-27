@@ -1,6 +1,6 @@
 #benefits_section {
   margin-top: 100px;
-  padding: 0 5%;
+  padding: 0 15%;
 }
 
 #benefits_section > h1 {
@@ -126,7 +126,7 @@
 
 #benefits_section #blog_swiper_wrapper .nav_wrapper {
   top: 275px;
-  width: calc(100% + 48px);
+  width: calc(85% + 48px);
 }
 
 #benefits_section #blog_swiper_wrapper .nav_wrapper .arrow {
@@ -183,7 +183,7 @@
 @media only screen and (max-width: 1080px) {
   #benefits_section .nav_wrapper {
     top: 180px !important;
-    width: calc(100% + 20px) !important;
+    width: calc(85% + 20px) !important;
   }
   #benefits_section .nav_wrapper #prev-arrow {
     margin-left: -20px !important;
@@ -214,7 +214,7 @@
   }
   #benefits_section .nav_wrapper {
     top: 180px !important;
-    width: calc(100% + 00px) !important;
+    width: calc(85% + 00px) !important;
   }
   #benefits_section .nav_wrapper #prev-arrow {
     margin-left: 0px !important;

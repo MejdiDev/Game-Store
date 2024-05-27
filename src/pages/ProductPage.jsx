@@ -13,7 +13,9 @@ import ProductAbout from "../components/ProductAbout";
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import games from "../data/games.json";
+
 import GuideBody from "../components/GuideBody";
+import VisualsCarousel from "../components/VisualsCarousel";
 
 const checkOffset = () => {
     const socialFloat = document.querySelector('#product_details_section #buy_component');
@@ -67,6 +69,7 @@ const ProductPage = () => {
             <Nav />
 
             <GuideBody />
+            <VisualsCarousel />
 
             <DropdownMenu platform={platform} />
             

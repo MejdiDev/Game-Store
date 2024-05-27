@@ -41,6 +41,20 @@ body {
   background-position: -50%;
 }
 
+@media only screen and (max-width: 650px) {
+  #blog_list, #benefits_section, .games_buy_slider, #product_details_section {
+      padding: 0 !important;
+  }
+
+  .games_buy_slider {
+    padding: 10px !important;
+  }
+
+  #info_section, #games_list_body, #account_body, #cart_body {
+    padding: 15px !important;
+  }
+}
+
 @media (max-aspect-ratio: 1 / 1) {
   body {
     background-size: contain !important;

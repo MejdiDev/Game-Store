@@ -1,7 +1,7 @@
 @import "utils/variables";
 
 .games_buy_slider {
-    padding: 0 5%;
+    padding: 0 15%;
     position: relative;
 
     &.gift_card {
@@ -84,7 +84,7 @@
     .nav_wrapper {
         z-index: 995;
         top: calc(100px + (380px + 70px) / 2);
-        width: calc(100% - 10vw + 48px);
+        width: calc(85% - 10vw + 48px);
 
         .arrow {
             border: 2px $light_prim solid;
@@ -121,7 +121,7 @@
 
 @media only screen and (max-width: 980px) {
     .games_buy_slider .nav_wrapper {
-        width: calc(100% - 10vw + 38px);
+        width: calc(85% - 10vw + 38px);
 
         .arrow {
             width: 20px;

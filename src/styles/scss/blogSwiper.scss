@@ -2,7 +2,7 @@
 
 #benefits_section {
     margin-top: 100px;
-    padding: 0 5%;
+    padding: 0 15%;
 
     & > h1 {
         margin: 0;
@@ -102,7 +102,7 @@
 
         .nav_wrapper {
             top: 275px;
-            width: calc(100% + 48px);
+            width: calc(85% + 48px);
 
             .arrow {
                 border: 2px $light_prim solid;
@@ -167,7 +167,7 @@
 @media only screen and (max-width: 1080px) {
     #benefits_section .nav_wrapper {
         top: 180px !important;
-        width: calc(100% + 20px) !important;
+        width: calc(85% + 20px) !important;
 
         #prev-arrow {
             margin-left: -20px !important;
@@ -199,7 +199,7 @@
 
         .nav_wrapper {
             top: 180px !important;
-            width: calc(100% + 00px) !important;
+            width: calc(85% + 00px) !important;
     
             #prev-arrow {
                 margin-left: 0px !important;

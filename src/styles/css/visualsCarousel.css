@@ -1,0 +1,112 @@
+#visual_carr_wrapper {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: fixed;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+#visual_carr_wrapper.active {
+  opacity: 1;
+}
+
+#visual_carr_wrapper #visual_carr {
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow-y: scroll;
+  background: #1d1d29;
+  width: auto !important;
+  height: 80vh;
+  gap: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  color: #f9fafe;
+  padding: 30px 20px;
+  padding-top: 100px;
+  border-radius: 10px;
+}
+
+#visual_carr_wrapper #visual_carr #cross {
+  z-index: 999;
+  border-radius: 5px;
+  background: #40404c;
+  padding: 10px;
+  padding-bottom: 6px;
+  right: 20px;
+  top: 30px;
+  cursor: pointer;
+  width: 20px;
+  position: absolute;
+}
+
+#visual_carr_wrapper #visual_carr #cross img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+#visual_carr_wrapper #visual_carr #swiper_wrapper {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#visual_carr_wrapper #visual_carr #swiper_wrapper .swiper {
+  height: 100%;
+  width: 100%;
+}
+
+#visual_carr_wrapper #visual_carr #swiper_wrapper .swiper div {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#visual_carr_wrapper #visual_carr #swiper_wrapper .swiper .swiper-slide:not([class^="swiper-slide swiper-slide-active"]) div {
+  opacity: .4;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  margin: 0;
+}
+
+@media only screen and (max-width: 1370px) {
+  #visual_carr_wrapper #visual_carr {
+    width: calc(100% - 70px) !important;
+    height: auto !important;
+  }
+}

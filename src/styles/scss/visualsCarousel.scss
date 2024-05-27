@@ -1,0 +1,107 @@
+@import "utils/variables";
+
+#visual_carr_wrapper {
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 999;
+    position: fixed;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 300ms;
+    transition-timing-function: ease-in-out;
+
+    &.active {
+        opacity: 1;
+    }
+
+    #visual_carr {
+        aspect-ratio: 16/9;
+        position: relative;
+        overflow-y: scroll;
+        
+        background: $light_bg;
+        width: auto !important;
+        height: 80vh;
+
+        gap: 2px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        overflow: hidden;
+
+        color: $prim;
+        padding: 30px 20px;
+        padding-top: 100px;
+        border-radius: 10px;
+
+        #cross {
+            z-index: 999;
+            border-radius: 5px;
+            background: $light_prim;
+            padding: 10px;
+            padding-bottom: 6px;
+            right: 20px;
+            top: 30px;
+            cursor: pointer;
+            width: 20px;
+            position: absolute;
+
+            img {
+                width: 20px;
+                height: 20px;
+
+                margin: 0;
+                padding: 0;
+            }
+        }
+        
+
+        #swiper_wrapper {
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            .swiper {
+                height: 100%;
+                width: 100%;
+                
+                div {
+                    border-radius: 10px;
+                    height: 100%;
+                    width: 100%;
+
+                    opacity: 1;
+                    transition-duration: 500ms;
+                    transform: scale(1);
+
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                .swiper-slide:not([class^="swiper-slide swiper-slide-active"]) {
+                    div {
+                        opacity: .4;
+                        transform: scale(.8);
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1370px) {
+    #visual_carr_wrapper #visual_carr {
+        width: calc(100% - 70px) !important;
+        height: auto !important;
+    }
+}
