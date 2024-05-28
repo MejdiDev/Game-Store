@@ -21,19 +21,16 @@
     }
 
     #visual_carr {
-        aspect-ratio: 16/9;
         position: relative;
-        overflow-y: scroll;
+        overflow: hidden;
         
         background: $light_bg;
-        width: auto !important;
-        height: 80vh;
+        aspect-ratio: 16/7 !important;
+        width: 70%;
 
-        gap: 2px;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        overflow: hidden;
 
         color: $prim;
         padding: 30px 20px;
@@ -63,20 +60,23 @@
         
 
         #swiper_wrapper {
-            height: 100%;
-            width: 100%;
+            width: 200%;
 
             display: flex;
             justify-content: center;
+            align-items: center;
 
             .swiper {
-                height: 100%;
                 width: 100%;
+
+                .swiper-slide {
+                    height: auto !important;
+                }
                 
                 div {
                     border-radius: 10px;
-                    height: 100%;
                     width: 100%;
+                    aspect-ratio: 16/9;
 
                     opacity: 1;
                     transition-duration: 500ms;
@@ -90,7 +90,7 @@
                 .swiper-slide:not([class^="swiper-slide swiper-slide-active"]) {
                     div {
                         opacity: .4;
-                        transform: scale(.8);
+                        transform: scale(.86);
                         margin: 0;
                     }
                 }

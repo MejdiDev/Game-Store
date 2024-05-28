@@ -83,8 +83,8 @@
 
     .nav_wrapper {
         z-index: 995;
-        top: calc(100px + (380px + 70px) / 2);
-        width: calc(85% - 10vw + 48px);
+        top: calc(50%);
+        width: calc(70% + 48px);
 
         .arrow {
             border: 2px $light_prim solid;
@@ -121,8 +121,6 @@
 
 @media only screen and (max-width: 980px) {
     .games_buy_slider .nav_wrapper {
-        width: calc(85% - 10vw + 38px);
-
         .arrow {
             width: 20px;
         }

@@ -39,11 +39,11 @@ const VisualsCarousel = () => {
                         loop={true}
                         modules={[Autoplay]}
                         effect={"fade"}
-                        spaceBetween={60}
+                        spaceBetween={0}
                         grabCursor={true}
                         
                         centeredSlides={true}
-                        slidesPerView={1}
+                        slidesPerView={3}
 
                         autoplay={{
                             delay: 4000

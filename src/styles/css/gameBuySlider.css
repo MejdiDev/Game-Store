@@ -97,8 +97,8 @@
 
 .games_buy_slider .nav_wrapper {
   z-index: 995;
-  top: calc(100px + (380px + 70px) / 2);
-  width: calc(85% - 10vw + 48px);
+  top: calc(50%);
+  width: calc(70% + 48px);
 }
 
 .games_buy_slider .nav_wrapper .arrow {
@@ -133,9 +133,6 @@
 }
 
 @media only screen and (max-width: 980px) {
-  .games_buy_slider .nav_wrapper {
-    width: calc(85% - 10vw + 38px);
-  }
   .games_buy_slider .nav_wrapper .arrow {
     width: 20px;
   }

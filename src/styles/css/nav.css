@@ -18,9 +18,9 @@ nav {
 
 nav.fixed {
   top: 0;
-  width: calc(100vw - 195px);
-  position: fixed;
+  width: 90%;
   background: #1d1d29;
+  position: fixed;
   border-radius: 0 0 20px 20px;
 }
 
@@ -140,7 +140,6 @@ nav #inputs #menu {
   }
   nav.fixed {
     background: #1d1d29;
-    width: calc(100vw - 50px);
   }
   nav #inputs {
     gap: 10px;

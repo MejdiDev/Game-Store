@@ -42,11 +42,11 @@ body {
 }
 
 @media only screen and (max-width: 650px) {
-  #blog_list, #benefits_section, .games_buy_slider, #product_details_section {
+  #blog_list, .games_buy_slider, #product_details_section {
       padding: 0 !important;
   }
 
-  .games_buy_slider {
+  .games_buy_slider, #benefits_section {
     padding: 10px !important;
   }
 
@@ -133,7 +133,7 @@ input, button, select {
   flex-flow: row nowrap;
   justify-content: space-between;
   position: absolute;
-  z-index: 997;
+  z-index: 996;
 
   .arrow {
       width: 20px;

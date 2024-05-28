@@ -23,13 +23,11 @@
 }
 
 #visual_carr_wrapper #visual_carr {
-  aspect-ratio: 16/9;
   position: relative;
-  overflow-y: scroll;
+  overflow: hidden;
   background: #1d1d29;
-  width: auto !important;
-  height: 80vh;
-  gap: 2px;
+  aspect-ratio: 16/7 !important;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,7 +38,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
   color: #f9fafe;
   padding: 30px 20px;
   padding-top: 100px;
@@ -68,25 +65,30 @@
 }
 
 #visual_carr_wrapper #visual_carr #swiper_wrapper {
-  height: 100%;
-  width: 100%;
+  width: 200%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #visual_carr_wrapper #visual_carr #swiper_wrapper .swiper {
-  height: 100%;
   width: 100%;
+}
+
+#visual_carr_wrapper #visual_carr #swiper_wrapper .swiper .swiper-slide {
+  height: auto !important;
 }
 
 #visual_carr_wrapper #visual_carr #swiper_wrapper .swiper div {
   border-radius: 10px;
-  height: 100%;
   width: 100%;
+  aspect-ratio: 16/9;
   opacity: 1;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
@@ -99,8 +101,8 @@
 
 #visual_carr_wrapper #visual_carr #swiper_wrapper .swiper .swiper-slide:not([class^="swiper-slide swiper-slide-active"]) div {
   opacity: .4;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  -webkit-transform: scale(0.86);
+          transform: scale(0.86);
   margin: 0;
 }
 

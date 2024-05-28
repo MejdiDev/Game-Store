@@ -1,10 +1,27 @@
 @import "utils/variables";
 
+@media only screen and (max-width: 760px) {
+    #about_product {
+        width: 90% !important;
+        padding: 0 5% !important;
+
+        .section_wrapper {
+            width: 100% !important;
+
+            .content_wrapper {
+                width: calc(100% - 60px) !important;
+            }
+        }
+    }
+}
+
 #about_product {
-    width: calc(105% - 320px);
     margin-top: 50px;
     margin-bottom: 150px;
-    padding-left: 5%;
+
+    width: calc(80% - 40px);
+    padding-left: 15%;
+
     color: $prim;
 
     h1 {
@@ -326,6 +343,8 @@
 
 @media only screen and (max-width: 1320px) {
     #about_product {
+        width: 75%;
+
         .games_buy_slider {
             width: 95% !important;
             
