@@ -2,7 +2,7 @@
   margin-top: 150px;
   margin-bottom: 200px;
   padding: 0 15%;
-  color: #f9fafe;
+  color: #f3f3f3;
 }
 
 #account_body > h1 {
@@ -34,7 +34,7 @@
   padding: 15px;
   width: 300px;
   border-radius: 20px;
-  background: #0d0d17;
+  background: #00337C;
 }
 
 #account_body #row_wrapper #navigator #bg {
@@ -43,7 +43,7 @@
   height: 50px;
   width: calc(100% - 30px);
   position: absolute;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   z-index: 0;
   border-radius: 10px;
   -webkit-transition: top 150ms;
@@ -54,7 +54,7 @@
   padding: 0 15px;
   cursor: pointer;
   height: 50px;
-  color: #f9fafe;
+  color: #f3f3f3;
   gap: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,6 +76,10 @@
 
 #account_body #row_wrapper #navigator .tab_wrapper p {
   z-index: 1;
+}
+
+#account_body #row_wrapper #content_wrapper {
+  width: 70%;
 }
 
 #account_body #row_wrapper #content_wrapper h1 {
@@ -131,7 +135,7 @@
 
 #account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card {
   padding: 15px 25px;
-  border: 2px #40404c solid;
+  border: 2px #000d6d solid;
   border-radius: 12px;
   font-family: Manrope;
 }
@@ -171,14 +175,14 @@
 }
 
 #account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #top div p:first-of-type {
-  color: #40404c;
+  color: #000d6d;
   font-weight: 900;
 }
 
 #account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card {
   cursor: pointer;
   position: relative;
-  border-top: 1px #40404c solid;
+  border-top: 1px #000d6d solid;
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,7 +196,7 @@
           align-items: center;
   gap: 20px;
   height: 80px;
-  background: #1d1d29;
+  background: #a0c8fa;
 }
 
 #account_body #row_wrapper #content_wrapper #orders_tab #orders_wrapper .order_card #body .order_product_card:first-of-type {
@@ -237,8 +241,18 @@
   width: 100%;
 }
 
-#account_body #row_wrapper #content_wrapper #info_tab #body {
+#account_body #row_wrapper #content_wrapper #info_tab #avatar {
   margin-top: 20px;
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#account_body #row_wrapper #content_wrapper #info_tab #body {
+  margin-top: 30px;
 }
 
 #account_body #row_wrapper #content_wrapper #info_tab #body h1 {
@@ -270,11 +284,11 @@
   border: none;
   background: none;
   width: 100%;
-  border: 2px #40404c solid;
+  border: 2px #a0c8fa solid;
   border-radius: 4px;
   height: 30px;
   padding-left: 15px;
-  color: #f9fafe;
+  color: #f3f3f3;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -287,9 +301,12 @@
   }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1250px) {
   #account_body {
     margin-top: 50px;
+  }
+  #account_body #content_wrapper {
+    width: calc(100% - 30px) !important;
   }
   #account_body #row_wrapper {
     -webkit-box-align: center;
@@ -309,7 +326,29 @@
   }
 }
 
+@media only screen and (max-width: 650px) {
+  #account_body #content_wrapper {
+    width: 100% !important;
+  }
+}
+
 @media only screen and (max-width: 700px) {
+  #account_body #info_tab {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #account_body #info_tab #body {
+    width: 100%;
+  }
   #account_body #info_tab .input_grp {
     gap: 20px !important;
     -webkit-box-orient: vertical !important;

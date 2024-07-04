@@ -24,7 +24,7 @@
         position: relative;
         overflow-y: scroll;
         
-        background: $light_bg;
+        background: $light_prim;
         width: auto !important;
         height: 90vh;
 
@@ -38,7 +38,7 @@
 
         #cross {
             border-radius: 5px;
-            background: $light_prim;
+            background: $light_bg;
             padding: 10px;
             padding-bottom: 6px;
             right: 20px;
@@ -94,7 +94,7 @@
                         width: 12px;
                         height: 12px;
                         border-radius: 50%;
-                        border: 3px $light_bg solid;
+                        border: 3px $light_prim solid;
                     }
                 }
 

@@ -8,10 +8,12 @@ import GamesList from "../../components/GamesList";
 import { useEffect } from "react";
 
 
-const GameListPage = ({ platform, pageTitle, games }) => {
+const GameListPage = ({ platform, pageTitle, games, onGenreClick, selectedGenres, currentPage, onPageChange, totalPages, handleMinMaxPrice, isLoading,
+    minPrice, maxPrice
+}) => {
     useEffect(() => {
-        hideMobileNav()
-    }, [])
+        hideMobileNav();
+    }, [games])
 
     return (
         <main>
@@ -22,14 +24,22 @@ const GameListPage = ({ platform, pageTitle, games }) => {
 
             <Nav />
             <DropdownMenu platform={platform} />
+
             
             <GamesList
+                isLoading={isLoading}
                 platform={platform}
-                pageTitle={ pageTitle }
-                games={ games }
+                pageTitle={pageTitle}
+                games={games}
+                onGenreClick={onGenreClick}
+                selectedGenres={selectedGenres}
+                currentPage={currentPage}
+                onPageChange={onPageChange}
+                totalPages={totalPages}
+                handleMinMaxPrice={handleMinMaxPrice}
+                minPrice={minPrice}
+                maxPrice={maxPrice}
             />
-
-            {/* <div id="ending"></div> */}
 
             <Footer />
         </main>

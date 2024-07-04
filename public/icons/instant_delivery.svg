@@ -1,0 +1,26 @@
+<svg width="48px" height="20px" viewBox="0 0 48 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>instant-delivery</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.900000036">
+        <g id="001---home---v2" transform="translate(-1259.000000, -678.000000)">
+            <g id="Day-Offer" transform="translate(1141.000000, 238.000000)">
+                <g id="Product-/-Card-/-Large" transform="translate(23.000000, 86.000000)">
+                    <g id="content" transform="translate(23.000000, 281.000000)">
+                        <g id="Product-/-Card-Info-(Default)" transform="translate(0.000000, 73.000000)">
+                            <g id="instant-delivery" transform="translate(73.000000, 1.000000)">
+                                <text id="Instant-Delivery" font-family="Poppins-SemiBoldItalic, Poppins" font-size="7" font-style="italic" font-weight="500" line-spacing="7" fill="#f3f3f3" data-originalfillcolor="#8083A1">
+                                    <tspan x="14" y="9">  INSTANT</tspan>
+                                    <tspan x="14" y="16">DELIVERY</tspan>
+                                </text>
+                                <g id="Group">
+                                    <path d="M5.70925511,18 C7.41595377,18 9.0116966,17.5249416 10.3714649,16.6998436 C12.9718647,15.1219389 14.7092551,12.2638641 14.7092551,9 C14.7092551,5.87384569 13.1153807,3.11996069 10.6959404,1.5066536 C9.2684882,0.554814082 7.55366354,0 5.70925511,0 C3.98354926,0 2.37128439,0.485698562 1.00170282,1.32785336 C0.651183696,1.54338734 0.31656056,1.78226954 -2.22044605e-13,2.04233337" id="Oval" stroke="#f3f3f3" stroke-width="1.5" stroke-linecap="round" transform="translate(7.354628, 9.000000) scale(-1, 1) translate(-7.354628, -9.000000) " data-originalstrokecolor="#8083A1"></path>
+                                    <polygon id="Path-3" fill="#E30016" transform="translate(9.511228, 6.580387) rotate(23.000000) translate(-9.511228, -6.580387) " points="11.0224558 3.33227464 8 9.24855068 10.5115183 9.8284986" data-originalfillcolor="#E30016"></polygon>
+                                    <circle id="Oval" fill="#E30016" cx="8" cy="9.33227464" r="2" data-originalfillcolor="#E30016"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

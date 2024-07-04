@@ -1,0 +1,195 @@
+@import "utils/variables";
+
+#contact_us_section {
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+    color: $prim;
+    padding: 0 15%;
+
+    > h1 {
+        margin: 0;
+        margin-bottom: 50px;
+        font-size: 35px;
+        font-weight: 600;
+    }
+    
+    #content_wrapper {
+        gap: 100px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        form {
+            width: 70%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: start;
+
+            gap: 15px;
+
+            .c_input_wrapper {
+                display: flex;
+                gap: 10px;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% - 15px);
+                background: $light_prim;
+                padding: 5px;
+                border-radius: 10px;
+                padding-left: 10px;
+
+                img, svg {
+                    height: 25px;
+                    width: auto;
+                }
+
+                input {
+                    height: 30px;
+                    width: 100%;
+                    background: none;
+                    outline: none;
+                    border: none;
+
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: $prim;
+                }
+            }
+
+            textarea {
+                color: $prim;
+                width: calc(100% - 30px);
+                background: $light_prim;
+                outline: none;
+                border: none;
+                resize: none;
+
+                font-size: 18px;
+                font-weight: 500;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            > button {
+                cursor: pointer;
+                font-size: 22px;
+                padding: 5px 40px;
+                color: $prim;
+                background: $btn_gradient;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+            }
+
+            #fileUpload {
+                display: none;
+            }
+
+            label {
+                cursor: pointer;
+                width: calc(100% - 8px);
+                border: 4px $light_prim dashed;
+                border-radius: 10px;
+
+                filter: brightness(1);
+                transition: filter 100ms;
+
+                &:hover {
+                    filter: brightness(.8);
+                }
+
+                div {
+                    font-family: Manrope;
+                    padding: 30px 15px;
+                    border-radius: 5px;
+                    width: calc(100% - 30px);
+                    background: $dark_bg;
+
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+
+                    h3 {
+                        margin: 0;
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
+
+                    img {
+                        height: 80px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        #info {
+            h2 {
+                font-size: 30px;
+                font-weight: 500;
+                margin: 0;
+
+                &:not(h2:first-child) {
+                    margin-top: 50px;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-family: Manrope;
+                margin-top: 10px;
+                font-size: 18px;
+            }
+
+            div {
+                margin-top: 10px;
+                gap: 10px;
+                display: flex;
+                flex-flow: row nowrap;
+
+                a {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                img {
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    #contact_us_section {
+        padding: 0 5%;
+
+        #content_wrapper {
+            gap: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #contact_us_section {
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    #contact_us_section {
+        #content_wrapper {
+            flex-flow: column nowrap;
+
+            #info {
+                width: 100%;
+            }
+
+            form {
+                width: 100%;
+            }
+        }
+    }
+}

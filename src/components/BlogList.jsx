@@ -1,38 +1,37 @@
+import { Link } from "react-router-dom";
 import "../styles/css/blogList.css";
-
-import blog_data from "../data/blog_data.json";
 
 const GridBlogCard = ({ blog, className }) => {
     return (
-        <div className={`blog_card ${className}`}>
-            <div id="cover" style={{backgroundImage: `url('${blog.img}')`}}></div>
-            
-            <div id="text">
-                { className == "" && <p>Date</p> }
-                <h1>{ blog.title }</h1>
+        <Link to={ '/blog/' + blog.id }>
+            <div className={`blog_card ${className}`}>
+                <div id="cover" style={{backgroundImage: `url('${blog.img}')`}}></div>
+                
+                <div id="text">
+                    { className == "" && <p>{ blog.date }</p> }
+                    <h1>{ blog.title } </h1>
 
-                <p id="description">{ blog.description }</p>
-                { className == "main" &&
-                    <div id="date_wrapper">
-                        <p>Date</p>
-                    </div>
-                }
+                    <p id="description">{ blog.description }</p>
+                    { className == "main" &&
+                        <p id="date_wrapper">{ blog.date }</p>
+                    }
+                </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
-const BlogList = () => {
+const BlogList = ({ blogList }) => {
     return (
         <section id="blog_list">
             <h1>Blog</h1>
 
-            <GridBlogCard className="main" blog={blog_data[0]} />
+            <GridBlogCard className="main" blog={blogList[0]} />
 
             <div id="blog_grid">
                 {
-                    blog_data.map((blog, idx) =>
-                        <GridBlogCard key={`grid-blog-card-${idx}`} className="" blog={blog} />
+                    blogList.map((blog, idx) =>
+                        (idx != 0) && <GridBlogCard key={`grid-blog-card-${idx}`} className="" blog={blog} />
                     )
                 }
             </div>

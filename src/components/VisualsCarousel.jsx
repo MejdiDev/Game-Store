@@ -29,7 +29,7 @@ const VisualsCarousel = () => {
         <section id="visual_carr_wrapper">
             <div id="visual_carr">
                 <div onClick={hideGuideWindow} id="cross">
-                    <img src="./icons/cross.png" alt="Close" />
+                    <img src="./icons/cross.svg" alt="Close" />
                 </div>
                 
                 <div id="swiper_wrapper">

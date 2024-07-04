@@ -25,7 +25,7 @@
 #visual_carr_wrapper #visual_carr {
   position: relative;
   overflow: hidden;
-  background: #1d1d29;
+  background: #a0c8fa;
   aspect-ratio: 16/7 !important;
   width: 70%;
   display: -webkit-box;
@@ -38,7 +38,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #f9fafe;
+  color: #f3f3f3;
   padding: 30px 20px;
   padding-top: 100px;
   border-radius: 10px;
@@ -47,7 +47,7 @@
 #visual_carr_wrapper #visual_carr #cross {
   z-index: 999;
   border-radius: 5px;
-  background: #40404c;
+  background: #000d6d;
   padding: 10px;
   padding-bottom: 6px;
   right: 20px;

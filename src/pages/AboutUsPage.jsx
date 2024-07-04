@@ -32,8 +32,6 @@ const AboutUsPage = () => {
             
             <BlogSwiper data={ shuffleArray(blog_data) } />
 
-            {/* <div id="ending"></div> */}
-
             <Footer />
         </main>
     );

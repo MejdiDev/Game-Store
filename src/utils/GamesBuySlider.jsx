@@ -8,13 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import '../styles/css/gameBuySlider.css';
 
-window.addEventListener("resize", (event) => {
-    document.querySelectorAll(".games_buy_slider #placeholder").forEach(el => {
-        el.style.height = document.querySelector(".game_card #cover").style.height
-    })
-})
 
 const GamesBuySlider = ({ title, id, className, games, platform, delay, custombreak }) => {
+
     const sliderRef = useRef(null);
     const navigate = useNavigate();
 
@@ -30,22 +26,24 @@ const GamesBuySlider = ({ title, id, className, games, platform, delay, custombr
 
     const handleRedirect = (e, platform, id) => {
         let trgt = e.target
-        while(trgt.tagName != "DIV") {
+        while (trgt.tagName != "DIV") {
             trgt = trgt.parentNode
         }
 
+
         if(trgt.getAttribute("favable") !== "true")
             (className == "gift_card") ? alert(id) : navigate(`/product/${platform}/${id}`)
+
     }
 
     return (
         <section id={id} className={`games_buy_slider ${className ? className : ""}`}>
             <div id="top">
-                <h1>{ title }</h1>
+                <h1>{title}</h1>
 
                 <button className="more_btn">
                     <p>See more</p>
-                    <img src="./icons/see_more_arrow.png" alt="Arrow" />
+                    <img src="./icons/see_more_arrow.svg" alt="Arrow" />
                 </button>
             </div>
 
@@ -56,50 +54,56 @@ const GamesBuySlider = ({ title, id, className, games, platform, delay, custombr
                     speed={500}
                     loop={true}
                     grabCursor={true}
-                    modules={[Autoplay]}
+                    modules={[]}
 
                     autoplay={{ delay }}
 
+
                     breakpoints= {
                         custombreak ? custombreak :
-                        
+                      
                         {
                             0: {
                                 slidesPerView: 2,
                                 spaceBetween: 10
                             },
     
-                            820: {
+
+                            960: {
                                 slidesPerView: 3,
                                 spaceBetween: 30
                             },
+
     
-                            1100: {
+                            1220: {
                                 slidesPerView: 4,
                                 spaceBetween: 30
                             },
     
-                            1390: {
+                            1590: {
                                 slidesPerView: 5,
                                 spaceBetween: 30
                             }
                         }
+
                     }
 
                     onSlideChangeTransitionStart={(slide) => {
                         document.querySelectorAll("#" + id + " .pags_wrapper div").forEach(el => {
-                            if(el.id.replace(id + '-pag-','') === String(slide.realIndex)) el.classList.add("active")
+                            if (el.id.replace(id + '-pag-', '') === String(slide.realIndex)) el.classList.add("active")
                             else el.classList.remove("active")
-                    })
+                        })
                     }}
                 >
                     {
                         games.map((game, index) =>
+
                             <SwiperSlide
                                 key={`game-buy-slider-child-${index}`}
-                                onClick={e => handleRedirect(e, platform, game.id)}
+
                             >
-                                <GameCard game={ game } />
+                                <GameCard game={game} />
+
                             </SwiperSlide>
                         )
                     }
@@ -122,7 +126,7 @@ const GamesBuySlider = ({ title, id, className, games, platform, delay, custombr
 
             <button className="more_btn mobl">
                 <p>See more</p>
-                <img src="./icons/see_more_arrow.png" alt="Arrow" />
+                <img src="./icons/see_more_arrow.svg" alt="Arrow" />
             </button>
         </section>
     );

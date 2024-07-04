@@ -10,7 +10,9 @@
         }
 
         .game_card {
+
             aspect-ratio: 3/4.4 !important;
+
 
             #discount_perc {
                 top: -90px;
@@ -22,7 +24,9 @@
 
             #cover {
                 top: -90px;
+
                 aspect-ratio: 3/4 !important;
+
             }
         }
 
@@ -40,14 +44,14 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        font-weight: 900;
+        font-weight: 600;
 
-        border: 2px $light_prim solid;
+        border: 2px $light_bg solid;
         border-radius: 12px;
         font-family: Manrope;
         margin: 0;
         padding: 15px 12px;
-        color: $light_prim;
+        color: $light_bg;
         background: none;
 
         &.mobl {
@@ -87,7 +91,6 @@
         width: calc(70% + 48px);
 
         .arrow {
-            border: 2px $light_prim solid;
             width: 28px;
         }
 

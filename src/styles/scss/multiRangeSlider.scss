@@ -1,6 +1,7 @@
 @import "utils/variables";
 
 .container {
+  overflow: hidden;
     margin-top: 10px;
     height: 30px;
     display: flex;

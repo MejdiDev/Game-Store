@@ -4,6 +4,11 @@
   padding: 0 15%;
 }
 
+#cart_body.msg {
+  padding-top: 200px;
+  height: calc(100vh - 450px) !important;
+}
+
 #cart_body .mobl {
   display: none;
 }
@@ -14,7 +19,7 @@
   outline: none;
   border: none;
   color: #fff;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   font-family: Manrope;
   font-size: 18px;
   padding: 15px 0;
@@ -46,7 +51,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 3px #25252f solid;
+  border: 3px #a0c8fa solid;
   border-radius: 30px;
   padding: 2px;
   height: 35px;
@@ -57,7 +62,76 @@
   height: 100%;
   font-size: 17px;
   background: transparent;
-  color: #f9fafe;
+  color: #f3f3f3;
+  width: 100%;
+  border-radius: 25px 0 0 25px;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+}
+
+#cart_body #promo_input_wrapper button {
+  width: auto;
+  padding: 0 20px;
+  height: 100%;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+#cart_body .mobl {
+  display: none;
+}
+
+#cart_body button.grad_btn {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
+  font-family: Manrope;
+  font-size: 18px;
+  padding: 15px 0;
+  border-radius: 10px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#cart_body #promo_input_wrapper {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px #a0c8fa solid;
+  border-radius: 30px;
+  padding: 2px;
+  height: 35px;
+  width: 100%;
+}
+
+#cart_body #promo_input_wrapper input {
+  height: 100%;
+  font-size: 17px;
+  background: transparent;
+  color: #f3f3f3;
   width: 100%;
   border-radius: 25px 0 0 25px;
   border: none;
@@ -76,20 +150,16 @@
 #cart_body #payement_method_wrapper {
   margin: 20px 0;
   width: calc(100% - 10px);
-  height: 100px;
-  display: -ms-grid;
-  display: grid;
-  gap: 10px;
-  -ms-grid-columns: (calc((100% / 3) - (10px / 3)))[3];
-      grid-template-columns: repeat(3, calc((100% / 3) - (10px / 3)));
-  -ms-grid-rows: (calc((100% / 2) - (10px / 2)))[2];
-      grid-template-rows: repeat(2, calc((100% / 2) - (10px / 2)));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-#cart_body #payement_method_wrapper div {
-  cursor: pointer;
-  background: #40404c;
-  border-radius: 10px;
+#cart_body #payement_method_wrapper img {
+  height: 60px;
 }
 
 #cart_body #row_wrapper {
@@ -114,12 +184,12 @@
 }
 
 #cart_body #row_wrapper #checkout_component {
-  color: #f9fafe;
+  color: #f3f3f3;
   width: 360px;
   padding: 20px;
   border-radius: 20px;
-  background: #151521;
-  border: 3px #272530 solid;
+  background: #153E90;
+  border: 2px #a0c8fa solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,12 +217,12 @@
   margin: 0;
   font-weight: 600;
   font-family: Manrope;
-  color: #40404c;
+  color: #000d6d;
   font-size: 17px;
 }
 
 #cart_body #row_wrapper #checkout_component #cart_total h3 {
-  color: #f9fafe;
+  color: #f3f3f3;
   font-size: 20px;
   font-weight: 500;
 }
@@ -167,13 +237,14 @@
 #cart_body #row_wrapper #checkout_component .seperation span {
   width: 100%;
   height: 2px;
+  background: #a0c8fa;
 }
 
 #cart_body #row_wrapper #games_list {
-  color: #f9fafe;
+  color: #f3f3f3;
   padding: 20px;
   border-radius: 20px;
-  border: 3px #272530 solid;
+  border: 2px #a0c8fa solid;
   width: calc(100% - 470px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,22 +270,34 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  background: #1d1d29;
+  background: #000d6d;
+  color: #f3f3f3;
 }
 
 #cart_body #row_wrapper #games_list .cart_game #cross {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   position: absolute;
   right: 15px;
   top: 15px;
-  background: none;
+  height: 26px;
+  border-radius: 3px;
+  background: #a0c8fa;
   border: none;
   outline: none;
 }
 
 #cart_body #row_wrapper #games_list .cart_game #cross img {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
 }
 
 #cart_body #row_wrapper #games_list .cart_game #cover {
@@ -250,7 +333,11 @@
   margin: 0;
   width: 100%;
   font-size: 18px;
-  height: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #cart_body #row_wrapper #games_list .cart_game #top .game_price_wrapper {
@@ -292,18 +379,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 22px;
 }
 
 #cart_body #row_wrapper #games_list .cart_game #bottom #qte_control_wrapper button {
   cursor: pointer;
-  color: #f9fafe;
+  color: #f3f3f3;
   background: none;
+  font-size: 22px;
+  line-height: 10px;
   border: none;
   outline: none;
-  border: 3px #272530 solid;
+  border: 2px #a0c8fa solid;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 #cart_body #row_wrapper #games_list .cart_game #bottom #total_price_wrapper {
@@ -319,6 +409,13 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 1250px) {
+  #cart_body.msg {
+    font-size: 25px !important;
+    padding-top: 80px !important;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -356,7 +453,7 @@
     height: auto;
     position: fixed;
     border-radius: 15px 15px 0 0;
-    background: #1d1d29;
+    background: #000d6d;
     bottom: 0;
     left: 0;
   }

@@ -65,6 +65,8 @@
         }
 
         #content_wrapper {
+            width: 70%;
+
             h1 {
                 font-weight: 500;
                 margin-bottom: 10px !important;
@@ -208,8 +210,19 @@
             }
 
             #info_tab {
-                #body {
+                #avatar {
                     margin-top: 20px;
+                    width: 100px;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 50%;
+
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                #body {
+                    margin-top: 30px;
 
                     h1 {
                         margin-top: 40px;
@@ -233,7 +246,7 @@
                                 border: none;
                                 background: none;
                                 width: 100%;
-                                border: 2px $light_prim solid;
+                                border: 2px $light_bg solid;
                                 border-radius: 4px;
                                 height: 30px;
                                 padding-left: 15px;
@@ -257,9 +270,13 @@
     }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1250px) {
     #account_body {
         margin-top: 50px;
+
+        #content_wrapper {
+            width: calc(100% - 30px) !important;
+        }
 
         #row_wrapper {
             align-items: center;
@@ -278,9 +295,24 @@
     }
 }
 
+@media only screen and (max-width: 650px) {
+    #account_body #content_wrapper {
+        width: 100% !important;
+    }
+}
+
 @media only screen and (max-width: 700px) {
     #account_body {
         #info_tab {
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+
+            #body {
+                width: 100%;
+            }
+
             .input_grp {
                 gap: 20px !important;
                 flex-flow: column nowrap !important;

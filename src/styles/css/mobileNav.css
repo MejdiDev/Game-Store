@@ -4,7 +4,7 @@
   height: 100%;
   z-index: 998;
   position: fixed;
-  background: #0d0d17;
+  background: #000;
   opacity: 0;
   display: none;
   -webkit-transition: opacity 400ms;
@@ -24,8 +24,8 @@
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: #1d1d29;
-  z-index: 999;
+  background: #000d6d;
+  z-index: 99999;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -63,12 +63,12 @@
   background: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 2px #40404c solid;
+  border: 2px #a0c8fa solid;
 }
 
 #mobileNavbar #top #cross {
   border-radius: 5px;
-  background: #40404c;
+  background: #a0c8fa;
   padding: 10px;
   padding-bottom: 6px;
   right: 20px;
@@ -86,9 +86,10 @@
 
 #mobileNavbar ul {
   margin-left: 20%;
+  list-style: none;
 }
 
-#mobileNavbar ul li {
+#mobileNavbar ul li:not(li:has(a)), #mobileNavbar ul li:has(a) a {
   gap: 10px;
   width: 95%;
   display: -webkit-box;
@@ -101,28 +102,30 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #f9fafe;
+  color: #f3f3f3;
+  margin: 0;
 }
 
-#mobileNavbar ul li.seperation {
+#mobileNavbar ul li:not(li:has(a)).seperation, #mobileNavbar ul li:has(a) a.seperation {
   height: 2px;
   margin: 20px 0;
 }
 
-#mobileNavbar ul li.seperation span {
+#mobileNavbar ul li:not(li:has(a)).seperation span, #mobileNavbar ul li:has(a) a.seperation span {
   width: 100%;
+  background: #a0c8fa;
 }
 
-#mobileNavbar ul li img {
+#mobileNavbar ul li:not(li:has(a)) img, #mobileNavbar ul li:has(a) a img {
   height: 20px;
 }
 
-#mobileNavbar ul li img:last-of-type {
+#mobileNavbar ul li:not(li:has(a)) img:last-of-type, #mobileNavbar ul li:has(a) a img:last-of-type {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-#mobileNavbar ul li p {
+#mobileNavbar ul li:not(li:has(a)) p, #mobileNavbar ul li:has(a) a p {
   width: 100%;
   margin: 0;
 }
@@ -137,7 +140,7 @@
   font-family: Manrope;
   margin: 0;
   font-weight: 700;
-  color: #40404c;
+  color: #a0c8fa;
   font-size: 16px;
   margin-bottom: 15px;
 }
@@ -146,7 +149,7 @@
   right: 100vw;
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1250px) {
   body.hidden {
     overflow-y: hidden !important;
   }

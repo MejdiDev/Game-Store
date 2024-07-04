@@ -1,11 +1,11 @@
 #games_list_body {
   margin-top: 150px;
   margin-bottom: 150px;
-  padding: 0 15%;
+  padding: 0 10%;
 }
 
 #games_list_body > h1 {
-  color: #f9fafe;
+  color: #f3f3f3;
   font-size: 30px;
   font-weight: 500;
 }
@@ -26,8 +26,8 @@
 
 #games_list_body #game_list_body_wrapper .filter_wrapper {
   position: relative;
-  width: 430px;
-  background: #0d0d17;
+  width: 300px;
+  background: #00337C;
   border-radius: 20px;
 }
 
@@ -56,8 +56,8 @@
   border-radius: 5px;
   padding: 5px 0;
   font-size: 16px;
-  color: #f9fafe;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  color: #f3f3f3;
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   margin-top: 20px;
   outline: none;
   border: none;
@@ -79,11 +79,11 @@
   border: none;
   background: none;
   width: 100%;
-  border: 2px #40404c solid;
+  border: 2px #a0c8fa solid;
   border-radius: 5px;
   height: 30px;
   padding-left: 15px;
-  color: #f9fafe;
+  color: #f3f3f3;
 }
 
 #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper#price_cri #price_inputs_wrapper input::-webkit-outer-spin-button, #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper#price_cri #price_inputs_wrapper input::-webkit-inner-spin-button {
@@ -93,7 +93,7 @@
 
 #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper h1 {
   margin: 0;
-  color: #f9fafe;
+  color: #f3f3f3;
   font-size: 18px;
   font-weight: 500;
 }
@@ -127,7 +127,7 @@
   width: 25px;
   aspect-ratio: 1 / 1;
   border-radius: 5px;
-  background: #1d1d29;
+  background: #a0c8fa;
 }
 
 #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper .checks_wrapper span #checkbox img {
@@ -136,7 +136,7 @@
 }
 
 #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper .checks_wrapper span #checkbox.active {
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
 }
 
 #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper .checks_wrapper span #checkbox.active img {
@@ -145,14 +145,24 @@
 
 #games_list_body #game_list_body_wrapper .filter_wrapper .cri_wrapper .checks_wrapper span p {
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   font-family: Manrope;
-  color: #40404c;
+  color: #f3f3f3;
+}
+
+#games_list_body #game_list_body_wrapper:not(#game_list_body_wrapper:has(.filter_wrapper)) #loader_wrapper {
+  width: 100% !important;
+}
+
+#games_list_body #game_list_body_wrapper #loader_wrapper {
+  overflow: hidden;
+  width: calc(100% - 400px);
+  min-height: 100vh;
 }
 
 #games_list_body #game_list_body_wrapper #content {
-  width: 100%;
+  width: calc(80% - 50px);
   margin-top: 50px;
 }
 
@@ -164,7 +174,7 @@
   display: none;
   margin-bottom: 100px;
   cursor: pointer;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   border: none;
   outline: none;
   border-radius: 8px;
@@ -181,7 +191,7 @@
 
 #games_list_body #game_list_body_wrapper #content #filter_btn p {
   margin: 0;
-  color: #f9fafe;
+  color: #f3f3f3;
   font-size: 18px;
   font-weight: 600;
 }
@@ -204,18 +214,6 @@
       grid-template-columns: repeat(4, calc((100% / 4) - (40px / 4)));
 }
 
-#games_list_body #game_list_body_wrapper #content #res_wrapper .msg {
-  font-size: 30px;
-  font-weight: 600;
-  color: #f9fafe;
-  margin: 0;
-  text-align: center;
-  opacity: 0;
-  margin-top: 50px;
-  -webkit-animation: fadeIn 300ms ease 200ms forwards;
-          animation: fadeIn 300ms ease 200ms forwards;
-}
-
 #games_list_body #game_list_body_wrapper #content #res_wrapper .game_card {
   will-change: margin-top, opacity;
   opacity: 0;
@@ -231,10 +229,22 @@
   }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1260px) {
+  #games_list_body {
+    padding: 0 5%;
+  }
+  #games_list_body #content {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
   #games_list_body {
     margin-top: 50px;
     padding: 0 20px;
+  }
+  #games_list_body #content {
+    width: 70% !important;
   }
 }
 
@@ -259,6 +269,7 @@
   }
   #games_list_body #content {
     margin-top: 0;
+    width: 100% !important;
   }
   #games_list_body #content #filter_btn {
     display: -webkit-box !important;

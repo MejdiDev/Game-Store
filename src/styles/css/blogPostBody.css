@@ -1,0 +1,121 @@
+@-webkit-keyframes fadeInBlogPost {
+  0% {
+    margin-top: 200px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 150px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBlogPost {
+  0% {
+    margin-top: 200px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 150px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInBlogPostMobile {
+  0% {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 50px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBlogPostMobile {
+  0% {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 50px;
+    opacity: 1;
+  }
+}
+
+#blog_post {
+  -webkit-animation: fadeInBlogPost 300ms forwards;
+          animation: fadeInBlogPost 300ms forwards;
+  margin-top: 200px;
+  opacity: 0;
+  margin-bottom: 100px;
+  padding: 0 15%;
+  color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#blog_post #top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#blog_post #top h1 {
+  font-size: 30px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+#blog_post #top img {
+  width: 75%;
+  margin: 30px 0;
+}
+
+#blog_post #content {
+  width: 75%;
+  margin: 0;
+  font-family: Manrope;
+}
+
+#blog_post #content img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1250px) {
+  #blog_post {
+    padding: 0 10%;
+    margin-top: 100px;
+    -webkit-animation: fadeInBlogPostMobile 400ms forwards;
+            animation: fadeInBlogPostMobile 400ms forwards;
+  }
+  #blog_post #top img {
+    width: 100%;
+  }
+  #blog_post #content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #blog_post #top img {
+    width: 100%;
+  }
+}

@@ -5,7 +5,7 @@
     margin-top: 100px;
 
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: bottom;
 
     display: flex;
@@ -54,6 +54,14 @@
             color: $prim;
             width: 400px;
 
+            #captcha_wrapper {
+                margin-top: 30px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
             #qa_wrapper {
                 margin-top: 30px;
                 width: 100%;
@@ -73,7 +81,7 @@
 
                     padding: 5px;
                     padding-right: 10px;
-                    border: 2px $light_prim solid;
+                    border: 2px $light_bg solid;
                     border-radius: 10px;
 
                     p {
@@ -105,7 +113,7 @@
 
             p {
                 margin: 0;
-                color: grey;
+                color: $light_bg;
                 margin-bottom: 30px;
             }
 
@@ -183,7 +191,7 @@
     }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1250px) {
     #login_body {
         margin-top: 0;
     }

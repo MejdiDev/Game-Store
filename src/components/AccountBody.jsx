@@ -1,13 +1,27 @@
 import { useEffect, useState } from "react";
 import "../styles/css/accountBody.css";
 
-import faved_games from "../data/faved_games.json";
-import orders from "../data/orders.json";
+import { useLocation, useNavigate } from "react-router-dom";
+import { myOrders } from "../data/api";
+import { getWishlist } from "../data/handle_wishList";
 
 import GameCard from "../utils/GameCard";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { myWishList, myProfile } from "../data/api";
+import { checkIsLoggedIn, getToken } from "../utils/cookie";
+const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear() % 100;
+    const formattedDay = day < 10 ? `0${day}` : day;
+    const formattedMonth = month < 10 ? `0${month}` : month;
 
+
+    return `${formattedDay}/${formattedMonth}/${year}`;
+};
 const OrderCard = ({ order, order_idx }) => {
+
     const navigate = useNavigate()
 
     return (
@@ -15,37 +29,39 @@ const OrderCard = ({ order, order_idx }) => {
             <div id="top">
                 <div>
                     <p>Date</p>
-                    <p>{ order.date }</p>
+                    <p>{formatDate(order.createdAt)}</p>
                 </div>
 
                 <div>
                     <p>Order Num</p>
-                    <p>{ order.num }</p>
+                    <p>{order._id}</p>
                 </div>
 
                 <div>
                     <p>Status</p>
-                    <p>{ order.status }</p>
+                    <p>Completed</p>
                 </div>
 
                 <div>
                     <p>Total Cost</p>
-                    <p>{ order.cost }</p>
+                    <p>{order.total}</p>
                 </div>
             </div>
 
             <div id="body">
                 {
-                    order.products.map((product, idx) =>
-                        <div key={`order-${order_idx}-product-${idx}`} onClick={() => navigate(`/product/PC/${product.id}`)} className="order_product_card">
-                            <div id="cover" style={{backgroundImage: `url('${product.cover}')`}}></div>
-                            <p>{product.title}</p>
 
-                            <p>{product.num}</p>
+                    order.products.map((product, i) =>
+                        <div onClick={() => navigate(`/product/PC/${product.id}`)} className="order_product_card">
+                            <div key={i} id="cover" style={{ backgroundImage: `url("${process.env.REACT_APP_BACKEND_URL}/${product.product.mainImage.replace('\\', '/')}` }}></div>
+                            <p>{product.product.productName}</p>
 
-                            <div className="game_price_wrapper">
-                                {product.is_discounted && <h3 id="discount_price">€ { product.new_price }</h3>}
-                                <h3 id="original_price">€ { product.price }</h3>
+
+                            <p>{product.qte}</p>
+
+                            <div key={i} className="game_price_wrapper">
+                                {product.product.is_discounted && <h3 id="discount_price">€ {product.product.new_price}</h3>}
+                                <h3 id="original_price">€ {product.product.price}</h3>
                             </div>
                         </div>
                     )
@@ -56,26 +72,40 @@ const OrderCard = ({ order, order_idx }) => {
 }
 
 const InfoTab = () => {
+    const [profile, setProfile] = useState({});
+    const getMyProfile = async () => {
+        const data = await myProfile();
+        console.log(data);
+        setProfile(data);
+
+    }
+
+    useEffect(() => {
+        getMyProfile();
+        console.log(checkIsLoggedIn());
+    }, []);
     return (
         <div className="tab_wrapper" id="info_tab">
             <h1>Personal Information</h1>
             <div className="seperation"><span></span></div>
 
+            <div id="avatar" style={{ backgroundImage: `url('./avatar.jpg')` }}></div>
+
             <div id="body">
                 <div className="input_grp">
                     <div>
                         <label>Username</label>
-                        <input type="text" />
+                        <input type="text" value={profile?.username} />
                     </div>
 
                     <div>
-                        <label>Full Name</label>
-                        <input type="text" />
+                        <label>Last Name</label>
+                        <input type="text" value={profile?.lastname} />
                     </div>
 
                     <div>
                         <label>E-mail</label>
-                        <input type="email" />
+                        <input type="email" value={profile?.email} />
                     </div>
                 </div>
 
@@ -103,71 +133,85 @@ const InfoTab = () => {
 }
 
 const OrdersTab = () => {
+    const [orders, setOrders] = useState(null);
+    const getMyOrders = async () => {
+        const data = await myOrders();
+        setOrders(data)
+    }
+    useEffect(() => {
+        getMyOrders();
+    }, []);
     return (
         <div className="tab_wrapper" id="orders_tab">
             <h1>Orders</h1>
             <div className="seperation"><span></span></div>
 
             <div id="orders_wrapper">
-                {
-                    orders.map((order, idx) =>
-                        <OrderCard order_idx={idx} order={order} />   
-                    )
-                }
+
+                {orders && orders.length > 0 ? (
+                    orders.map(order => <OrderCard key={order.id} order={order} />)
+                ) : (
+                    <p>no orders yet</p>
+                )}
+
             </div>
         </div>
     );
 }
 
 const FavsTab = () => {
+    const [wishlist, setWishList] = useState(getWishlist());
+
+    useEffect(() => {
+        wishlist.forEach(el => console.log(el))
+    }, [])
+
     return (
         <div className="tab_wrapper" id="favs_tab">
             <h1>Wish List</h1>
             <div className="seperation"><span></span></div>
 
             <div id="game_grid">
-                {
-                    faved_games.map((game, idx) =>
-                        <Link
-                            key={Math.random()}
-                            to={`/product/PC/${game.id}`}
-                        >
-                            <GameCard
-                                game={game}
-                                idx={idx}
-                            />
-                        </Link>
-                    )
-                }
+                {wishlist && wishlist.length > 0 ? (
+                    wishlist.map((game, idx) => (
+
+                        <GameCard isWishList={ true } game={game} idx={`gameCard-${idx}`} key={idx} plateform={game.platform} />
+                    ))
+                ) : (
+                    <p>No WishList items</p>
+                )}
             </div>
+
         </div>
     );
 }
 
 const AccountBody = ({ param_tab }) => {
     const navigate = useNavigate();
+    const location = useLocation();
+
     const [tab, setTab] = useState(param_tab);
 
     const handleTabChange = p_tab => {
         setTab(p_tab)
-        navigate('/account/' + p_tab)
+        if (!(location.pathname.includes('/account/' + p_tab))) navigate('/account/' + p_tab)
 
         let x = 0;
-        switch(p_tab) {
+        switch (p_tab) {
             case "orders":
                 x = 1
-            break;
+                break;
 
             case "favs":
                 x = 2
-            break;
+                break;
         }
 
         document.querySelector("#navigator #bg").style.top = String(15 + x * 50) + "px"
     }
 
     const dispTab = () => {
-        switch(tab) {
+        switch (tab) {
             case "info":
                 return <InfoTab />
 
@@ -181,7 +225,17 @@ const AccountBody = ({ param_tab }) => {
 
     useEffect(() => {
         handleTabChange(param_tab)
-    }, [ param_tab ])
+    }, [param_tab])
+
+    const deleteTokenCookie = () => {
+        document.querySelector("#navigator #bg").style.top = "165px"
+        // Set the expiry date of the cookie to the past
+        document.cookie = 'tk=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        navigate('/home');
+        window.location.reload();
+
+    }
+
 
     return (
         <section id="account_body">
@@ -206,16 +260,14 @@ const AccountBody = ({ param_tab }) => {
                         <p>Wishlist</p>
                     </div>
 
-                    <div onClick={
-                        () => document.querySelector("#navigator #bg").style.top = "165px"
-                    } className="tab_wrapper">
+                    <div onClick={deleteTokenCookie} className="tab_wrapper">
                         <img src="./icons/logout.png" alt="Logout" />
                         <p>Logout</p>
                     </div>
                 </div>
 
                 <div id="content_wrapper">
-                    { dispTab() }
+                    {dispTab()}
                 </div>
             </div>
         </section>

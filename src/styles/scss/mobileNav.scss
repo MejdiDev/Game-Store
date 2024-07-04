@@ -6,7 +6,7 @@
 	height: 100%;
 	z-index: 998;
 	position: fixed;
-	background: $dark_bg;
+	background: #000;
 	opacity: 0;
 	display: none;
 	transition: opacity 400ms;
@@ -25,8 +25,8 @@
 	height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-	background: $light_bg;
-	z-index: 999;
+	background: $light_prim;
+	z-index: 99999;
 	display: none;
 	flex-flow: column nowrap;
 	padding: 0;
@@ -51,12 +51,12 @@
 
             background: none;
             box-shadow: none;
-            border: 2px $light_prim solid;
+            border: 2px $light_bg solid;
         }
     
         #cross {
             border-radius: 5px;
-            background: $light_prim;
+            background: $light_bg;
             padding: 10px;
             padding-bottom: 6px;
             right: 20px;
@@ -76,8 +76,9 @@
 
     ul {
         margin-left: 20%;
+        list-style: none;
 
-        li {
+        li:not(li:has(a)), li:has(a) a {
             gap: 10px;
             width: 95%;
             display: flex;
@@ -85,12 +86,15 @@
             align-items: center;
             color: $prim;
 
+            margin: 0;
+
             &.seperation {
                 height: 2px;
                 margin: 20px 0;
 
                 span {
                     width: 100%;
+                    background: $light_bg;
                 }
             }
 
@@ -118,7 +122,7 @@
             font-family: Manrope;
             margin: 0;
             font-weight: 700;
-            color: $light_prim;
+            color: $light_bg;
             font-size: 16px;
             margin-bottom: 15px;
         }
@@ -129,7 +133,7 @@
 	right: 100vw;
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1250px) {
 	body.hidden {
 		overflow-y: hidden !important;
 	}

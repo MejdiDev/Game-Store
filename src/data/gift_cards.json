@@ -1,7 +1,9 @@
 [
     {
         "id": 9896,
+
         "cover": "./gift_cards/steam.png",
+
         "title": "Steam Giftcard",
         "price": 59,
         "new_price": 36,
@@ -12,7 +14,9 @@
 
     {
         "id": 7145,
+
         "cover": "./gift_cards/nintendo.png",
+
         "title": "Nintendo Giftcard",
         "price": 59,
         "platforms": [ "PC" ]
@@ -20,7 +24,9 @@
 
     {
         "id": 8364,
+
         "cover": "./gift_cards/ps-store.png",
+
         "title": "Playstation Giftcard",
         "price": 59,
         "new_price": 36,
@@ -31,13 +37,16 @@
 
     {
         "id": 7410,
+
         "cover": "./gift_cards/xbox.png",
+
         "title": "Xbox Giftcard",
         "price": 59,
         "platforms": [ "Xbox" ]
     },
 
     {
+
         "id": 9147,
         "cover": "./gift_cards/google-play.png",
         "title": "Google Play Card",
@@ -57,6 +66,7 @@
         "id": 5027,
         "cover": "./gift_cards/lol.png",
         "title": "League Giftcard",
+
         "price": 59,
         "platforms": [ "PC" ]
     }

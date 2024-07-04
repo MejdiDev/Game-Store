@@ -28,12 +28,13 @@
 }
 
 #categories_section ul li {
+  border-radius: 5px;
   gap: 10px;
   cursor: pointer;
-  color: #f9fafe;
+  color: #f3f3f3;
   height: 140px;
   aspect-ratio: 1 / 1;
-  background: #1d1d29;
+  background: #000d6d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +52,10 @@
 
 #categories_section ul li h4 {
   margin: 0;
+}
+
+#categories_section ul li img {
+  height: 50px;
 }
 
 #categories_section ul li p {

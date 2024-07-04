@@ -44,13 +44,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: 900;
-  border: 2px #40404c solid;
+  font-weight: 600;
+  border: 2px #a0c8fa solid;
   border-radius: 12px;
   font-family: Manrope;
   margin: 0;
   padding: 15px 12px;
-  color: #40404c;
+  color: #a0c8fa;
   background: none;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .games_buy_slider #top h1 {
-  color: #f9fafe;
+  color: #f3f3f3;
   font-weight: 500;
   font-size: 35px;
 }
@@ -102,7 +102,6 @@
 }
 
 .games_buy_slider .nav_wrapper .arrow {
-  border: 2px #40404c solid;
   width: 28px;
 }
 

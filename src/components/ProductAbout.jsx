@@ -5,12 +5,54 @@ import faved_games from "../data/faved_games.json";
 import { shuffleArray } from '../utils/functions';
 import GamesBuySlider from '../utils/GamesBuySlider';
 
+import 'swiper/css';
+import '../styles/css/slider.css';
+
+import moment from 'moment';
+
+const FormDate = (dateStr) => {
+    const formattedDate = moment(dateStr).format("D MMMM YYYY");
+    return formattedDate;
+}
+
+
 const ProductAbout = ({ game }) => {
+    const [numFlagsShown, setNumFlagsShown] = useState(3)
+
+    const parseRequirements = (requirementString) => {
+        if (game.systemRequirements[0].requirement.length > 1) {
+            const keyValuePairs = {};
+            game.systemRequirements[0].requirement.forEach(entry => {
+                const [key, value] = entry.split(':').map(item => item.trim());
+                keyValuePairs[key] = value;
+            });
+            return keyValuePairs;
+        } else {
+            const requirementsArray = requirementString.split('\n').filter(Boolean); // Split by new line and remove empty strings
+            const requirementsObject = {};
+
+            requirementsArray.forEach((requirement, index) => {
+                if (index === 0) {
+                    requirementsObject.Minimum = requirement.replace("Minimum:", "").trim();
+                } else {
+                    const [key, value] = requirement.split(":").map(item => item.trim());
+                    requirementsObject[key] = value;
+                }
+            });
+
+            return requirementsObject;
+        }
+
+
+    };
+
     const [shownMore, setShownMore] = useState(false);
 
+
     const showMore = () => {
+
         const h = document.querySelector("#more_less_wrapper #content_wrapper").offsetHeight;
-        document.getElementById("more_less_wrapper").style.height = String(h + 10) + "px";
+        document.getElementById("more_less_wrapper").style.height = String(h + 70) + "px";
 
         document.querySelector("#more_less_wrapper #grad").style.display = "none";
 
@@ -29,7 +71,7 @@ const ProductAbout = ({ game }) => {
 
         document.getElementById('overlay_dropdown').style.display = "block";
         document.getElementById('visual_carr_wrapper').style.display = "flex";
-        
+
         setTimeout(() => {
             document.getElementById('overlay_dropdown').style.opacity = "0.7";
             document.getElementById('visual_carr_wrapper').classList.add('active');
@@ -47,19 +89,18 @@ const ProductAbout = ({ game }) => {
                     <div id="more_less_wrapper">
                         <div id="content_wrapper">
                             <p>
-                                Battlefield™ 2042 is a first-person shooter that marks the return to the iconic all-out warfare of the franchise. With the help of a cutting-edge arsenal, you can engage in intense, immersive multiplayer battles.
-                                <br /><br />
-                                It’s all or nothing in Battlefield™ 2042 – Season 7: Turning Point<br /><br />
-                                Do whatever it takes in Season 7: Turning Point, which brings the battle for Earth’s most valuable resource to the Atacama Desert in Chile. There’s no holding back for your squad as you engage in lawless, suburban combat on the new map Haven and revisit a returning fan-favorite front: Stadium. Use destruction as your ally and give the enemy everything you’ve got with new gear like the SCZ-3 SMG, the Predator SRAW gadget, and the XFAD-4 Draugr aerial bomber*. Unlock 100 new tiers of Battle Pass content in a battle for ultimate power.
+                                {game.description}
                             </p>
 
                             <div className="inline_image_wrapper right">
+
                                 <div id="text">
                                     <h1>Lorem ipsum dolor sit amet, consectetur</h1>
                                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod distinctio optio laboriosam. Rerum expedita numquam ducimus recusandae, consequatur voluptate alias a cupiditate error sed facere quis harum perferendis dolorum nemo!</p>
                                 </div>
-                                
-                                <div id="img" style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
+
+                                <div id="img" style={{ backgroundImage: `url('./about_us_bg.png')` }}></div>
+
                             </div>
 
                             <p>
@@ -68,19 +109,21 @@ const ProductAbout = ({ game }) => {
                             </p>
 
                             <div className="inline_image_wrapper left">
+
                                 <div id="text">
                                     <h1>Lorem ipsum dolor sit amet, consectetur</h1>
                                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod distinctio optio laboriosam. Rerum expedita numquam ducimus recusandae, consequatur voluptate alias a cupiditate error sed facere quis harum perferendis dolorum nemo!</p>
                                 </div>
-                                 
-                                <div id="img" style={{backgroundImage: `url('./about_us_bg.png')`}}></div>
+
+                                <div id="img" style={{ backgroundImage: `url('./about_us_bg.png')` }}></div>
+
                             </div>
                         </div>
 
                         <div id="grad"></div>
                     </div>
 
-                    { !shownMore ?
+                    {!shownMore ?
                         <button onClick={() => showMore()}>Show more</button> : <button onClick={() => showLess()}>Show less</button>
                     }
                 </div>
@@ -89,12 +132,16 @@ const ProductAbout = ({ game }) => {
             <div className="section_wrapper" id="visuals">
                 <h1>Visuals</h1>
 
+
                 <div id="images_wrapper" onClick={showVisualCarr}>
-                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/6.jpg')`}}></div>
-                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/1.jpg')`}}></div>
-                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/2.jpg')`}}></div>
-                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/3.jpg')`}}></div>
-                    <div className="visuals_card" style={{backgroundImage: `url('./visuals_example/4.jpg')`}}></div>
+
+                    <div className="visuals_card" style={{ backgroundImage: `url(${game.images.cover.url})` }}></div>
+                    {game.images?.screenshots[0]?.url && (<div className="visuals_card" style={{ backgroundImage: `url(${game.images?.screenshots[0].url})` }}></div>)}
+                    {game.images?.screenshots[1]?.url && (<div className="visuals_card" style={{ backgroundImage: `url(${game.images?.screenshots[1].url})` }}></div>)}
+                    {game.images?.screenshots[2]?.url && (<div className="visuals_card" style={{ backgroundImage: `url(${game.images?.screenshots[2].url})` }}></div>)}
+                    {game.images?.screenshots[3]?.url && (<div className="visuals_card" style={{ backgroundImage: `url(${game.images?.screenshots[3].url})` }}></div>)}
+                    {game.images?.screenshots[4]?.url && (<div className="visuals_card" style={{ backgroundImage: `url(${game.images?.screenshots[4].url})` }}></div>)}
+
                 </div>
             </div>
 
@@ -104,12 +151,20 @@ const ProductAbout = ({ game }) => {
                 <div className="content_wrapper">
                     <div>
                         <p>Languages</p>
-                        
+
+
                         <div id="flags_wrapper">
                             {
-                                game.langs && game.langs.map((cnt, idx) =>
-                                    <div key={`game-lang-flag-${idx}`} className="flag" style={{backgroundImage: `url('https://flagsapi.com/${cnt}/flat/64.png')`}}></div>
-                                )
+                                game.languages && [...new Set(game.languages)].map((cnt, idx) => (
+                                    (idx <= numFlagsShown) && <span key={`game-lang-flag-text-${idx}`}>{cnt}</span>
+                                ))
+                            }
+
+                            {    
+                                (game.languages && game.languages.length > numFlagsShown) && 
+                                    <span id="see_more" onClick={() => setNumFlagsShown(999)}>
+                                        + { game.languages.length - numFlagsShown }
+                                    </span>
                             }
                         </div>
                     </div>
@@ -118,140 +173,154 @@ const ProductAbout = ({ game }) => {
 
                     <div>
                         <p>Release Date</p>
-                        <p>08.02.2024</p>
+                        <p>{FormDate(game.releaseDate)}</p>
                     </div>
 
                     <div className="seperation"><span></span></div>
 
                     <div>
                         <p>Developer</p>
-                        <p>Arrowhead Game Studios AB</p>
+                        <p>{game && game.developers && game.developers[0] ? game.developers[0] : 'Unknown'}</p>
                     </div>
 
                     <div className="seperation"><span></span></div>
 
                     <div>
                         <p>Publisher</p>
-                        <p>PlayStation PC LLC</p>
+                        <p>{game && game.publishers && game.publishers[0] ? game.publishers[0] : 'Unknown'}</p>
+
                     </div>
 
                     <div className="seperation"><span></span></div>
 
                     <div>
                         <p>Genres</p>
-                        
-                        {   game.genres && game.genres.map((genre, idx) => 
-                                <div key={`game-genre-${idx}`}>
-                                    <img src={`./categories/${genre}.svg`} alt={genre} />
-                                    <p>{ genre }</p>
-                                </div>    
-                            )
+
+                        {game.genres && game.genres.map((genre, idx) =>
+                            <div key={`game-genre-${idx}`}>
+                                <img src={
+                                    `./categories/${
+                                        genre.toLowerCase()
+                                        .replaceAll("/", "")
+                                        .replaceAll(" ", "-")
+                                        .replaceAll("--", "-")
+                                        
+                                    }.svg`} alt={ genre }
+                                />
+
+                                <p>{genre}</p>
+                            </div>
+                        )
                         }
                     </div>
                 </div>
             </div>
 
-            <div className="section_wrapper" id="requirements">
+            {game && game.systemRequirements && game.systemRequirements[0] && (<div className="section_wrapper" id="requirements">
                 <h1>System Requirements</h1>
-
                 <div id="row_wrapper">
-                    <div className="content_wrapper">
-                        <h4>Minimum</h4>
+                    {game && game.systemRequirements && game.systemRequirements[0] && (
+                        <div className="content_wrapper">
+                            <h4>Minimum for {game.systemRequirements[0].system}</h4>
 
-                        <div>
-                            <p>Os</p>
-                            <p>Windows 10</p>
-                        </div>
+                            <div>
+                                <p>Os</p>
+                                <p>{parseRequirements(game.systemRequirements[0].requirement[0])["OS *"] ? parseRequirements(game.systemRequirements[0].requirement[0])["OS *"] : (parseRequirements(game.systemRequirements[0].requirement[0])["OS"] ? parseRequirements(game.systemRequirements[0].requirement[0])["OS"] : 'Unknown')}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Processor</p>
-                            <p>Intel Core i7-4790K or AMD Ryzen 5 1500X</p>
-                        </div>
+                            <div>
+                                <p>Processor</p>
+                                <p>{parseRequirements(game.systemRequirements[0].requirement[0])["Processor"] ? parseRequirements(game.systemRequirements[0].requirement[0])["Processor"] : (parseRequirements(game.systemRequirements[0].requirement[0])["CPU"] ? parseRequirements(game.systemRequirements[0].requirement[0])["CPU"] : 'Unknown')}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Memory</p>
-                            <p>8 GB RAM</p>
-                        </div>
+                            <div>
+                                <p>Memory</p>
+                                <p>{parseRequirements(game.systemRequirements[0].requirement[0])["Memory"]}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Graphics</p>
-                            <p>NVIDIA GeForce GTX 1050 Ti or AMD Radeon RX 470</p>
-                        </div>
+                            <div>
+                                <p>Graphics</p>
+                                <p>{parseRequirements(game.systemRequirements[0].requirement[0])["Graphics"] ? parseRequirements(game.systemRequirements[0].requirement[0])["Graphics"] : (parseRequirements(game.systemRequirements[0].requirement[0])["Video Card"] ? parseRequirements(game.systemRequirements[0].requirement[0])["Video Card"] : 'Uknown')}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Storage</p>
-                            <p>100 GB available space</p>
-                        </div>
-                    </div>
+                            <div>
+                                <p>Storage</p>
+                                <p>{parseRequirements(game.systemRequirements[0].requirement[0])["Storage"] ? parseRequirements(game.systemRequirements[0].requirement[0])["Storage"] : (parseRequirements(game.systemRequirements[0].requirement[0])["HDD Space"] ? parseRequirements(game.systemRequirements[0].requirement[0])["HDD Space"] : 'Unknown')}</p>
+                            </div>
+                        </div>)}
+                    {game && game.systemRequirements && game.systemRequirements[1] && (
+                        <div className="content_wrapper">
+                            <h4>Minimum for {game.systemRequirements[1].system}</h4>
 
-                    <div className="content_wrapper">
-                        <h4>Recommended</h4>
-                        
-                        <div>
-                            <p>Os</p>
-                            <p>Windows 10</p>
-                        </div>
+                            <div>
+                                <p>Os</p>
+                                <p>{parseRequirements(game.systemRequirements[1].requirement[0])["OS *"] ? parseRequirements(game.systemRequirements[1].requirement[0])["OS *"] : (parseRequirements(game.systemRequirements[1].requirement[0])["OS"] ? parseRequirements(game.systemRequirements[1].requirement[0])["OS"] : 'Unkown')}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Processor</p>
-                            <p>Intel Core i7-9700K or AMD Ryzen 7 3700X</p>
-                        </div>
+                            <div>
+                                <p>Processor</p>
+                                <p>{parseRequirements(game.systemRequirements[1].requirement[0])["Processor"]}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Memory</p>
-                            <p>16 GB RAM</p>
-                        </div>
+                            <div>
+                                <p>Memory</p>
+                                <p>{parseRequirements(game.systemRequirements[1].requirement[0])["Memory"]}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Graphics</p>
-                            <p>NVIDIA GeForce RTX 2060 or AMD Radeon RX 6600XT</p>
-                        </div>
+                            <div>
+                                <p>Graphics</p>
+                                <p>{parseRequirements(game.systemRequirements[1].requirement[0])["Graphics"]}</p>
+                            </div>
 
-                        <div className="seperation"><span></span></div>
+                            <div className="seperation"><span></span></div>
 
-                        <div>
-                            <p>Storage</p>
-                            <p>100 GB available space</p>
-                        </div>
-                    </div>
+                            <div>
+                                <p>Storage</p>
+                                <p>{parseRequirements(game.systemRequirements[1].requirement[0])["Storage"]}</p>
+                            </div>
+                        </div>)}
                 </div>
-            </div>
 
-            <GamesBuySlider
-                id="similar_products_section"
-                title="Similar Products"
-                platform={ "" }
-                games={ shuffleArray(faved_games) }
-                delay={ 3000 }
 
-                custombreak={
-                    {
-                        0: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        },
 
-                        850: {
-                            slidesPerView: 3,
-                            spaceBetween: 30
+                <GamesBuySlider
+                    id="similar_products_section"
+                    title="Similar Products"
+                    platform={"PC"}
+                    games={shuffleArray(faved_games)}
+                    delay={3000}
+
+                    custombreak={
+                        {
+                            0: {
+                                slidesPerView: 2,
+                                spaceBetween: 10
+                            },
+
+                            850: {
+                                slidesPerView: 3,
+                                spaceBetween: 30
+                            }
                         }
                     }
-                }
-            />
+                />
+
+            </div>)}
+
         </section>
     );
 }

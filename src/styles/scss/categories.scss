@@ -18,12 +18,13 @@
         justify-content: center;
         
         li {
+            border-radius: 5px;
             gap: 10px;
             cursor: pointer;
             color: $prim;
             height: 140px;
             aspect-ratio: 1 / 1;
-            background: $light_bg;
+            background: $light_prim;
 
             display: flex;
             flex-flow: column nowrap;
@@ -32,6 +33,10 @@
 
             h4 {
                 margin: 0;
+            }
+
+            img {
+                height: 50px;
             }
 
             p {

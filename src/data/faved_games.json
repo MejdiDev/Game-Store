@@ -1,31 +1,43 @@
 [
     {
+
         "id": 50455,
         "cover": "./game_covers/COD_modern_warfare.jpg",
+
         "title": "Call Of Duty: Modern Warfare 3",
         "price": 59,
-        "platforms": [ "PC", "Playstation", "Xbox" ],
-        "genres": [ "action", "adventure", "fps", "rpg", "simulation", "strategy" ]
+        "platforms": [
+            "PC",
+            "Playstation",
+            "Xbox"
+        ],
+        "genres": [
+            "action",
+            "adventure",
+            "fps",
+            "rpg",
+            "simulation",
+            "strategy"
+        ]
     },
-
     {
         "id": 89127,
         "cover": "./game_covers/realms_of_ruin.jpg",
         "title": "Realms Of Ruin",
         "price": 59,
-        "platforms": [ "PC", "Playstation" ],
-        "genres": [ "action", "adventure", "fps", "rpg", "simulation", "strategy" ]
+        "platforms": [
+            "PC",
+            "Playstation"
+        ],
+        "genres": [
+            "action",
+            "adventure",
+            "fps",
+            "rpg",
+            "simulation",
+            "strategy"
+        ]
     },
-
-    {
-        "id": 43471,
-        "cover": "./game_covers/hogwarts_legacy.jpg",
-        "title": "Hogwarts Legacy",
-        "price": 59,
-        "platforms": [ "PC", "Playstation" ],
-        "genres": [ "action", "adventure", "rpg", "simulation", "strategy" ]
-    },
-
     {
         "id": 82189,
         "cover": "./game_covers/realms_of_ruin.jpg",
@@ -34,10 +46,36 @@
         "new_price": 36,
         "is_discounted": true,
         "discount_perc": 39,
-        "platforms": [ "PC", "Playstation" ],
-        "genres": [ "action", "adventure", "fps", "rpg", "strategy", "indie" ]
+        "platforms": [
+            "PC",
+            "Playstation"
+        ],
+        "genres": [
+            "action",
+            "adventure",
+            "fps",
+            "rpg",
+            "strategy",
+            "indie"
+        ]
     },
-
+    {
+        "id": 43471,
+        "cover": "./game_covers/hogwarts_legacy.jpg",
+        "title": "Hogwarts Legacy",
+        "price": 59,
+        "platforms": [
+            "PC",
+            "Playstation"
+        ],
+        "genres": [
+            "action",
+            "adventure",
+            "rpg",
+            "simulation",
+            "strategy"
+        ]
+    },
     {
         "id": 82787,
         "cover": "./game_covers/hogwarts_legacy.jpg",
@@ -46,7 +84,14 @@
         "new_price": 36,
         "is_discounted": true,
         "discount_perc": 39,
-        "platforms": [ "PC", "Playstation" ],
-        "genres": [ "action", "rpg", "strategy" ]
+        "platforms": [
+            "PC",
+            "Playstation"
+        ],
+        "genres": [
+            "action",
+            "rpg",
+            "strategy"
+        ]
     }
 ]

@@ -1,0 +1,66 @@
+.sgt_game {
+  width: 100%;
+  cursor: pointer;
+}
+
+.sgt_game #content {
+  gap: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.sgt_game #img {
+  border-radius: 3px;
+  aspect-ratio: 3 / 4;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sgt_game #text {
+  font-family: Manrope;
+  color: #f3f3f3;
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sgt_game #text p {
+  margin: 0;
+}
+
+.sgt_game #text .game_price_wrapper {
+  gap: 5px;
+}
+
+.sgt_game #text .game_price_wrapper:has(> #discount_price) #original_price {
+  font-size: 18px;
+}
+
+.sgt_game #text .game_price_wrapper h3 {
+  font-size: 20px;
+}
+
+.sgt_game .seperation {
+  margin: 10px 0;
+}
+
+.sgt_game .seperation span {
+  width: 100% !important;
+}

@@ -2,7 +2,7 @@
   padding: 80px 0;
   margin-top: 100px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: bottom;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,7 +29,7 @@
   flex-flow: row nowrap;
   gap: 80px;
   border-radius: 25px;
-  border: 3px #40404c solid;
+  border: 3px #000d6d solid;
   background-color: rgba(29, 29, 41, 0.5);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -37,7 +37,7 @@
 
 #login_body #form_wrapper #hot_games_slider_wrapper {
   border-radius: 22px 30px 30px 22px;
-  color: #f9fafe;
+  color: #f3f3f3;
   width: 500px;
   aspect-ratio: 2/3;
   background-repeat: no-repeat;
@@ -61,8 +61,22 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  color: #f9fafe;
+  color: #f3f3f3;
   width: 400px;
+}
+
+#login_body #form_wrapper form #captcha_wrapper {
+  margin-top: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #login_body #form_wrapper form #qa_wrapper {
@@ -99,7 +113,7 @@
           align-items: center;
   padding: 5px;
   padding-right: 10px;
-  border: 2px #40404c solid;
+  border: 2px #a0c8fa solid;
   border-radius: 10px;
 }
 
@@ -133,7 +147,7 @@
 
 #login_body #form_wrapper form p {
   margin: 0;
-  color: grey;
+  color: #a0c8fa;
   margin-bottom: 30px;
 }
 
@@ -149,9 +163,9 @@
   height: 40px;
   border: none;
   outline: none;
-  background: #40404c;
+  background: #000d6d;
   border-radius: 15px;
-  color: #f9fafe;
+  color: #f3f3f3;
   padding-left: 25px;
   margin-bottom: 20px;
   font-size: 18px;
@@ -179,7 +193,7 @@
   outline: none;
   border: none;
   color: #fff;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   font-family: Manrope;
   font-size: 18px;
   padding: 15px 0;
@@ -207,7 +221,7 @@
   }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1250px) {
   #login_body {
     margin-top: 0;
   }

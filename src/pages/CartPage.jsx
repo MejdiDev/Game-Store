@@ -9,9 +9,11 @@ import CartBody from "../components/CartBody";
 
 
 const CartPage = () => {
+
     useEffect(() => {
         hideMobileNav()
-    }, [])
+    }, []);
+
 
     return (
         <main>
@@ -24,8 +26,6 @@ const CartPage = () => {
             <DropdownMenu platform="" />
 
             <CartBody />
-
-            {/* <div id="ending"></div> */}
 
             <Footer />
         </main>

@@ -12,18 +12,36 @@
           align-items: center;
 }
 
-#about_us_section h1 {
-  width: 90%;
-  margin: 0;
-  color: #f9fafe;
+#about_us_section > h1 {
+  width: 70%;
+  color: #f3f3f3;
+  font-weight: 500;
+  font-size: 35px;
 }
 
 #about_us_section #img {
   margin-bottom: 100px;
-  width: 90%;
-  height: 450px;
+  width: 70%;
+  aspect-ratio: 16 / 7;
   border-radius: 20px;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media only screen and (max-width: 1250px) {
+  #about_us_section {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #about_us_section > h1 {
+    width: calc(100% - 30px);
+  }
+  #about_us_section #img {
+    aspect-ratio: 16 / 9;
+    width: calc(100% - 30px);
+    margin-bottom: 30px;
+  }
 }

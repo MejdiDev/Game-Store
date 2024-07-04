@@ -1,3 +1,61 @@
+@-webkit-keyframes dropNav {
+  0% {
+    top: -85px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes dropNav {
+  0% {
+    top: -85px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes dropNavMobl {
+  0% {
+    top: -140px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes dropNavMobl {
+  0% {
+    top: -140px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes accountFadeIn {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 27px;
+    opacity: 1;
+  }
+}
+
+@keyframes accountFadeIn {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 27px;
+    opacity: 1;
+  }
+}
+
 nav {
   z-index: 997;
   display: -webkit-box;
@@ -13,13 +71,21 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 5%;
+  padding: 20px 15%;
+}
+
+nav.blur {
+  z-index: 997 !important;
 }
 
 nav.fixed {
-  top: 0;
-  width: 90%;
-  background: #1d1d29;
+  z-index: 9999;
+  padding: 20px 15%;
+  top: -85px;
+  -webkit-animation: dropNav 250ms forwards;
+          animation: dropNav 250ms forwards;
+  width: 70%;
+  background: #000d6d;
   position: fixed;
   border-radius: 0 0 20px 20px;
 }
@@ -47,6 +113,7 @@ nav .logo.wrapper a, nav .logo.wrapper img {
 }
 
 nav .text_input_wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,21 +127,19 @@ nav .text_input_wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 3px #25252f solid;
+  border: 2px #a0c8fa solid;
   border-radius: 30px;
   padding: 2px;
   height: 35px;
   width: 500px;
-}
-
-nav .text_input_wrapper#mobl {
-  display: none;
-  width: 100%;
+  background: #153E90;
+  -webkit-transition: border-radius 100ms;
+  transition: border-radius 100ms;
 }
 
 nav .text_input_wrapper button {
   cursor: pointer;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   border-radius: 50%;
   outline: none;
   border: none;
@@ -100,12 +165,75 @@ nav .text_input_wrapper input {
   height: 100%;
   font-size: 17px;
   background: transparent;
-  color: #f9fafe;
+  color: #f3f3f3;
   width: 100%;
   border-radius: 25px 0 0 25px;
   border: none;
   outline: none;
   padding-left: 25px;
+}
+
+nav .search_sgt_wrapper {
+  width: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .search_sgt_wrapper.mobl {
+  display: none;
+  width: 100% !important;
+}
+
+nav .search_sgt_wrapper .text_input_wrapper {
+  width: 100%;
+  z-index: 9999;
+}
+
+nav .search_sgt_wrapper .sgt_wrapper {
+  display: none;
+  top: 20px;
+  position: absolute;
+  width: calc(100% + 4px);
+  padding-top: 40px;
+  padding-bottom: 15px;
+  background: #00337C;
+  border: 2px rgba(160, 200, 250, 0.4) solid;
+  border-radius: 0 0 15px 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 9998;
+}
+
+nav .search_sgt_wrapper .sgt_wrapper.shown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .search_sgt_wrapper .sgt_wrapper #games_wrapper {
+  width: calc(100% - 20px);
+}
+
+nav .search_sgt_wrapper .sgt_wrapper > p {
+  color: #f3f3f3;
+  margin: 0;
+  width: calc(100% - 20px);
+  margin-bottom: 15px;
+  font-family: Manrope;
 }
 
 nav #inputs {
@@ -129,17 +257,175 @@ nav #inputs #menu {
   display: none;
 }
 
-@media only screen and (max-width: 1130px) {
+nav #inputs #account_btn_wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav #inputs #account_btn_wrapper:hover #login_menu_wrapper {
+  display: block;
+}
+
+nav #inputs #account_btn_wrapper:hover .nav_btn {
+  outline: none;
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%) !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_wrapper {
+  cursor: pointer;
+  display: none;
+  z-index: 19999;
+  top: 27px;
+  width: 290px;
+  padding-top: 20px;
+  height: 300px;
+  position: absolute;
+  -webkit-animation: accountFadeIn 250ms forwards;
+          animation: accountFadeIn 250ms forwards;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content {
+  cursor: default;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% - 40px);
+  background: #00337C;
+  border-radius: 10px;
+  color: #f3f3f3;
+  padding: 20px;
+  padding-bottom: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content p {
+  width: 100%;
+  text-align: center;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content p:first-of-type {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content p:last-of-type {
+  font-family: Manrope;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content button {
+  cursor: pointer;
+  height: 40px;
+  font-size: 18px;
+  color: #a0c8fa;
+  font-weight: 600;
+  background: transparent;
+  border: 2px #a0c8fa solid;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content button p {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content button img {
+  margin: 0;
+  height: 27px;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content button:last-of-type {
+  display: block;
+  font-weight: 500;
+  border: none;
+  color: #f3f3f3;
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content a {
+  color: #a0c8fa;
+  font-family: Manrope;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  text-decoration: underline;
+}
+
+nav #inputs #account_btn_wrapper #login_menu_content::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #00337C;
+  top: 13px;
+  left: calc(50% - 5px);
+}
+
+@media only screen and (max-width: 1440px) {
+  nav {
+    padding: 20px 5%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
   nav {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    background: #1d1d29;
+    background: #000d6d;
     border-radius: 0 0 25px 25px;
   }
+  nav #login_menu_wrapper {
+    left: -50px !important;
+  }
+  nav #login_menu_content::before {
+    left: 63px !important;
+  }
   nav.fixed {
-    background: #1d1d29;
+    top: -140px;
+    width: 90%;
+    padding: 20px 5%;
+    background: #000d6d;
   }
   nav #inputs {
     gap: 10px;
@@ -151,20 +437,12 @@ nav #inputs #menu {
     display: -ms-flexbox;
     display: flex;
   }
-  nav .text_input_wrapper#comp, nav .select_wrapper {
-    display: none !important;
-  }
-  nav .text_input_wrapper#mobl {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  nav .logo#comp {
-    display: none !important;
-  }
-  nav .logo.mobl {
+  nav .mobl {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+  }
+  nav .comp, nav .select_wrapper {
+    display: none !important;
   }
 }

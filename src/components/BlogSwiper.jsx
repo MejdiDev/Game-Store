@@ -6,19 +6,40 @@ import { Autoplay } from "swiper/modules";
 import { useRef, useCallback } from "react";
 
 import 'swiper/css';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const BlogCard = ({ blog_data }) => {
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const RedirectOnClick = (e, id) => {
+        if(!(location.pathname.includes('/blog/'))) return
+
+        e.preventDefault()
+
+        document.querySelector("main").style.display = "none"
+        navigate('/blog/' + id)
+        navigate(0)
+    }
+
     return (
-        <div className="benefit_card">
-            <div id="background" style={{backgroundImage: `url(${blog_data.img})`}}></div>
-            
-            <h1>{ blog_data.title }</h1>
-            <p>{ blog_data.description }</p>
-        </div>
+        <Link
+            to={'/blog/' + blog_data.id}
+            onClick={e => 
+                RedirectOnClick(e, blog_data.id)
+            }
+        >
+            <div className="benefit_card">
+                <div id="background" style={{backgroundImage: `url(${blog_data.img})`}}></div>
+                
+                <h1>{ blog_data.title }</h1>
+                <p>{ blog_data.description }</p>
+            </div>
+        </Link>
     );
 }
 
-const BlogSwiper = ({ data }) => {
+const BlogSwiper = ({ data, title }) => {
     const sliderRef = useRef(null);
 
     const handlePrev = useCallback(() => {
@@ -31,10 +52,11 @@ const BlogSwiper = ({ data }) => {
 
     return (
         <section id="benefits_section">
-            <h1>Blog</h1>
+            <h1>{ !title ? "Blog" : title }</h1>
 
             <div id="blog_swiper_wrapper">
                 <Swiper
+                    ref={sliderRef}
                     speed={500}
                     loop={true}
                     grabCursor={true}
@@ -59,11 +81,6 @@ const BlogSwiper = ({ data }) => {
                         820: {
                             slidesPerView: 3,
                             spaceBetween: 20
-                        },
-
-                        1450: {
-                            slidesPerView: 4,
-                            spaceBetween: 40
                         }
                     }}
                 >

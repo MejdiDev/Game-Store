@@ -9,7 +9,7 @@ const AboutUsSection = () => {
             <div id="img" style={{backgroundImage: "url('./about_us_bg.png')"}}></div>
 
             <InfoSection
-                title="Key4GG: Your Gateway to Epic Gaming Adventures !"
+                title="SOFTKey24: Your Gateway to Epic Gaming Adventures !"
                 body={
                     <p>
                         Welcome to our online game shop, your trusted partner in the world of virtual entertainment. We offer a wide range of PC and console games to satisfy the most sophisticated array of games for all ages.

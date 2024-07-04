@@ -5,6 +5,11 @@
     margin-bottom: 150px;
     padding: 0 15%;
 
+    &.msg {
+        padding-top: 200px;
+        height: calc(100vh - 450px) !important;
+    }
+
     .mobl {
         display: none;
     }
@@ -34,7 +39,65 @@
         align-items: center;
         justify-content: space-between;
 
-        border: 3px $dark_prim solid;
+        border: 3px $light_bg solid;
+        border-radius: 30px;
+        padding: 2px;
+
+        height: 35px;
+        width: 100%;
+
+        input {
+            height: 100%;
+            font-size: 17px;
+
+            background: transparent;
+            color: $prim;
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+        }
+
+        button {
+            width: auto;
+            padding: 0 20px;
+            height: 100%;
+            font-size: 16px;
+            border-radius: 30px;
+        }
+    }
+
+    .mobl {
+        display: none;
+    }
+
+    button.grad_btn {
+        cursor: pointer;
+        width: 100%;
+        outline: none;
+        border: none;
+        color: #fff;
+        background: $btn_gradient;
+        font-family: Manrope;
+        font-size: 18px;
+        padding: 15px 0;
+        border-radius: 10px;
+        height: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #promo_input_wrapper {
+        margin: 20px 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        border: 2px $light_bg solid;
         border-radius: 30px;
         padding: 2px;
 
@@ -66,18 +129,12 @@
     #payement_method_wrapper {
         margin: 20px 0;
         width: calc(100% - 10px);
-        height: 100px;
 
-        display: grid;
-        gap: 10px;
-        
-        grid-template-columns: repeat(3, calc((100% / 3) - (10px / 3)));
-        grid-template-rows: repeat(2, calc((100% / 2) - (10px / 2)));
+        display: flex;
+        justify-content: center;
 
-        div {
-            cursor: pointer;
-            background: $light_prim;
-            border-radius: 10px;
+        img {
+            height: 60px;
         }
     }
 
@@ -101,7 +158,7 @@
             
             border-radius: 20px;
             background: $bg;
-            border: 3px $neo_background solid;
+            border: 2px $light_bg solid;
 
             display: flex;
             flex-flow: column nowrap;
@@ -137,6 +194,7 @@
                 span {
                     width: 100%;
                     height: 2px;
+                    background: $light_bg;
                 }
             }
         }
@@ -145,7 +203,7 @@
             color: $prim;
             padding: 20px;
             border-radius: 20px;
-            border: 3px $neo_background solid;
+            border: 2px $light_bg solid;
             width: calc(100% - 470px);
 
             display: flex;
@@ -163,22 +221,29 @@
                 display: flex;
                 flex-flow: row nowrap;
 
-                background: $light_bg;
+                background: $light_prim;
+                color: $prim;
 
                 #cross {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
                     cursor: pointer;
                     position: absolute;
 
                     right: 15px;
                     top: 15px;
+                    height: 26px;
+                    border-radius: 3px;
 
-                    background: none;
+                    background: $light_bg;
                     border: none;
                     outline: none;
 
                     img {
-                        width: 12px;
-                        height: 12px;
+                        width: 13px;
+                        height: 13px;
                     }
                 }
 
@@ -209,7 +274,12 @@
                         margin: 0;
                         width: 100%;
                         font-size: 18px;
-                        height: 30px;
+
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .game_price_wrapper {
@@ -233,20 +303,23 @@
                         display: flex;
                         flex-flow: row nowrap;
                         align-items: center;
+                        font-size: 22px;
 
                         button {
                             cursor: pointer;
                             color: $prim;
                             background: none;
+                            font-size: 22px;
+                            line-height: 10px;
 
                             border: none;
                             outline: none;
 
-                            border: 3px $neo_background solid;
+                            border: 2px $light_bg solid;
                             border-radius: 50%;
 
-                            width: 30px;
-                            height: 30px;
+                            width: 35px;
+                            height: 35px;
                         }
                     }
 
@@ -260,6 +333,13 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    #cart_body.msg {
+        font-size: 25px !important;
+        padding-top: 80px !important;
     }
 }
 
@@ -293,7 +373,7 @@
                 height: auto;
                 position: fixed;
                 border-radius: 15px 15px 0 0;
-                background: $light_bg;
+                background: $light_prim;
 
                 bottom: 0;
                 left: 0;

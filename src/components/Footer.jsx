@@ -6,11 +6,11 @@ const Footer = () => {
         <footer>
             <ul>
                 <li>
-                    <img className="logo" id="comp" src="./logo.png" alt="Logo" />
+                    <img className="logo" id="comp" src="./logo_2.png" alt="Logo" />
 
                     <div className="link_wrapper">
                         <img src="./icons/mail.png" alt="PC" />
-                        <p>Key4gg@gmail.com</p>
+                        <p>SOFTKey24@gmail.com</p>
                     </div>
                 </li>
 
@@ -69,11 +69,10 @@ const Footer = () => {
                         <Link to='/blog'>
                             <p>Blog</p>
                         </Link>
-
-                        <p>Create ticket</p>
-                        <p>Delivery payment</p>
-                        <p>Sitemap</p>
-                        <p>Contact us</p>
+                        
+                        <Link to='/contact'>
+                            <p>Contact us</p>
+                        </Link>
                     </div>
                 </li>
 
@@ -82,11 +81,7 @@ const Footer = () => {
                 <li>
                     <h3>Payment Network</h3>
                     <div id="payement_method_wrapper">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <img src="./icons/stripe_3.png" alt="Powered By Stripe" />
                     </div>
                 </li>
             </ul>

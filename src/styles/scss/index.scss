@@ -35,14 +35,14 @@ body {
   width: 100%;
   margin: 0;
 
-  background-image: url('../assets/bg.svg');
+  background-image: url('../assets/bg_2.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: -50%;
 }
 
 @media only screen and (max-width: 650px) {
-  #blog_list, .games_buy_slider, #product_details_section {
+  #blog_list, .games_buy_slider {
       padding: 0 !important;
   }
 
@@ -50,7 +50,7 @@ body {
     padding: 10px !important;
   }
 
-  #info_section, #games_list_body, #account_body, #cart_body {
+  #info_section, #games_list_body, #account_body, #cart_body, #blog_post {
     padding: 15px !important;
   }
 }
@@ -78,9 +78,14 @@ a {
   text-decoration: none;
 }
 
-input, button, select {
+input, button, select, textarea {
   font-family: "Manrope", sans-serif;
   -webkit-tap-highlight-color: transparent;
+
+  &::placeholder {
+    color: $light_bg;
+    font-weight: 600;
+  }
 }
 
 .mobl {
@@ -101,7 +106,7 @@ input, button, select {
     display: block;
     width: 80%;
     height: 100%;
-    background: $light_prim;
+    background: $light_bg;
   }
 }
 
@@ -135,6 +140,10 @@ input, button, select {
   position: absolute;
   z-index: 996;
 
+  &:not(.nav_wrapper.main) .arrow {
+    border: 2px $light_bg solid;
+  }
+
   .arrow {
       width: 20px;
       height: 65px;
@@ -159,27 +168,17 @@ input, button, select {
   }
 }
 
-#ending {
-  width: 100%;
-  height: 300px;
-  border-radius: 0 0 35% 35%;
-  position: absolute;
-
-  background: $bg;
-  box-shadow: inset -22px 22px 44px #08080d,
-              inset 22px -22px 44px #222235;
-}
-
 .nav_btn, .select_wrapper {
   cursor: pointer;
   outline: none;
   border: none;
 
   border-radius: 150px;
-  background: $neo_background;
+  background: $dark_prim;
   box-shadow: $neo_box_shadow;
   padding: 5px 10px;
   transition-duration: 250ms;
+  outline: 1px $light_bg solid;
 
   height: 40px;
   width: 40px;
@@ -189,6 +188,7 @@ input, button, select {
   justify-content: center;
 
   &.active, &:hover {
+      outline: none;
       background: $btn_gradient !important;
       box-shadow: none;
   }
@@ -272,9 +272,9 @@ input, button, select {
   
   &:has(> #discount_price) {
       #original_price {
-          color: $light_prim;
+          color: $light_bg;
           font-size: 18px;
-          font-weight: 800;
+          font-weight: 500;
           text-decoration: line-through;
       }
   }
@@ -288,5 +288,84 @@ input, button, select {
       padding: 0;
       font-size: 25px;
       font-weight: 600;
+  }
+}
+
+.msg {
+  font-size: 30px;
+  font-weight: 600;
+  color: $prim;
+  margin: 0;
+  text-align: center;
+
+  opacity: 0;
+  margin-top: 50px;
+
+  animation: fadeIn 300ms ease 200ms forwards;
+}
+
+.index_pags {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 7px;
+
+  .pag {
+    cursor: pointer;
+    background: none;
+    border: 2px $light_prim solid;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $prim;
+
+    &.active {
+      border-color: $btn_1;
+    }
+  }
+
+  #next, #prev {
+    padding-left: 15px;
+    padding-right: 10px;
+
+    height: 40px;
+    border: 2px $light_prim solid;
+    cursor: pointer;
+    background: none;
+    color: $prim;
+    border-radius: 20px;
+
+    gap: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      height: 20px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  #prev {
+    padding-left: 10px;
+    padding-right: 20px;
+    flex-flow: row-reverse nowrap;
+
+    img {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .index_pags {
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -5,7 +5,7 @@
 
 #benefits_section > h1 {
   margin: 0;
-  color: #f9fafe;
+  color: #f3f3f3;
   font-weight: 500;
   font-size: 35px;
 }
@@ -35,54 +35,28 @@
 }
 
 #benefits_section #blog_swiper_wrapper .swiper-slide {
-  aspect-ratio: 1 / 1;
+  height: auto;
   font-size: 18px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-#benefits_section #blog_swiper_wrapper .swiper-slide .slider_child {
-  width: 100%;
+#benefits_section #blog_swiper_wrapper a {
+  display: block;
   height: 100%;
-  opacity: 1;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  border-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 #benefits_section #blog_swiper_wrapper .benefit_card {
-  color: #f9fafe;
+  height: calc(100% - 40px);
+  color: #f3f3f3;
   border-radius: 30px;
   padding: 20px;
   position: relative;
-  background: #272530;
-  -webkit-box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
-          box-shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+  background: linear-gradient(315deg, #084796, #0a55b3);
+  -webkit-box-shadow: inset 32px 32px 49px #084898, inset -32px -32px 49px #0a56b6;
+          box-shadow: inset 32px 32px 49px #084898, inset -32px -32px 49px #0a56b6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,27 +67,30 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../assets/card_blur_bg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left 100px top calc(100% + 20px);
+  background-image: none;
 }
 
 #benefits_section #blog_swiper_wrapper .benefit_card #background {
-  height: 200px;
   width: 100%;
   border-radius: 10px;
+  aspect-ratio: 16 / 9;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #benefits_section #blog_swiper_wrapper .benefit_card h1 {
+  font-family: Manrope;
   margin: 0;
-  width: 100%;
   margin-top: 15px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 25px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #benefits_section #blog_swiper_wrapper .benefit_card p {
@@ -122,6 +99,11 @@
   margin: 0;
   padding: 0;
   margin-top: 3px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #benefits_section #blog_swiper_wrapper .nav_wrapper {
@@ -130,7 +112,6 @@
 }
 
 #benefits_section #blog_swiper_wrapper .nav_wrapper .arrow {
-  border: 2px #40404c solid;
   width: 28px;
 }
 
@@ -151,47 +132,9 @@
   }
 }
 
-@media only screen and (max-width: 1420px) {
-  #benefits_section {
-    row-gap: 150px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  #benefits_section .benefit_card {
-    width: 400px;
-  }
-  #benefits_section .benefit_card h2 {
-    font-size: 18px;
-  }
-  #benefits_section .benefit_card p {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 1013px) {
-  #benefits_section .benefit_card {
-    width: 350px;
-  }
-}
-
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1080px) {
   #benefits_section .nav_wrapper .arrow {
     width: 20px;
-  }
-}
-
-@media only screen and (max-width: 870px) {
-  #benefits_section {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-  }
-  #benefits_section .benefit_card {
-    width: 80%;
   }
 }
 
@@ -204,22 +147,7 @@
   }
 }
 
-@media only screen and (max-width: 560px) {
-  #benefits_section {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-  }
-  #benefits_section .benefit_card {
-    width: 100%;
-  }
-}
-
 @media only screen and (max-width: 530px) {
-  #benefits_section #blog_swiper_wrapper {
-    margin-top: 0;
-  }
   #benefits_section > h1 {
     width: 100%;
     text-align: center;

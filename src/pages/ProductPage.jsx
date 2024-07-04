@@ -12,14 +12,15 @@ import ProductAbout from "../components/ProductAbout";
 
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import games from "../data/games.json";
+import { getKinguinProduct } from "../data/api";
 
 import GuideBody from "../components/GuideBody";
+
 import VisualsCarousel from "../components/VisualsCarousel";
 
 const checkOffset = () => {
     const socialFloat = document.querySelector('#product_details_section #buy_component');
-    if(!socialFloat) return
+    if (!socialFloat) return
 
     const footer = document.querySelector('footer');
 
@@ -27,38 +28,50 @@ const checkOffset = () => {
         return el.getBoundingClientRect().top
     }
 
-    if((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10) {
+    if ((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight + 100 >= (getRectTop(footer) + document.body.scrollTop)) {
         socialFloat.style.position = 'absolute'
-        console.log("-" + String(window.scrollY + document.querySelector('footer').getBoundingClientRect().top) + "px")
+        socialFloat.style.top = "auto"
         socialFloat.style.bottom = "-" + String(window.scrollY + document.querySelector('footer').getBoundingClientRect().top - 1000) + "px"
     }
 
-    if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop)) {
+    if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop + 200)) {
         socialFloat.style.position = 'fixed'
         socialFloat.style.bottom = "auto"
+        socialFloat.style.top = "230px"
     }
 }
 
 document.addEventListener("scroll", () => {
-    if(window.innerWidth > 1320) {
+    if (window.innerWidth > 1320) {
         checkOffset()
     }
 });
 
 const ProductPage = () => {
-    const { platform, product_id } = useParams();
-    const [gameData, setGameData] = useState({})
+    const { name } = useParams();
+    const [gameData, setGameData] = useState(null);
 
+    const getGameData = async () => {
+        try {
+            const kinguinId = name.split('-').reverse()[0];
+            const response = await getKinguinProduct(kinguinId);
+            setGameData(response.game);
+
+            document.title = response.game.name;
+
+        } catch (e) {
+            console.log(`error while getting product data :: ${e}`)
+
+        }
+    }
     useEffect(() => {
+
+        getGameData();
+
         window.scrollTo(0, 0);
         hideMobileNav();
 
-        const res_game = games.filter(game => game.id == product_id)[0];
-        console.log(res_game)
-
-        document.title = res_game.title;
-        setGameData( res_game );
-    }, [])
+    }, [name])
 
     return (
         <main>
@@ -67,19 +80,28 @@ const ProductPage = () => {
 
             <MobileNav />
             <Nav />
+            <DropdownMenu platform={''} />
 
-            <GuideBody />
-            <VisualsCarousel />
 
-            <DropdownMenu platform={platform} />
-            
-            <ProductLocation />
-            <ProductDetails platform={platform} game={ gameData } />
-            <ProductAbout game={ gameData } />
+            {!gameData ?
 
-            {/* <div id="ending"></div> */}
 
-            <Footer />
+                <div id="loader_wrapper"><div className="loader"></div></div>
+
+                :
+                <div>
+                    <GuideBody />
+
+                    <VisualsCarousel />
+
+
+                    <ProductLocation />
+                    <ProductDetails platform={gameData.platform} game={gameData} />
+                    <ProductAbout game={gameData} />
+
+                    <Footer />
+                </div>
+            }
         </main>
     );
 }

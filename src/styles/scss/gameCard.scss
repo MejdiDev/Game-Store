@@ -6,7 +6,7 @@
     aspect-ratio: 3 / 4.8;
     font-family: Manrope;
 
-    background: $light_bg;
+    background: $dark_bg;
     color: $prim;
     position: relative;
 
@@ -14,6 +14,8 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: end;
+
+    margin-bottom: 20px;
 
     #fav_btn {
         top: -40px;
@@ -33,6 +35,8 @@
         backdrop-filter: blur(12px);
         background-color: rgba(21, 21, 33, .2);
 
+        transition: background 200ms;
+
         svg {
             height: 100%;
             width: 100%;
@@ -41,7 +45,7 @@
     }
 
     #platforms_wrapper {
-        background: $dark_bg;
+        background: $light_prim;
         margin-top: 15px;
         width: calc(100% - 20px);
         border-radius: 0 0 15px 15px;
@@ -56,22 +60,35 @@
         }
 
         #platforms {
-            column-gap: 10px;
+            column-gap: 7px;
             display: flex;
             align-items: center;
             flex-flow: row nowrap;
 
-            #platform_entry_wrapper {
+            .platform_entry {
                 position: relative;
+                height: 25px;
 
-                &:hover {
-                    #index {
-                        display: flex;
-                    }
+                &:hover #index, &:hover #arrow {
+                    display: -webkit-box;
                 }
 
                 img {
                     height: 25px;
+                }
+
+                #arrow {
+                    display: none;
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-left: 7px solid transparent;
+                    border-right: 7px solid transparent;
+                    border-bottom: 8px solid $prim;
+
+                    bottom: -15px;
+                    left: calc(50% - 4px);
+                    z-index: 999;
                 }
 
                 #index {
@@ -79,32 +96,25 @@
                     margin-left: -30px;
                     margin-top: 10px;
                     position: absolute;
-                    background: $light_prim;
-                    height: 30px;
+                    background: $prim;
                     width: 90px;
                     border-radius: 3px;
+                    padding: 5px 0;
 
                     justify-content: center;
                     align-items: center;
+                    
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
 
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        width: 0;
-                        height: 0;
-                        border-left: 7px solid transparent;
-                        border-right: 7px solid transparent;
-                        border-bottom: 8px solid $light_prim;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-align: center;
+                    color: $light_prim;
 
-                        top: -8px;
-                        left: 38px;
-                    }
-
-                    p {
-                        font-size: 14px;
-                        width: 100%;
-                        text-align: center;
-                    }
+                    z-index: 9999;
                 }
             }
         }
@@ -137,24 +147,57 @@
         margin-bottom: 5%;
         white-space: nowrap; 
         overflow: hidden;
-        text-overflow: ellipsis; 
+        text-overflow: ellipsis;
     }
+
+    .skeleton-box {
+        display: inline-block;
+        height: 1em;
+        position: relative;
+        overflow: hidden;
+        background-color: #DDDBDD;
+      
+        
+      }
 
     #cover {
         border-radius: 15px;
         top: -50px;
         position: absolute;
+        overflow: hidden;
 
         width: calc(100% - 20px);
-        aspect-ratio: 3 / 4;
-
+        height: calc(100% - 100px);
+        
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-    }
 
-    #placeholder {
-        width: 100%;
+        background-color: #DDDBDD;
+
+        &.loading::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-100%);
+            background-image: linear-gradient(
+              90deg,
+              rgba(#fff, 0) 0,
+              rgba(#fff, 0.2) 20%,
+              rgba(#fff, 0.5) 60%,
+              rgba(#fff, 0)
+            );
+            animation: shimmer 1s infinite;
+            content: '';
+          }
+        
+          @keyframes shimmer {
+            100% {
+              transform: translateX(100%);
+            }
+          }
     }
 
     #bottom {
@@ -179,7 +222,7 @@
             border: none;
             outline:  none;
 
-            svg {
+            svg, img {
                 height: 25px;
                 width: 25px;
             }
@@ -205,8 +248,11 @@
 
 @media only screen and (max-width: 500px) {
     .game_card {
-        aspect-ratio: 3 / 4;
         padding-bottom: 15px;
+
+        #cover {
+            height: calc(100% - 50px);
+        }
 
         #platforms_wrapper {
             display: none !important;

@@ -3,7 +3,7 @@
 #benefits_section {
     margin-top: 100px;
     padding: 0 15%;
-
+    
     & > h1 {
         margin: 0;
         color: $prim;
@@ -27,34 +27,18 @@
         }
         
         .swiper-slide {
-            aspect-ratio: 1 / 1;
+            height: auto ;
             font-size: 18px;
             user-select: none;
+        }
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .slider_child {
-                width: 100%;
-                height: 100%;
-
-                opacity: 1;
-                transition-duration: 500ms;
-                transform: scale(1);
-                border-radius: 15px;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
+        a {
+            display: block;
+            height: 100%;
         }
 
         .benefit_card {
+            height: calc(100% - 40px);
             color: $prim;
             border-radius: 30px;
             padding: 20px;
@@ -67,15 +51,12 @@
             flex-flow: column nowrap;
             align-items: center;
 
-            background-image: url('../assets/card_blur_bg.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: left 100px top calc(100% + 20px);
+            background-image: none;
 
             #background {
-                height: 200px;
                 width: 100%;
                 border-radius: 10px;
+                aspect-ratio: 16 / 9;
 
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -83,11 +64,18 @@
             }
 
             h1 {
+                font-family: Manrope;
                 margin: 0;
-                width: 100%;
                 margin-top: 15px;
-                font-weight: 500;
+                font-weight: 700;
                 font-size: 25px;
+                
+                width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             p {
@@ -97,15 +85,22 @@
                 margin: 0;
                 padding: 0;
                 margin-top: 3px;
+
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
         .nav_wrapper {
+
             top: calc(50% - 40px);
             width: calc(100% + 48px) !important;
 
+
             .arrow {
-                border: 2px $light_prim solid;
                 width: 28px;
             }
 
@@ -134,81 +129,31 @@
     }
 }
 
-@media only screen and (max-width: 1420px) {
-    #benefits_section {
-        row-gap: 150px;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        .benefit_card {
-            width: 400px;
-
-            h2 {
-                font-size: 18px;
-            }
-
-            p {
-                font-size: 14px;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1013px) {
-    #benefits_section {
-
-        .benefit_card {
-            width: 350px;
-        }
-    }
-}
-
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1080px) {
     #benefits_section .nav_wrapper {
         .arrow {
             width: 20px;
         }
-    }
-}
 
-@media only screen and (max-width: 870px) {
-    #benefits_section {
-        flex-flow: column nowrap;
-
-        .benefit_card {
-            width: 80%;
-        }
     }
 }
 
 @media only screen and (max-width: 650px) {
     #benefits_section {
+
         & > h1 {
             text-align: center;
         }
 
         .nav_wrapper {
             display: none;
-        }
-    }
-}
 
-@media only screen and (max-width: 560px) {
-    #benefits_section {
-        flex-flow: column nowrap;
-
-        .benefit_card {
-            width: 100%;
         }
     }
 }
 
 @media only screen and (max-width: 530px) {
     #benefits_section {
-        #blog_swiper_wrapper {
-            margin-top: 0;
-        }
-
         & > h1 {
             width: 100%;
             text-align: center;

@@ -1,4 +1,5 @@
 .container {
+  overflow: hidden;
   margin-top: 10px;
   height: 30px;
   display: -webkit-box;
@@ -31,13 +32,13 @@
 }
 
 .slider__track {
-  background-color: #1d1d29;
+  background-color: #a0c8fa;
   width: 100%;
   z-index: 1;
 }
 
 .slider__range {
-  background-color: #fb4a14;
+  background-color: #29adb2;
   z-index: 2;
 }
 
@@ -75,7 +76,7 @@
 /* For Chrome browsers */
 .thumb::-webkit-slider-thumb {
   background-color: #fff;
-  border: 4px #fb4a14 solid;
+  border: 4px #29adb2 solid;
   border-radius: 50%;
   cursor: pointer;
   height: 22px;
@@ -88,7 +89,7 @@
 /* For Firefox browsers */
 .thumb::-moz-range-thumb {
   background-color: #fff;
-  border: 4px #fb4a14 solid;
+  border: 4px #29adb2 solid;
   border-radius: 50%;
   cursor: pointer;
   height: 22px;

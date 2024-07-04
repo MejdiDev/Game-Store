@@ -1,16 +1,10 @@
 @import "utils/variables";
 
 #product_details_section {
-    gap: 30px;
     padding: 0 15%;
     width: 70%;
     margin-top: 150px;
     color: $prim;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: start;
-    align-items: start;
 
     #title {
         font-size: 30px;
@@ -21,12 +15,20 @@
         font-family: Manrope;
     }
 
+    #details_wrapper {
+        display: flex;
+        align-items: start;
+        gap: 30px;
+        
+        width: calc(80vw - 400px);
+    }
+
     #cover {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
     
-        width: 300px;
+        min-width: 300px;
         aspect-ratio: 3 / 4;
         border-radius: 15px;
     }
@@ -47,6 +49,7 @@
     }
 
     #buy_component {
+        top: 230px;
         position: absolute;
 
         width: 320px;
@@ -56,12 +59,14 @@
         background: $neo_background;
         box-shadow: $neo_box_shadow;
 
+        box-shadow: 10px 12px 29px -7px rgba(0,0,0,0.69);
+
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
 
         & > p:last-child {
-            color: grey;
+            color: $light_bg;
             cursor: pointer;
             font-family: Manrope;
             font-size: 17px;
@@ -84,7 +89,7 @@
             div {
                 width: 5px;
                 height: 30px;
-                background: $light_prim;
+                background: $light_bg;
                 opacity: .2;
             }
 
@@ -134,8 +139,8 @@
                 p {
                     margin: 0;
                     font-size: 14px;
-                    opacity: .4;
                     font-weight: 500;
+                    color: $light_bg;
                 }
             }
         }
@@ -217,18 +222,19 @@
     }
 
     #data {
-        width: calc(100% - 720px);
 
         p {
             margin: 0;
             font-size: 16px;
-            color: $light_prim;
+            color: $light_bg;
         }
 
         #flags_wrapper {
             margin-top: 7px;
             display: flex;
             gap: 15px;
+
+            font-family: Manrope;
 
             .flag {
                 border-radius: 2px;
@@ -242,11 +248,12 @@
         }
 
         #game_info {
-            height: 150px;
             row-gap: 30px;
             column-gap: 50px;
-            display: flex;
-            flex-flow: column wrap;
+            margin-bottom: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(2, calc(100% / 2 - 50px / 2));
             
             .info_wrapper {
                 gap: 10px;
@@ -255,9 +262,13 @@
                 font-weight: 700;
 
                 #icon {
-                    width: 50px;
-                    aspect-ratio: 1 / 1;
-                    background: $light_bg;
+                    min-width: 50px;
+                    min-height: 50px;
+
+                    max-width: 50px;
+                    max-height: 50px;
+
+                    background: $light_prim;
                     border-radius: 5px;
 
                     display: flex;
@@ -273,11 +284,15 @@
                 #text {
                     display: flex;
                     flex-flow: column nowrap;
-                    justify-content: space-between;
 
                     h4 {
                         margin: 0;
                         font-size: 18px;
+                    }
+
+                    p {
+                        margin: 0;
+                        color: $light_bg;
                     }
                 }
             }
@@ -290,12 +305,22 @@
         flex-wrap: wrap;
 
         #data {
-            width: calc(100% - 350px);
+            width: 100% !important;
         }
 
         #buy_component {
             position: static !important;
             width: 100%;
+        }
+
+        #details_wrapper {
+            width: calc(100% + 40px);
+            margin-bottom: 50px;
+        }
+
+        #game_info {
+            display: flex !important;
+            flex-flow: row wrap !important;
         }
     }
 }
@@ -303,7 +328,6 @@
 @media only screen and (max-width: 900px) {
     #product_details_section {
         #game_info {
-            height: auto !important;
             margin-bottom: 30px;
         }
     }
@@ -311,13 +335,17 @@
 
 @media only screen and (max-width: 760px) {
     #product_details_section {
-        padding: 0;
+        padding: 0 15px;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: calc(100% - 30px);
+
+        #flags_label, #flags_wrapper {
+            display: none !important;
+        }
 
         #buy_component {
-            width: calc(100% - 100px);
+            width: calc(100% - 40px);
         }
 
         #cover {
@@ -330,6 +358,10 @@
 
         #data {
             width: 90%;
+        }
+
+        #details_wrapper {
+            width: 100%;
         }
     }
 }
@@ -353,12 +385,46 @@
     }
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 720px) {
     #product_details_section {
         margin-top: 50px;
 
+        #details_wrapper {
+            flex-flow: column nowrap !important;
+        }
+
         #cover {
-            width: calc(100% - 40px);
+            width: 100%;
+        }
+
+        #game_info {
+            column-gap: 15px !important;
+            display: grid !important;
+            grid-template-columns: repeat(2, calc(100% / 2 - 15px / 2)) !important;
+
+            .info_wrapper {
+                width: 100%;
+
+                #text {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+    
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #product_details_section {
+        #game_info {
+            column-gap: 0px !important;
+            display: flex !important;
+            flex-flow: column nowrap !important;
         }
     }
 }

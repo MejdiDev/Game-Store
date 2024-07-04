@@ -1,5 +1,14 @@
 {
     "PC": "./icons/pc.png",
-    "Playstation": "./icons/playstation.png",
-    "Xbox": "./icons/xbox.png"
+    "PlayStation": "./icons/playstation.png",
+    "PlayStation 5": "./icons/playstation.png",
+    "PlayStation 4": "./icons/playstation.png",
+    "Xbox": "./icons/xbox.png",
+    "Xbox Series X|S": "./icons/xbox.png",
+    "Xbox One": "./icons/xbox.png",
+    "Nintendo": "./icons/switch.png",
+    "Nintendo Switch": "./icons/switch.png",
+    "Steam": "./icons/steam.svg",
+    "Ubisoft": "./icons/ubisoft.svg",
+    "Epic Games": "./icons/epic.svg"
 }

@@ -3,64 +3,56 @@ import "../styles/css/gamesList.css";
 import GameCard from "../utils/GameCard";
 import MultiRangeSlider from "../utils/MultiRangeSlider";
 
-import { Link } from "react-router-dom";
-import { shuffleArray, includesAll, gameIsInWishlist } from "../utils/functions";
+import { Link, useNavigate } from "react-router-dom";
+import { includesAll, gameIsInWishlist } from "../utils/functions";
 import { useEffect, useState } from "react";
 import { hideMobileNav } from "./MobileNav";
+import { getCurrentCurrency } from "../data/handle_currency";
 
 const emptyCri = { "platforms": [], "genres": [], "price_range": { "min": 0, "max": 1000 }, "wishlisted": false }
 
-window.addEventListener("resize", (event) => {
-    document.querySelectorAll("#games_list_body .game_card #placeholder").forEach(el => {
-        el.style.height = document.querySelector(".game_card #cover").style.height
-    })
-})
+const FilterComponent = ({ games, applyHandler, onGenreClick, selectedGenres, handleMinMaxPrice, minPrice, maxPrice }) => {
 
-const FilterComponent = ({ games, applyHandler }) => {
-    const [rangeMin, setRangeMin] = useState(0)
-    const [rangeMax, setRangeMax] = useState(1000)
-    
-    const [criList, criListHandler] = useState(emptyCri)
+    const [criList, criListHandler] = useState(emptyCri);
+    const [rangeMin, setRangeMin] = useState(minPrice);
+    const [rangeMax, setRangeMax] = useState(maxPrice);
+    const [tempError, setTempError] = useState(false)
 
     const getAvOptions = field => {
-        return [...new Set(
-            games.flatMap(game =>
-                game[field]
-            )
-        )]
+        return [
+            'Action', 'Adult Games',
+            'Adventure', 'Anime',
+            'Casual', 'Co-op',
+            'Dating Simulator', 'FPS',
+            'Fighting', 'Hack and Slash',
+            'Hidden Object', 'Horror',
+            'Indie', 'Life Simulation',
+            'MMO', 'Music / Soundtrack',
+            'Online Courses', 'Open World',
+            'PSN Card', 'Platformer',
+            'Point & click', 'Puzzle',
+            'RPG', 'Racing',
+            'Simulation', 'Software',
+            'Sport', 'Story rich',
+            'Strategy', 'Subscription',
+            'Survival', 'Third-Person Shooter',
+            'VR Games', 'Visual Novel'
+        ]
     }
 
     const handleCheck = (e, field) => {
-        const trgt = (e.target.tagName == "IMG" ? e.target.parentNode : e.target)
-        trgt.classList.toggle("active")
+        onGenreClick(field)
+    }
+    const updatePrice = () => {
+        if (rangeMin && rangeMax && rangeMin > rangeMax) {
 
-        let tmp = JSON.parse(JSON.stringify(criList))
-
-        if(field == "wishlisted") {
-            tmp["wishlisted"] = !tmp["wishlisted"]
-            criListHandler(tmp)
-
-            return
+            setTempError(true)
+        } else {
+            handleMinMaxPrice(rangeMin, rangeMax);
         }
-        
-        const toAppend = trgt.parentNode.innerText
-
-        if(!tmp[field].includes(toAppend)) tmp[field].push(toAppend)
-        else tmp[field] = tmp[field].filter(item => item != toAppend)
-
-        criListHandler(tmp)
     }
 
-    const handleRangeChange = (min, max) => {
-        setRangeMin(min)
-        setRangeMax(max)
 
-        let tmp = JSON.parse(JSON.stringify(criList))
-        tmp["price_range"]["min"] = min
-        tmp["price_range"]["max"] = max
-
-        if(JSON.stringify(tmp) !=  JSON.stringify(criList)) criListHandler(tmp)
-    }
 
     return (
         <div className="filter_wrapper mobl_hidden">
@@ -70,23 +62,20 @@ const FilterComponent = ({ games, applyHandler }) => {
                 <div id="price_inputs_wrapper">
                     <input value={rangeMin} onChange={e => setRangeMin(e.target.value)} placeholder="From" type="number" min={0} step={10} max={10000} />
                     <input value={rangeMax} onChange={e => setRangeMax(e.target.value)} placeholder="To" type="number" min={10} step={10} max={10000} />
+
                 </div>
 
-                <MultiRangeSlider
-                    min={ Math.min(...games.map(game => game.is_discounted ? game.new_price : game.price)) }
-                    max={ Math.max(...games.map(game => game.is_discounted ? game.new_price : game.price)) }
-                    onChange={({ min, max }) => handleRangeChange(min, max)}
-                />
 
+                {tempError && <p style={{ color: 'red', padding: '0' }}>please verify</p>}
                 <button onClick={() => {
                     hideMobileNav()
-                    applyHandler(criList)
+                    updatePrice()
                 }}>Filter</button>
             </div>
 
             <div className="seperation"><span></span></div>
 
-            <div className="cri_wrapper">
+            {/*   <div className="cri_wrapper">
                 <h1>Wishlisted:</h1>
 
                 <div className="checks_wrapper">
@@ -99,10 +88,12 @@ const FilterComponent = ({ games, applyHandler }) => {
                     </span>
                 </div>
             </div>
+                 <div className="seperation"><span></span></div>
 
-            <div className="seperation"><span></span></div>
+ */}
 
-            <div className="cri_wrapper">
+
+            {/*     <div className="cri_wrapper">
                 <h1>Platform:</h1>
 
                 <div className="checks_wrapper">
@@ -113,14 +104,15 @@ const FilterComponent = ({ games, applyHandler }) => {
                                     <img src="./icons/check.svg" alt="Check" />
                                 </div>
 
-                                <p>{ label }</p>
+                                <p>{label}</p>
                             </span>
                         )
                     }
                 </div>
             </div>
 
-            <div className="seperation"><span></span></div>
+            <div className="seperation"><span></span></div>*/}
+
 
             <div className="cri_wrapper">
                 <h1>Genre:</h1>
@@ -129,11 +121,11 @@ const FilterComponent = ({ games, applyHandler }) => {
                     {
                         getAvOptions("genres").map((label, idx) =>
                             <span key={`genre-option-${idx}`}>
-                                <div onClick={e => handleCheck(e, "genres")} id="checkbox">
+                                <div onClick={e => handleCheck(e, label)} id="checkbox" className={selectedGenres[label] === true ? "active" : ""}>
                                     <img src="./icons/check.svg" alt="Check" />
                                 </div>
 
-                                <p>{ label }</p>
+                                <p>{label}</p>
                             </span>
                         )
                     }
@@ -143,14 +135,27 @@ const FilterComponent = ({ games, applyHandler }) => {
     );
 }
 
-const GamesList = ({ pageTitle, games, platform }) => {
+const GamesList = ({ pageTitle, games, platform, onGenreClick, selectedGenres, currentPage, onPageChange, totalPages, isLoading,
+    handleMinMaxPrice, minPrice, maxPrice
+}) => {
+    const maxPageButtons = 10;
+    const halfMaxPageButtons = Math.floor(maxPageButtons / 2);
+
+    let startPage = Math.max(currentPage - halfMaxPageButtons, 1);
+    let endPage = startPage + maxPageButtons - 1;
+
+    if (endPage > totalPages) {
+        endPage = totalPages;
+        startPage = Math.max(endPage - maxPageButtons + 1, 1);
+    }
+    const pageNumbers = Array.from({ length: endPage - startPage + 1 }, (_, idx) => startPage + idx);
     const [resGameList, setResGameList] = useState(null)
     const [applCriList, applCriListHandler] = useState(emptyCri)
 
     const showFilterMenu = () => {
         document.getElementById('overlay').style.display = "block";
         document.querySelector('.filter_wrapper').classList.remove("mobl_hidden");
-        
+
         setTimeout(() => {
             document.querySelector('.filter_wrapper').classList.add("slid_into_view");
             document.getElementById('overlay').style.opacity = "0.7";
@@ -160,62 +165,112 @@ const GamesList = ({ pageTitle, games, platform }) => {
     }
 
     useEffect(() => {
+        if(!games) return
+
         setResGameList(
+
             games.filter(game => {
                 const initBool = (
-                    !applCriList["wishlisted"] ? true : gameIsInWishlist(game.id)
+                    !applCriList["wishlisted"] ? true : gameIsInWishlist(game._id)
                 )
 
-                const game_price = game.is_discounted ? game.new_price : game.price
+                const game_price = game.sellPrice
+                    ? getCurrentCurrency() === "Usd"
+                        ? game.usdPrice
+                        : getCurrentCurrency() === "Pln"
+                            ? game.plnPrice
+                            : getCurrentCurrency() === "Gbp"
+                                ? game.gbpPrice
+                                : game.sellPrice
+                    : getCurrentCurrency() === "Usd"
+                        ? game.usdPrice
+                        : getCurrentCurrency() === "Pln"
+                            ? game.plnPrice
+                            : getCurrentCurrency() === "Gbp"
+                                ? game.gbpPrice
+                                : game.price;
+                console.log(applCriList["price_range"].min <= game_price &&
+                    game_price <= applCriList["price_range"].max);
 
-                return(
-                    initBool &&
 
-                    includesAll(game.platforms, applCriList["platforms"]) &&
-                    includesAll(game.genres, applCriList["genres"]) &&
-                    
+                return (
+
+
+
                     applCriList["price_range"].min <= game_price &&
-                    game_price <= applCriList["price_range"].max
+                    parseFloat(game_price) <= applCriList["price_range"].max
                 )
             })
         )
-    }, [ applCriList ])
+    }, [applCriList, games, platform])
 
-    return(
+    return (
         <section id="games_list_body">
-            <h1>{ pageTitle }</h1>
+            <h1>{pageTitle}</h1>
 
             <div id="game_list_body_wrapper">
-                <FilterComponent
-                    games={games}
-                    applyHandler={applCriListHandler}
-                />
+                {games &&
+                    <FilterComponent
+                        games={games}
+                        applyHandler={applCriListHandler}
+                        onGenreClick={onGenreClick}
+                        selectedGenres={selectedGenres}
+                        handleMinMaxPrice={handleMinMaxPrice}
+                        minPrice={minPrice}
+                        maxPrice={maxPrice}
+                    />}
 
-                <div id="content">
-                    <button id="filter_btn" onClick={() => showFilterMenu()}>
-                        <p>Filter</p>
-                        <img src="./icons/filter.png" alt="Filter" />
-                    </button>
+                {   isLoading ?
+                    
+                    <div id="loader_wrapper"><div className="loader"></div></div>
 
-                    <div id="res_wrapper">
-                        {   !resGameList ? <h1 className="msg">Loading ...</h1> :
+                    :
 
-                            (resGameList.length == 0 ? <h1 className="msg">No results found ! 🤷🏻‍♂️🙅🏻‍♀️</h1> :
-                                resGameList.map((game, idx) =>
-                                    <Link
-                                        key={Math.random()}
-                                        to={`/product/${platform == "" ? "PC" : platform}/${game.id}`}
-                                    >
+                    <div id="content">
+                        <button id="filter_btn" onClick={() => showFilterMenu()}>
+                            <p>Filter</p>
+                            <img src="./icons/filter.png" alt="Filter" />
+                        </button>
+
+                        <div id="res_wrapper">
+                            {!resGameList ? <h1 className="msg">Loading ...</h1> :
+
+                                (resGameList.length == 0 ? <h1 className="msg">No results found ! 🤷🏻‍♂️🙅🏻‍♀️</h1> :
+                                    resGameList.map((game, idx) =>
+
                                         <GameCard
                                             game={game}
                                             idx={idx}
+                                            key={Math.random()}
+                                            plateform={platform}
                                         />
-                                    </Link>
+                                    )
                                 )
-                            )
-                        }
+                            }
+                        </div>
+                        {resGameList && resGameList.length > 0 && <div className="index_pags">
+                            <button id="prev" onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
+                                <p>Previous</p>
+                                <img src="./icons/dropdown.png" alt="Arrow" />
+                            </button>
+
+                            {pageNumbers.map((pageNumber) => (
+                                <button
+                                    key={pageNumber}
+                                    className={`pag ${currentPage === pageNumber ? 'active' : ''}`}
+                                    onClick={() => onPageChange(pageNumber)}
+                                >
+                                    {pageNumber}
+                                </button>
+                            ))}
+
+                            <button id="next" onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                                <p>Next</p>
+                                <img src="./icons/dropdown.png" alt="Arrow" />
+                            </button>
+                        </div>}
                     </div>
-                </div>
+                }
             </div>
         </section>
     );

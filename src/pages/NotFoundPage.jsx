@@ -1,6 +1,6 @@
-const NotFoundPage = () => {
+const NotFoundPage = ({message}) => {
     return (
-        <h1>404 !!</h1>
+        <h1 style={{color:"white"}}>{message}</h1>
     );
 }
 

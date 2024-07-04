@@ -1,0 +1,114 @@
+@media only screen and (max-width: 1250px) {
+  #loader_wrapper {
+    height: calc(100vh - 170px) !important;
+  }
+}
+
+#loader_wrapper {
+  overflow-y: scroll;
+  width: 100%;
+  height: calc(100vh - 99px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#loader_wrapper .loader {
+  width: 80px;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+#loader_wrapper .loader:before,
+#loader_wrapper .loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -8px 0 0 -8px;
+  width: 22px;
+  aspect-ratio: 1;
+  background: #29adb2;
+  -webkit-animation: l2-1 2s  infinite, l2-2 1s infinite;
+          animation: l2-1 2s  infinite, l2-2 1s infinite;
+}
+
+#loader_wrapper .loader:after {
+  background: #c5e898;
+  -webkit-animation-delay: -1s,0s;
+          animation-delay: -1s,0s;
+}
+
+@-webkit-keyframes l2-1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 100%;
+    left: 0;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    top: 0;
+    left: 100%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes l2-1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 100%;
+    left: 0;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    top: 0;
+    left: 100%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@-webkit-keyframes l2-2 {
+  40%, 50% {
+    -webkit-transform: rotate(0.25turn) scale(0.5);
+            transform: rotate(0.25turn) scale(0.5);
+  }
+  100% {
+    -webkit-transform: rotate(0.5turn) scale(1);
+            transform: rotate(0.5turn) scale(1);
+  }
+}
+
+@keyframes l2-2 {
+  40%, 50% {
+    -webkit-transform: rotate(0.25turn) scale(0.5);
+            transform: rotate(0.25turn) scale(0.5);
+  }
+  100% {
+    -webkit-transform: rotate(0.5turn) scale(1);
+            transform: rotate(0.5turn) scale(1);
+  }
+}

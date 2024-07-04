@@ -6,26 +6,44 @@ import Footer from "../components/Footer";
 
 import LoginBody from "../components/LoginBody";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { googleLogin } from "../data/api";
+import { signup } from "../data/api";
 
 const LoginPage = () => {
     const { type } = useParams()
     const navigate = useNavigate()
 
+
     useEffect(() => {
-        if(!["login", "signup"].includes(type)) {
+        if(!["login", "signup", "forgot"].includes(type)) {
             navigate("/");
             return;
         }
 
-        document.title = "Key4GG";
+        if(document.title !== "SOFTKey24 Store") document.title = "SOFTKey24 Store";
         hideMobileNav()
-    }, [])
+    }, []);
+
+    const loginwithgoogle = ()=>{
+        console.log('pl');
+        window.open("http://localhost:4000/auth/google/callback","_self")
+    }
+
+
+    const loginwithFacebook = ()=>{
+        console.log('pl');
+        window.open("http://localhost:4000/auth/facebook/callback","_self")
+    }
+
+    const loginwithSteam = ()=>{
+        console.log('pl');
+        window.open("http://localhost:4000/user/steam","_self")
+    }
 
     return (
-        ["login", "signup"].includes(type) &&
+        ["login", "signup", "forgot"].includes(type) &&
 
         <main>
             <div id="overlay" onClick={hideMobileNav}></div>
@@ -36,9 +54,7 @@ const LoginPage = () => {
 
             <DropdownMenu platform="" />
 
-            <LoginBody type={type} navigate={navigate} />
-
-            {/* <div id="ending"></div> */}
+            <LoginBody type={type} navigate={navigate} loginwithgoogle={loginwithgoogle} loginwithFacebook={loginwithFacebook} loginwithSteam={loginwithSteam}/>
 
             <Footer />
         </main>

@@ -3,7 +3,7 @@
 #games_list_body {
     margin-top: 150px;
     margin-bottom: 150px;
-    padding: 0 15%;
+    padding: 0 10%;
 
     & > h1 {
         color: $prim;
@@ -19,7 +19,7 @@
 
         .filter_wrapper {
             position: relative;
-            width: 430px;
+            width: 300px;
             background: $dark_bg;
             border-radius: 20px;
     
@@ -74,7 +74,7 @@
                             border: none;
                             background: none;
                             width: 100%;
-                            border: 2px $light_prim solid;
+                            border: 2px $light_bg solid;
                             border-radius: 5px;
                             height: 30px;
                             padding-left: 15px;
@@ -125,18 +125,28 @@
     
                         p {
                             font-size: 17px;
-                            font-weight: 700;
+                            font-weight: 600;
                             margin: 0;
                             font-family: Manrope;
-                            color: $light_prim;
+                            color: $prim;
                         }
                     }
                 }
             }
         }
+
+        &:not(#game_list_body_wrapper:has(.filter_wrapper)) #loader_wrapper {
+            width: 100% !important;
+        }
     
+        #loader_wrapper {
+            overflow: hidden;
+            width: calc(100% - 400px);
+            min-height: 100vh;
+        }
+
         #content {
-            width: 100%;
+            width: calc(80% - 50px);
             margin-top: 50px;
 
             &:has(#res_wrapper > .msg) {
@@ -180,19 +190,6 @@
                     grid-template-columns: repeat(4, calc((100% / 4) - (40px / 4)));
                 }
 
-                .msg {
-                    font-size: 30px;
-                    font-weight: 600;
-                    color: $prim;
-                    margin: 0;
-                    text-align: center;
-
-                    opacity: 0;
-                    margin-top: 50px;
-
-                    animation: fadeIn 300ms ease 200ms forwards;
-                }
-
                 .game_card {
                     will-change: margin-top, opacity;
 
@@ -214,10 +211,24 @@
     }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1260px) {
+    #games_list_body {
+        padding: 0 5%;
+        
+        #content {
+            width: 70% !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1250px) {
     #games_list_body {
         margin-top: 50px;
         padding: 0 20px;
+        
+        #content {
+            width: 70% !important;
+        }
     }
 }
 
@@ -245,6 +256,7 @@
         
         #content {
             margin-top: 0;
+            width: 100% !important;
 
             #filter_btn {
                 display: flex !important;

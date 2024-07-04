@@ -1,22 +1,26 @@
 @import "utils/variables";
 
+body:has(#cart_body #checkout_component) footer {
+    padding-bottom: 250px;
+}
+
 footer {
-    background: $dark_bg;
-    padding: 100px 15%;
-    width: 70%;
+    background: $light_prim;
+    padding: 100px 0;
+    width: 100%;
 
     ul {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: center;
 
         list-style: none;
 
         .li_seprt {
             height: 300px;
-            width: 3px;
+            min-width: 3px;
             opacity: .2;
-            background: $light_prim;
+            background: $light_bg;
             margin: 0 50px;
 
             &:nth-of-type(4) {
@@ -40,6 +44,8 @@ footer {
             }
 
             &:nth-child(3) {
+                padding-right: 50px;
+
                 .links {
                     display: flex;
                     flex-flow: column wrap;
@@ -51,8 +57,8 @@ footer {
 
             &:nth-child(5) {
                 p {
-                    font-weight: 600;
-                    color: $light_prim;
+                    font-weight: 500;
+                    color: $light_bg;
                     font-size: 17px;
                     margin-bottom: 15px;
                 }
@@ -79,18 +85,12 @@ footer {
 
         #payement_method_wrapper {
             margin: 20px 0;
-            width: calc(100% - 10px);
-            height: 100px;
-    
-            display: grid;
-            gap: 10px;
-            
-            grid-template-columns: repeat(3, calc((100% / 3) - (10px / 3)));
-            grid-template-rows: repeat(2, calc((100% / 2) - (10px / 2)));
-    
-            div {
-                background: $light_prim;
-                border-radius: 10px;
+            max-width: 100%;
+
+            display: flex;
+
+            img {
+                height: 50px;
             }
         }
     }
@@ -100,11 +100,9 @@ footer {
     footer {
         padding-left: 0;
         padding-right: 0;
-
-        width: 100%;
         
         ul {
-            padding: 0 15%;
+            padding: 0 10%;
             margin: 0;
 
             flex-flow: column nowrap;
@@ -124,6 +122,10 @@ footer {
                     display: flex;
                     flex-flow: column nowrap;
                     align-items: center;
+                }
+
+                &:nth-child(3) {
+                    padding: 0;
                 }
 
                 &:nth-child(5) {

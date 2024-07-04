@@ -1,20 +1,16 @@
-$prim : #f9fafe;
-$light_prim : #40404c;
-$dark_prim : #25252f;
+$light_prim : #000d6d;
+$dark_prim : #19456B;
 
-$bg : #151521;
-$light_bg: #1d1d29;
-$dark_bg: #0d0d17;
+$light_bg: #a0c8fa;
+$dark_bg: #00337C;
 
-$btn_1 : #fb4a14;
-$btn_2 : #fcce16;
+$btn_gradient: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
 
-$btn_gradient: linear-gradient(131deg, rgba(246,99,29,1) 0%, rgba(217,48,7,1) 100%);
-$neo_background: #272530;
-$neo_box_shadow: inset -7px -7px 20px #19171e, inset 7px 7px 20px #353342;
+$neo_background: linear-gradient(315deg, #084796, #0a55b3);
+$neo_box_shadow:  inset 32px 32px 49px #084898, inset -32px -32px 49px #0a56b6;
 
-// $prim : #000421;
-// $bg : #1c7bf3;
+$prim : #f3f3f3;
+$bg : #153E90;
 
-// $btn_1 : #0ac693;
-// $btn_2 : #3483ff;
+$btn_1 : #29adb2;
+$btn_2 : #c5e898;

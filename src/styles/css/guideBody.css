@@ -25,7 +25,7 @@
 #guide_body_wrapper #guide_body {
   position: relative;
   overflow-y: scroll;
-  background: #1d1d29;
+  background: #000d6d;
   width: auto !important;
   height: 90vh;
   gap: 2px;
@@ -36,14 +36,14 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  color: #f9fafe;
+  color: #f3f3f3;
   padding: 30px 20px;
   border-radius: 10px;
 }
 
 #guide_body_wrapper #guide_body #cross {
   border-radius: 5px;
-  background: #40404c;
+  background: #a0c8fa;
   padding: 10px;
   padding-bottom: 6px;
   right: 20px;
@@ -100,7 +100,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,13 +118,13 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 3px #1d1d29 solid;
+  border: 3px #000d6d solid;
 }
 
 #guide_body_wrapper #guide_body .step_wrapper #line_design_wrapper #line {
   height: calc(100% - 36px);
   width: 2px;
-  background: linear-gradient(131deg, #f6631d 0%, #d93007 100%);
+  background: linear-gradient(131deg, #99b476 0%, #29adb2 100%);
 }
 
 #guide_body_wrapper #guide_body .step_wrapper #content_wrapper {

@@ -10,32 +10,65 @@ import InfoSection from "../utils/InfoSection";
 import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 
-import games from "../data/games.json"
-import gift_cards from "../data/gift_cards.json"
 import blog_data from "../data/blog_data.json"
 
 import { shuffleArray } from "../utils/functions";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { getHomeData } from "../data/api";
+import { useLocation } from 'react-router-dom';
+import { setToken } from "../utils/cookie";
+
+import { getAllKinguinGames } from "../data/api";
 
 
 const LandingPage = () => {
+    const navigate = useNavigate();
     const { platform } = useParams();
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [sliders, setSliders] = useState(null);
+    const [trending, setTrending] = useState(null);
+    const [bestSellers, setBestSellers] = useState(null);
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const name = searchParams.get('token');
+    const getHomeContent = async () => {
+        const response = await getHomeData();
+        console.log(response)
+        setSliders(response.sliders);
+        setBestSellers(response.bestSellers);
+        setTrending(response.trendings);
+    }
 
-    const getGameData = () => {
-        axios.get(`https://www.giantbomb.com/api/games/?format=json&limit=20&api_key=${process.env.REACT_APP_GIANT_BOMB_API_KEY}`)
-        .then(res => res.data.results)
-        .then(res => {
-            setData(res)
-            console.log(res[0])
-        })
+    const setTokenQuery = async () => {
+        if (name) {
+            setToken(name);
+            searchParams.delete('token');
+            navigate({ search: searchParams.toString() }, { replace: true });
+        }
+    }
+    const getHomeContentTemp = async () => {     //TODO: REMOVE THIS FUNCTION.
+        let res = []
+
+        const respSteam = await getAllKinguinGames("Steam", []);
+        const respPS = await getAllKinguinGames("Xbox", []);
+        const respXbox = await getAllKinguinGames("Playstation", []);
+
+        res = shuffleArray(res.concat(respSteam.products, respPS.products, respXbox.products))
+
+        setSliders(res.slice(0, 6));
+        setBestSellers(res.slice(6, 12));
+        setTrending(res.slice(12, 18));
     }
 
     useEffect(() => {
-        document.title = "Key4GG";
+        document.title = "SOFTKey24"
+
+        getHomeContentTemp()        //TODO: REPLACE WITH ORIGINAL FUNCTION.
         hideMobileNav()
+        setTokenQuery();
+
     }, [])
 
     return (
@@ -47,57 +80,46 @@ const LandingPage = () => {
 
             <Nav />
             <DropdownMenu platform={platform} />
-            
-            <Slider platform={platform} games={ games } />
 
-            <Categories />
+            {!(sliders && trending && bestSellers) ?
 
-            <div className="seperation"><span></span></div>
+                <div id="loader_wrapper"><div className="loader"></div></div>
 
-            <GamesBuySlider
-                id="trending_games_section"
-                title="Trending"
-                platform={platform}
-                games={ shuffleArray(games) }
-                delay={2000}
-            />
+                :
+                <div>
+                    {sliders && (<Slider platform={platform} games={sliders} />)}
 
-            <GamesBuySlider
-                id="bestsell_games_section"
-                title="Bestsellers"
-                platform={platform}
-                games={ shuffleArray(games.filter(game => game.is_discounted)) }
-                delay={2700}
-            />
+                    <Categories />
 
-            <GamesBuySlider
-                className="gift_card"
-                id="gift_cards_section"
-                title="Gift Cards"
-                platform={ platform }
-                games={ shuffleArray(gift_cards) }
-                delay={ 3000 }
-            />
+                    <div className="seperation"><span></span></div>
 
-            <BlogSwiper data={ shuffleArray(blog_data) } />
-            <InfoSection
-                title="Online game shop Key4gg"
-                body={
-                    <p>
-                        Welcome to our online game shop, your trusted partner in the world of virtual entertainment. We offer a wide range of PC and console games to satisfy the most sophisticated array of games for all ages.
-                        <br /><br />
-                        Why us?
-                        <br /><br />
-                        A huge selection of games. We have the best games on the market for PC and consoles. Whether you're a fan of action, adventure, strategy or sports simulation, we offer a wide selection to satisfy your thirst for gaming entertainment.
-                        <br /><br />
-                        Bargain prices. We pride ourselves on offering our customers competitive prices. We have regular promotions and discounts, making your gaming fun even more affordable.
-                    </p>
-                }
-            />
 
-            {/* <div id="ending"></div> */}
+                    {trending && (<GamesBuySlider id="trending_games_section" title="Trending" platform={platform} games={trending} />)}
+                    {bestSellers && (<GamesBuySlider id="bestsell_games_section" title="Bestsellers" platform={platform} games={bestSellers} />)}
 
-            <Footer />
+                    <BlogSwiper data={shuffleArray(blog_data)} />
+
+
+
+
+                    <InfoSection
+                        title="Online game shop SOFTKey24"
+                        body={
+                            <p>
+                                Welcome to our online game shop, your trusted partner in the world of virtual entertainment. We offer a wide range of PC and console games to satisfy the most sophisticated array of games for all ages.
+                                <br /><br />
+                                Why us?
+                                <br /><br />
+                                A huge selection of games. We have the best games on the market for PC and consoles. Whether you're a fan of action, adventure, strategy or sports simulation, we offer a wide selection to satisfy your thirst for gaming entertainment.
+                                <br /><br />
+                                Bargain prices. We pride ourselves on offering our customers competitive prices. We have regular promotions and discounts, making your gaming fun even more affordable.
+                            </p>
+                        }
+                    />
+
+                    <Footer />
+                </div>
+            }
         </main>
     );
 }
