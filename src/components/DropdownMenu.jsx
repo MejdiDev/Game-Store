@@ -8,7 +8,7 @@ import 'swiper/css';
 const menuTabs = [
     {
         label: "Steam",
-        img: "PC.png"
+        img: "steam.svg"
     },
 
     {
